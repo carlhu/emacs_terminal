@@ -1,0 +1,1944 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Minus Priorities</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2011-12-05 19:28:15 EST"/>
+<meta name="author" content="Ubuntu"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">Minus Priorities</h1>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">John </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-1_1">□ make lights off more prominent in settings page </a></li>
+<li><a href="#sec-1_2">□ Add profile to Minus Team </a></li>
+<li><a href="#sec-1_3">Profile </a></li>
+<li><a href="#sec-1_4">□ Wed: Newsletter goes out. </a></li>
+<li><a href="#sec-1_5">□ Show ranking title or ranking progress bar based on Minus points </a></li>
+<li><a href="#sec-1_6">□ Have attitude or not! Standout vs Broad Audience. </a></li>
+<li><a href="#sec-1_7">□ home page on reddit and HN </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">Carl </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-2_1">□ Dance community evangelism, starting out with competitions. </a></li>
+<li><a href="#sec-2_2">□ Ghost accounts - robot agents that autofollow. 505 followers, 350 follows. Random from explore/popular. </a></li>
+<li><a href="#sec-2_3">□ buy 2 reserved video instances. </a></li>
+<li><a href="#sec-2_4">□ Explore </a></li>
+<li><a href="#sec-2_5">□ gallery view: (filmstrip) (integrate gridview) Show graphically, number of items in gallery, and where you are. consider using k links. </a></li>
+<li><a href="#sec-2_6">□ what to use, the last you drag, or the last you uploaded.  when an upload completes, go to next item in mlist </a></li>
+<li><a href="#sec-2_7">□ http://minus.com/mQDCc4GOY I can only hear the voice but not see the image. What is the problem? My browser or?  BTW, after I download the video file, it works well. Write back to Jiao when done. </a></li>
+<li><a href="#sec-2_8">□ "show more images like this" "since you starred this, you might like this" </a></li>
+<li><a href="#sec-2_9">□ reshare/star should include a personal comment </a></li>
+<li><a href="#sec-2_10">□ can't find uploads on dashboard </a></li>
+<li><a href="#sec-2_11">□ study google plus.broadcast news updates to family. </a></li>
+<li><a href="#sec-2_12">□ Study: http://playground.mobily.pl/jquery/mobily-blocks/demo.html for explore preview hover. </a></li>
+<li><a href="#sec-2_13">□ Improve daemon behavior: https://github.com/kasun/YapDi/blob/master/examples/ex_basic.py </a></li>
+<li><a href="#sec-2_14">□ analyze http://narly.us/repos/tagged/schacon, explore timeline ideas. </a></li>
+<li><a href="#sec-2_15">□ Study pure css pathlike fanout menu. http://lab.victorcoulon.fr/css/path-menu/ </a></li>
+<li><a href="#sec-2_16">□ people you view a lot maybe should show up more frequently on followlist. </a></li>
+<li><a href="#sec-2_17">□ Show # Published and minus points in followbox </a></li>
+<li><a href="#sec-2_18">□ spathe uploader style to make it easier. http://minus.com/mWJ9gJBM9#1. Think about remote upload. </a></li>
+<li><a href="#sec-2_19">□ How many people have tried minus? </a></li>
+<li><a href="#sec-2_20">□ create an efficient browse, open, left/right, comment mouse and keyboard workflow. </a></li>
+<li><a href="#sec-2_21">□ how many people have tried minus? (get a real answer). How many of them remain active? </a></li>
+<li><a href="#sec-2_22">□ measure turnover (gallery level) in popular </a></li>
+<li><a href="#sec-2_23">□ reshare: github style reshare. reshare credits original. remix and reshare. </a></li>
+<li><a href="#sec-2_24">□ Modify team page to not open in new window </a></li>
+<li><a href="#sec-2_25">□ drag image into a folder for copy. </a></li>
+<li><a href="#sec-2_26">□ add search to home page signed out. </a></li>
+<li><a href="#sec-2_27">□ transient urls exposed to user. </a></li>
+<li><a href="#sec-2_28">□ refine license terms for minus. </a></li>
+<li><a href="#sec-2_29">□ js browser bookmark, ala pinterest, to remote upload. Default Descriptions. </a></li>
+<li><a href="#sec-2_30">□ add search to home page </a></li>
+<li><a href="#sec-2_31">□ is there any feasible way to automatically categorize? </a></li>
+<li><a href="#sec-2_32">□ remote upload, reshare bookmark, remix, copy. </a></li>
+<li><a href="#sec-2_33">□ &ndash; Next milestone &ndash; </a></li>
+<li><a href="#sec-2_34">□ http://www.reddit.com/r/linux/comments/mi80x/give_me_that_one_command_you_wish_you_knew_years http://news.ycombinator.com/item?id=3257393 </a></li>
+<li><a href="#sec-2_35">□ multirendering of thumbnail: research imagemagick compositor. </a></li>
+<li><a href="#sec-2_36">□ Add copy to galleries. See Jiao's email. </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">Yejun </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-3_1">□ Vertical presenter dimension, maxed at 700px. </a></li>
+<li><a href="#sec-3_2">□ make minimum height of presenter area 230px. </a></li>
+<li><a href="#sec-3_3">□ Policy: </a></li>
+<li><a href="#sec-3_4">□ l link should redirect to m link, full size, with the right # in it. </a></li>
+<li><a href="#sec-3_5">□ download all should be the name of the gallery not "gallery" (name of gallery) </a></li>
+<li><a href="#sec-3_6">□ CR2 file ( which is a RAW photo format ) upload is broken </a></li>
+<li><a href="#sec-3_7">□ profile has XXX shared, but none displayed (#2120). see http://minus.com/ryanmacg </a></li>
+<li><a href="#sec-3_8">□ -&mdash;&mdash;&mdash;&mdash; </a></li>
+<li><a href="#sec-3_9">□ remote upload. look pinterest, imgur, website overlay design and implementation. </a></li>
+<li><a href="#sec-3_10">□ Expose the embeddable html for video player </a></li>
+<li><a href="#sec-3_11">□ Rotate original via css. </a></li>
+<li><a href="#sec-3_12">□ Figure out how pinterest bookmark submits picture. </a></li>
+<li><a href="#sec-3_13">□ add avatar to galleries </a></li>
+<li><a href="#sec-3_14">□ add avatar to explore timelines. (at least add variable) </a></li>
+<li><a href="#sec-3_15">□ change history write to just log more after, instead of insert duplicate ignore. </a></li>
+<li><a href="#sec-3_16">□ ogv video issue. </a></li>
+<li><a href="#sec-3_17">□ why is http://minus.com/mbqks62cEd (ogv) not showing flash player) </a></li>
+<li><a href="#sec-3_18">□ Search for test in live. Dropdown. See Txn&hellip; see area below is "null'. </a></li>
+<li><a href="#sec-3_19">□ Let user select thumbnail area </a></li>
+<li><a href="#sec-3_20">□ Review referer stats with Carl to determine blocking strategy. </a></li>
+<li><a href="#sec-3_21">□ calculate crc on upload instead of on download zip to avoid double download. </a></li>
+<li><a href="#sec-3_22">□ identify: Empty input file `/mnt/minus/minus<sub>com</sub>/smedia/uploads/0000204305.JPG' @ error/jpeg.c/EmitMessage/235. </a></li>
+<li><a href="#sec-3_23">□ investigate custom ffmpeg based ogv conversion. </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4">Dion </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-4_1">□ reshare should show up even in signed out. </a></li>
+<li><a href="#sec-4_2">□ merge share and embed tabs </a></li>
+<li><a href="#sec-4_3">□ gallery: show avatar </a></li>
+<li><a href="#sec-4_4">□ If owner: in comment box, "Add a description for this item." Else: "Add a comment for this item." </a></li>
+<li><a href="#sec-4_5">□ explore: take out flag in drop down for non mods. </a></li>
+<li><a href="#sec-4_6">□ explore: take time out. add 'by' back in the right color (#999). </a></li>
+<li><a href="#sec-4_7">□ explore: remove file types. show on hover </a></li>
+<li><a href="#sec-4_8">□ Messages </a></li>
+<li><a href="#sec-4_9">□ -&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; </a></li>
+<li><a href="#sec-4_10">□ gallery / share tab: switch positions of google/fb share to the top. </a></li>
+<li><a href="#sec-4_11">□ explore: put stats back. File / Reshare / Items / View </a></li>
+<li><a href="#sec-4_12">□ explore: square. </a></li>
+<li><a href="#sec-4_13">□ explore. Move title to overlay hover. </a></li>
+<li><a href="#sec-4_14">□ explore: show avatar </a></li>
+<li><a href="#sec-4_15">□ gallery: show follow </a></li>
+<li><a href="#sec-4_16">□ signed out fb/twitter to overlay </a></li>
+<li><a href="#sec-4_17">□ -&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; </a></li>
+<li><a href="#sec-4_18">□ Move like/tweet to front of item. </a></li>
+<li><a href="#sec-4_19">□ Reshare should be #1 action. </a></li>
+<li><a href="#sec-4_20">□ Keyboard shortcuts, tab. http://projeqt.com/brainpicker#lsi08443ci0q, how to show keyboard. http://www.flickr.com/photos/dcdead/5963809124/?f=hp. Click keyboard shortcuts. john pefers qt. </a></li>
+<li><a href="#sec-4_21">□ reshare user get's cut off. </a></li>
+<li><a href="#sec-4_22">□ follow button on userpage "looks like i'm already following" </a></li>
+<li><a href="#sec-4_23">□ tooltip for star: should note that it's private (ian, alex) </a></li>
+<li><a href="#sec-4_24">□ back to top is ugly </a></li>
+<li><a href="#sec-4_25">□ explain it: tags doesn't do anything so does publishing </a></li>
+<li><a href="#sec-4_26">□ move flag down to bottom "you should have to look for it" </a></li>
+<li><a href="#sec-4_27">□ indicate mlist menu that's selected (comments, share) </a></li>
+<li><a href="#sec-4_28">□ star should bring up a tab same with reshare (some are tabs, some are buttons. be more consistent) </a></li>
+<li><a href="#sec-4_29">□ Explore home page should have follow button </a></li>
+<li><a href="#sec-4_30">□ take off fixed positioning for the right bar. </a></li>
+<li><a href="#sec-4_31">□ add shift click to tooltip for upload. </a></li>
+<li><a href="#sec-4_32">□ Gallery home page should have follow button </a></li>
+<li><a href="#sec-4_33">□ Revise followboxHow to edit the description of the file (not the whole gallery)? Is it possible? </a></li>
+<li><a href="#sec-4_34">□ Profile: HSpace between Shared 250 and Gridbox should be same as space between "karma number" and "Shared". </a></li>
+<li><a href="#sec-4_35">□ Add tooltips to every link in gallery view bottom right. </a></li>
+<li><a href="#sec-4_36">□ "Organize" becomes Reorder and Edit for owners </a></li>
+<li><a href="#sec-4_37">□ Increase width in filenames in menu. </a></li>
+<li><a href="#sec-4_38">□ Decouple li coupling in gallery view / bottom right. </a></li>
+<li><a href="#sec-4_39">□ 3-line headings look bad in explore. increase vertical space. </a></li>
+<li><a href="#sec-4_40">□ show in title edit box how much is left that will fit in explore. make same amount fit in explore as in gallery view. </a></li>
+<li><a href="#sec-4_41">□ Lights on lights off should be in separate dropdown. </a></li>
+<li><a href="#sec-4_42">□ Rename button should float in paragrpah. </a></li>
+<li><a href="#sec-4_43">□ reshares profiles/avatar more dominant. </a></li>
+<li><a href="#sec-4_44">□ add avatar to timelines </a></li>
+<li><a href="#sec-4_45">□ Turn off text-shadow in dropdown. </a></li>
+<li><a href="#sec-4_46">□ Make shortlink box same as other input boxes </a></li>
+<li><a href="#sec-4_47">□ Remover vertical lines. </a></li>
+<li><a href="#sec-4_48">□ gray font of bottom area same as gray of menu and gray of minus. </a></li>
+<li><a href="#sec-4_49">□ make gray everywhere be the same gray exactly. </a></li>
+<li><a href="#sec-4_50">□ Add showing to the drop down for filetypes. </a></li>
+<li><a href="#sec-4_51">□ administrators have to click open menu to open gallery menu. </a></li>
+<li><a href="#sec-4_52">□ Move download all to link area. </a></li>
+<li><a href="#sec-4_53">□ increase hspace between filename, etc. </a></li>
+<li><a href="#sec-4_54">□ Decrease size of icons (or remove them entirely) </a></li>
+<li><a href="#sec-4_55">□ Folder view. Linear mode font is too big. </a></li>
+<li><a href="#sec-4_56">□ Add user avatar, folder view. </a></li>
+<li><a href="#sec-4_57">□ Header - selected item has gray box. Same hover effect as secondary nav hover (border plus gradient). </a></li>
+<li><a href="#sec-4_58">□ New timeline date </a></li>
+<li><a href="#sec-4_59">□ Optimize explore rendering of title and time. </a></li>
+<li><a href="#sec-4_60">□ Improve tooltip for starred to say something about bookmark, collect, and only for yourself. </a></li>
+<li><a href="#sec-4_61">□ Tooltip for gallery view: left/right arrow to indicate keyboard shortcuts. </a></li>
+<li><a href="#sec-4_62">□ grid mode </a></li>
+<li><a href="#sec-4_63">□ hover underline should be orange </a></li>
+<li><a href="#sec-4_64">□ all hover of dropdowns should have similar effect. include orange line. </a></li>
+<li><a href="#sec-4_65">□ restyle of the drop down to simplify look of follow and unfollow. </a></li>
+<li><a href="#sec-4_66">□ dropdown search: fix public galleries vertical spacing. </a></li>
+<li><a href="#sec-4_67">□ explore: take time out of explore, put in # views / reshares. driible style info. </a></li>
+<li><a href="#sec-4_68">□ explore: improve hover effect. show first comment. </a></li>
+<li><a href="#sec-4_69">□ explore: consider, no titles. (show only on hover) </a></li>
+<li><a href="#sec-4_70">□ explore: look at pinterest video overlay. </a></li>
+<li><a href="#sec-4_71">□ header: de-emphasize search </a></li>
+<li><a href="#sec-4_72">□ flesh out gridview. add share menus, etc. </a></li>
+<li><a href="#sec-4_73">□ emphasize profile gallery count in folder view </a></li>
+<li><a href="#sec-4_74">□ restyle followbox unfollow. </a></li>
+<li><a href="#sec-4_75">□ improve gridview, gallery view. </a></li>
+<li><a href="#sec-4_76">□ optimized news feed with more personalized presentation. </a></li>
+<li><a href="#sec-4_77">□ design: explore thumbnails: replace with a number. that's it. </a></li>
+<li><a href="#sec-4_78">□ design: optimize ordering in filetype dropdown </a></li>
+<li><a href="#sec-4_79">□ design: gallery view: no vscroll. use mouse wheel for navigating gallery. </a></li>
+<li><a href="#sec-4_80">□ generate optimal gallery view, precalculated. </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">Adam </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-5_1">□ disable follow all when everyone is followed or singleton </a></li>
+<li><a href="#sec-5_2">□ apostraphe breaks username </a></li>
+<li><a href="#sec-5_3">□ pull facebook name as display name </a></li>
+<li><a href="#sec-5_4">□ remove autofollows from follow statistics. </a></li>
+<li><a href="#sec-5_5">□ avatars retroactive </a></li>
+<li><a href="#sec-5_6">□ &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; </a></li>
+<li><a href="#sec-5_7">□ permanent home page to explore </a></li>
+<li><a href="#sec-5_8">□ followbox, search results: change "Published" to Shared. Also, add new user results style to other page's. </a></li>
+<li><a href="#sec-5_9">□ look at profile description in http://minus.com/minus-team. Fix &lt;br/&gt;. Feed it through django's markdown filter or something. </a></li>
+<li><a href="#sec-5_10">□ add fb, twitter, google plus, and mlink to dropdown in explore timelines on </a></li>
+<li><a href="#sec-5_11">□ flag dropdown is too easy to click "needs to go". let's delimit by horizontal line. </a></li>
+<li><a href="#sec-5_12">□ minus-team sends a message when they register. </a></li>
+<li><a href="#sec-5_13">□ Minus is not usable for mobile browser. </a></li>
+<li><a href="#sec-5_14">□ he has portuguese bug </a></li>
+<li><a href="#sec-5_15">□ track # of gmail invites, # email invites, and the new fb invites in bizanalytics page. </a></li>
+<li><a href="#sec-5_16">□ notifications of new Reshares/Comments (URL of gallery, who did it - in the top right corner) (at least message) </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-6">Attila </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-6_1">□ Load fb connect only when we need it. Currently loading on every page </a></li>
+<li><a href="#sec-6_2">□ Resumeable uploads </a></li>
+<li><a href="#sec-6_3">□ Visible panes should load on load of the page for Dashboard, Search Page, Profile, as well as Explore. </a></li>
+<li><a href="#sec-6_4">□ Merge the two signup js functions. </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-7">Skye </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-7_1">□ signed out, profile, click on follow. no sign in link in overlay. </a></li>
+<li><a href="#sec-7_2">□ Folder view: send box </a></li>
+<li><a href="#sec-7_3">□ gallery menu should be start out closed for moderators as well. </a></li>
+<li><a href="#sec-7_4">□ why are there two signup js functions? email attila and me. </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8">Shelah </a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-8_1">□ Folder view, new drag behavior request: If user drags a file onto the page, and the gallery is not hers, then drop still works, but means that it creates a new gallery. </a></li>
+<li><a href="#sec-8_2">□ Make it clear that the image is loading. For example, show the size of image, with a percentage (possibly faked since js doesn't offer percentage). Use a bigger loading animated hourglass. (big gifs take a long time and people can't tell it's actually working). </a></li>
+<li><a href="#sec-8_3">□ Disable up/down keyboard manipulating item select. Let those keys scroll the window. </a></li>
+<li><a href="#sec-8_4">□ Click on next item, you get the hover cursor instead of the regular cursor, even though you're not hovering over the selected item. </a></li>
+<li><a href="#sec-8_5">□ back on fullsize mlist view should return to shrunk (instead of out of gallery) </a></li>
+<li><a href="#sec-8_6">□ Remove blinking of the comments box on item change. </a></li>
+<li><a href="#sec-8_7">□ Menu dotification </a></li>
+<li><a href="#sec-8_8">□ Gallery dotification </a></li>
+<li><a href="#sec-8_9">□ List view dotification </a></li>
+<li><a href="#sec-8_10">□ css restyling of the menu to achieve listview. </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2"></span> John </h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1_1" class="outline-4">
+<h4 id="sec-1_1"><span class="section-number-4"></span> □ make lights off more prominent in settings page </h4>
+<div class="outline-text-4" id="text-1_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1_2" class="outline-4">
+<h4 id="sec-1_2"><span class="section-number-4"></span> □ Add profile to Minus Team </h4>
+<div class="outline-text-4" id="text-1_2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1_3" class="outline-4">
+<h4 id="sec-1_3"><span class="section-number-4"></span> Profile </h4>
+<div class="outline-text-4" id="text-1_3">
+
+<ul>
+<li id="sec-1_3_1">□ Bigger Avatar <br/>
+<ul>
+<li id="sec-1_3_1_1">□ Suggest users add Avatar if no avatar <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1_3_1_2">□ Suggest users to customize/connect <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1_3_1_3">□ Add RANKINGS to profile <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1_3_1_4">□ Emphasize Point system <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1_3_1_5">□ Clarify what's Reshared (less confusion - friends think I uploaded stuff in my profile…no one understands) <br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1_3_2">□ Ability to filter Reshared vs Galleries - see youtube, pinterest etc <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1_4" class="outline-4">
+<h4 id="sec-1_4"><span class="section-number-4"></span> □ Wed: Newsletter goes out. </h4>
+<div class="outline-text-4" id="text-1_4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1_5" class="outline-4">
+<h4 id="sec-1_5"><span class="section-number-4"></span> □ Show ranking title or ranking progress bar based on Minus points </h4>
+<div class="outline-text-4" id="text-1_5">
+
+<ul>
+<li id="sec-1_5_1">0-5 points: Newbie <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1_5_2">6-20 points: Amatuer OR simply use graphic progress bar to display <a href="http://minus.com/mbcDOzRQP6#3">http://minus.com/mbcDOzRQP6#3</a> <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1_6" class="outline-4">
+<h4 id="sec-1_6"><span class="section-number-4"></span> □ Have attitude or not! Standout vs Broad Audience. </h4>
+<div class="outline-text-4" id="text-1_6">
+
+</div>
+
+</div>
+
+<div id="outline-container-1_7" class="outline-4">
+<h4 id="sec-1_7"><span class="section-number-4"></span> □ home page on reddit and HN </h4>
+<div class="outline-text-4" id="text-1_7">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2"></span> Carl </h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2_1" class="outline-4">
+<h4 id="sec-2_1"><span class="section-number-4"></span> □ Dance community evangelism, starting out with competitions. </h4>
+<div class="outline-text-4" id="text-2_1">
+
+<ul>
+<li id="sec-2_1_1">□ upload music, videos, pictures. <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2_2" class="outline-4">
+<h4 id="sec-2_2"><span class="section-number-4"></span> □ Ghost accounts - robot agents that autofollow. 505 followers, 350 follows. Random from explore/popular. </h4>
+<div class="outline-text-4" id="text-2_2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_3" class="outline-4">
+<h4 id="sec-2_3"><span class="section-number-4"></span> □ buy 2 reserved video instances. </h4>
+<div class="outline-text-4" id="text-2_3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_4" class="outline-4">
+<h4 id="sec-2_4"><span class="section-number-4"></span> □ Explore </h4>
+<div class="outline-text-4" id="text-2_4">
+
+<ul>
+<li id="sec-2_4_1">□ Bigger thumbs <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-2_4_2">□ Indicate quality of gallery by # of items + # of views? <br/>
+<ul>
+<li id="sec-2_4_2_1">Hover to show title. <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-2_4_2_2">remove timestamp <br/>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2_5" class="outline-4">
+<h4 id="sec-2_5"><span class="section-number-4"></span> □ gallery view: (filmstrip) (integrate gridview) Show graphically, number of items in gallery, and where you are. consider using k links. </h4>
+<div class="outline-text-4" id="text-2_5">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_6" class="outline-4">
+<h4 id="sec-2_6"><span class="section-number-4"></span> □ what to use, the last you drag, or the last you uploaded.  when an upload completes, go to next item in mlist </h4>
+<div class="outline-text-4" id="text-2_6">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_7" class="outline-4">
+<h4 id="sec-2_7"><span class="section-number-4"></span> □ <a href="http://minus.com/mQDCc4GOY">http://minus.com/mQDCc4GOY</a> I can only hear the voice but not see the image. What is the problem? My browser or?  BTW, after I download the video file, it works well. Write back to Jiao when done. </h4>
+<div class="outline-text-4" id="text-2_7">
+
+<ul>
+<li id="sec-2_7_1">□ try building handbrake (3 day investment) <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2_8" class="outline-4">
+<h4 id="sec-2_8"><span class="section-number-4"></span> □ "show more images like this" "since you starred this, you might like this" </h4>
+<div class="outline-text-4" id="text-2_8">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_9" class="outline-4">
+<h4 id="sec-2_9"><span class="section-number-4"></span> □ reshare/star should include a personal comment </h4>
+<div class="outline-text-4" id="text-2_9">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_10" class="outline-4">
+<h4 id="sec-2_10"><span class="section-number-4"></span> □ can't find uploads on dashboard </h4>
+<div class="outline-text-4" id="text-2_10">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_11" class="outline-4">
+<h4 id="sec-2_11"><span class="section-number-4"></span> □ study google plus.broadcast news updates to family. </h4>
+<div class="outline-text-4" id="text-2_11">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_12" class="outline-4">
+<h4 id="sec-2_12"><span class="section-number-4"></span> □ Study: <a href="http://playground.mobily.pl/jquery/mobily-blocks/demo.html">http://playground.mobily.pl/jquery/mobily-blocks/demo.html</a> for explore preview hover. </h4>
+<div class="outline-text-4" id="text-2_12">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_13" class="outline-4">
+<h4 id="sec-2_13"><span class="section-number-4"></span> □ Improve daemon behavior: <a href="https://github.com/kasun/YapDi/blob/master/examples/ex_basic.py">https://github.com/kasun/YapDi/blob/master/examples/ex_basic.py</a> </h4>
+<div class="outline-text-4" id="text-2_13">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_14" class="outline-4">
+<h4 id="sec-2_14"><span class="section-number-4"></span> □ analyze <a href="http://narly.us/repos/tagged/schacon">http://narly.us/repos/tagged/schacon</a>, explore timeline ideas. </h4>
+<div class="outline-text-4" id="text-2_14">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_15" class="outline-4">
+<h4 id="sec-2_15"><span class="section-number-4"></span> □ Study pure css pathlike fanout menu. <a href="http://lab.victorcoulon.fr/css/path-menu/">http://lab.victorcoulon.fr/css/path-menu/</a> </h4>
+<div class="outline-text-4" id="text-2_15">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_16" class="outline-4">
+<h4 id="sec-2_16"><span class="section-number-4"></span> □ people you view a lot maybe should show up more frequently on followlist. </h4>
+<div class="outline-text-4" id="text-2_16">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_17" class="outline-4">
+<h4 id="sec-2_17"><span class="section-number-4"></span> □ Show # Published and minus points in followbox </h4>
+<div class="outline-text-4" id="text-2_17">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_18" class="outline-4">
+<h4 id="sec-2_18"><span class="section-number-4"></span> □ spathe uploader style to make it easier. <a href="http://minus.com/mWJ9gJBM9#1">http://minus.com/mWJ9gJBM9#1</a>. Think about remote upload. </h4>
+<div class="outline-text-4" id="text-2_18">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_19" class="outline-4">
+<h4 id="sec-2_19"><span class="section-number-4"></span> □ How many people have tried minus? </h4>
+<div class="outline-text-4" id="text-2_19">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_20" class="outline-4">
+<h4 id="sec-2_20"><span class="section-number-4"></span> □ create an efficient browse, open, left/right, comment mouse and keyboard workflow. </h4>
+<div class="outline-text-4" id="text-2_20">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_21" class="outline-4">
+<h4 id="sec-2_21"><span class="section-number-4"></span> □ how many people have tried minus? (get a real answer). How many of them remain active? </h4>
+<div class="outline-text-4" id="text-2_21">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_22" class="outline-4">
+<h4 id="sec-2_22"><span class="section-number-4"></span> □ measure turnover (gallery level) in popular </h4>
+<div class="outline-text-4" id="text-2_22">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_23" class="outline-4">
+<h4 id="sec-2_23"><span class="section-number-4"></span> □ reshare: github style reshare. reshare credits original. remix and reshare. </h4>
+<div class="outline-text-4" id="text-2_23">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_24" class="outline-4">
+<h4 id="sec-2_24"><span class="section-number-4"></span> □ Modify team page to not open in new window </h4>
+<div class="outline-text-4" id="text-2_24">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_25" class="outline-4">
+<h4 id="sec-2_25"><span class="section-number-4"></span> □ drag image into a folder for copy. </h4>
+<div class="outline-text-4" id="text-2_25">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_26" class="outline-4">
+<h4 id="sec-2_26"><span class="section-number-4"></span> □ add search to home page signed out. </h4>
+<div class="outline-text-4" id="text-2_26">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_27" class="outline-4">
+<h4 id="sec-2_27"><span class="section-number-4"></span> □ transient urls exposed to user. </h4>
+<div class="outline-text-4" id="text-2_27">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_28" class="outline-4">
+<h4 id="sec-2_28"><span class="section-number-4"></span> □ refine license terms for minus. </h4>
+<div class="outline-text-4" id="text-2_28">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_29" class="outline-4">
+<h4 id="sec-2_29"><span class="section-number-4"></span> □ js browser bookmark, ala pinterest, to remote upload. Default Descriptions. </h4>
+<div class="outline-text-4" id="text-2_29">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_30" class="outline-4">
+<h4 id="sec-2_30"><span class="section-number-4"></span> □ add search to home page </h4>
+<div class="outline-text-4" id="text-2_30">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_31" class="outline-4">
+<h4 id="sec-2_31"><span class="section-number-4"></span> □ is there any feasible way to automatically categorize? </h4>
+<div class="outline-text-4" id="text-2_31">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_32" class="outline-4">
+<h4 id="sec-2_32"><span class="section-number-4"></span> □ remote upload, reshare bookmark, remix, copy. </h4>
+<div class="outline-text-4" id="text-2_32">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_33" class="outline-4">
+<h4 id="sec-2_33"><span class="section-number-4"></span> □ &ndash; Next milestone &ndash; </h4>
+<div class="outline-text-4" id="text-2_33">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_34" class="outline-4">
+<h4 id="sec-2_34"><span class="section-number-4"></span> □ <a href="http://www.reddit.com/r/linux/comments/mi80x/give_me_that_one_command_you_wish_you_knew_years">http://www.reddit.com/r/linux/comments/mi80x/give_me_that_one_command_you_wish_you_knew_years</a> http://news.ycombinator.com/item?id=3257393 </h4>
+<div class="outline-text-4" id="text-2_34">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_35" class="outline-4">
+<h4 id="sec-2_35"><span class="section-number-4"></span> □ multirendering of thumbnail: research imagemagick compositor. </h4>
+<div class="outline-text-4" id="text-2_35">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2_36" class="outline-4">
+<h4 id="sec-2_36"><span class="section-number-4"></span> □ Add copy to galleries. See Jiao's email. </h4>
+<div class="outline-text-4" id="text-2_36">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2"></span> Yejun </h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3_1" class="outline-4">
+<h4 id="sec-3_1"><span class="section-number-4"></span> □ Vertical presenter dimension, maxed at 700px. </h4>
+<div class="outline-text-4" id="text-3_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_2" class="outline-4">
+<h4 id="sec-3_2"><span class="section-number-4"></span> □ make minimum height of presenter area 230px. </h4>
+<div class="outline-text-4" id="text-3_2">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_3" class="outline-4">
+<h4 id="sec-3_3"><span class="section-number-4"></span> □ Policy: </h4>
+<div class="outline-text-4" id="text-3_3">
+
+<ul>
+<li id="sec-3_3_1">For pictures: ban referal urls <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-3_3_2">Use signed link everywhere for non-images: at least i links <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3_4" class="outline-4">
+<h4 id="sec-3_4"><span class="section-number-4"></span> □ l link should redirect to m link, full size, with the right # in it. </h4>
+<div class="outline-text-4" id="text-3_4">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_5" class="outline-4">
+<h4 id="sec-3_5"><span class="section-number-4"></span> □ download all should be the name of the gallery not "gallery" (name of gallery) </h4>
+<div class="outline-text-4" id="text-3_5">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_6" class="outline-4">
+<h4 id="sec-3_6"><span class="section-number-4"></span> □ CR2 file ( which is a RAW photo format ) upload is broken </h4>
+<div class="outline-text-4" id="text-3_6">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_7" class="outline-4">
+<h4 id="sec-3_7"><span class="section-number-4"></span> □ profile has XXX shared, but none displayed (#2120). see <a href="http://minus.com/ryanmacg">http://minus.com/ryanmacg</a> </h4>
+<div class="outline-text-4" id="text-3_7">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_8" class="outline-4">
+<h4 id="sec-3_8"><span class="section-number-4"></span> □ -&mdash;&mdash;&mdash;&mdash; </h4>
+<div class="outline-text-4" id="text-3_8">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_9" class="outline-4">
+<h4 id="sec-3_9"><span class="section-number-4"></span> □ remote upload. look pinterest, imgur, website overlay design and implementation. </h4>
+<div class="outline-text-4" id="text-3_9">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_10" class="outline-4">
+<h4 id="sec-3_10"><span class="section-number-4"></span> □ Expose the embeddable html for video player </h4>
+<div class="outline-text-4" id="text-3_10">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_11" class="outline-4">
+<h4 id="sec-3_11"><span class="section-number-4"></span> □ Rotate original via css. </h4>
+<div class="outline-text-4" id="text-3_11">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_12" class="outline-4">
+<h4 id="sec-3_12"><span class="section-number-4"></span> □ Figure out how pinterest bookmark submits picture. </h4>
+<div class="outline-text-4" id="text-3_12">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_13" class="outline-4">
+<h4 id="sec-3_13"><span class="section-number-4"></span> □ add avatar to galleries </h4>
+<div class="outline-text-4" id="text-3_13">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_14" class="outline-4">
+<h4 id="sec-3_14"><span class="section-number-4"></span> □ add avatar to explore timelines. (at least add variable) </h4>
+<div class="outline-text-4" id="text-3_14">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_15" class="outline-4">
+<h4 id="sec-3_15"><span class="section-number-4"></span> □ change history write to just log more after, instead of insert duplicate ignore. </h4>
+<div class="outline-text-4" id="text-3_15">
+
+<ul>
+<li id="sec-3_15_1">log gallery access to a log file on o101, using redis queueing? (basic requirement, stop losing important access data) <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3_16" class="outline-4">
+<h4 id="sec-3_16"><span class="section-number-4"></span> □ ogv video issue. </h4>
+<div class="outline-text-4" id="text-3_16">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_17" class="outline-4">
+<h4 id="sec-3_17"><span class="section-number-4"></span> □ why is <a href="http://minus.com/mbqks62cEd">http://minus.com/mbqks62cEd</a> (ogv) not showing flash player) </h4>
+<div class="outline-text-4" id="text-3_17">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_18" class="outline-4">
+<h4 id="sec-3_18"><span class="section-number-4"></span> □ Search for test in live. Dropdown. See Txn&hellip; see area below is "null'. </h4>
+<div class="outline-text-4" id="text-3_18">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_19" class="outline-4">
+<h4 id="sec-3_19"><span class="section-number-4"></span> □ Let user select thumbnail area </h4>
+<div class="outline-text-4" id="text-3_19">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_20" class="outline-4">
+<h4 id="sec-3_20"><span class="section-number-4"></span> □ Review referer stats with Carl to determine blocking strategy. </h4>
+<div class="outline-text-4" id="text-3_20">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_21" class="outline-4">
+<h4 id="sec-3_21"><span class="section-number-4"></span> □ calculate crc on upload instead of on download zip to avoid double download. </h4>
+<div class="outline-text-4" id="text-3_21">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_22" class="outline-4">
+<h4 id="sec-3_22"><span class="section-number-4"></span> □ identify: Empty input file `/mnt/minus/minus<sub>com</sub>/smedia/uploads/0000204305.JPG' @ error/jpeg.c/EmitMessage/235. </h4>
+<div class="outline-text-4" id="text-3_22">
+
+</div>
+
+</div>
+
+<div id="outline-container-3_23" class="outline-4">
+<h4 id="sec-3_23"><span class="section-number-4"></span> □ investigate custom ffmpeg based ogv conversion. </h4>
+<div class="outline-text-4" id="text-3_23">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2"></span> Dion </h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4_1" class="outline-4">
+<h4 id="sec-4_1"><span class="section-number-4"></span> □ reshare should show up even in signed out. </h4>
+<div class="outline-text-4" id="text-4_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_2" class="outline-4">
+<h4 id="sec-4_2"><span class="section-number-4"></span> □ merge share and embed tabs </h4>
+<div class="outline-text-4" id="text-4_2">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_3" class="outline-4">
+<h4 id="sec-4_3"><span class="section-number-4"></span> □ gallery: show avatar </h4>
+<div class="outline-text-4" id="text-4_3">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_4" class="outline-4">
+<h4 id="sec-4_4"><span class="section-number-4"></span> □ If owner: in comment box, "Add a description for this item." Else: "Add a comment for this item." </h4>
+<div class="outline-text-4" id="text-4_4">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_5" class="outline-4">
+<h4 id="sec-4_5"><span class="section-number-4"></span> □ explore: take out flag in drop down for non mods. </h4>
+<div class="outline-text-4" id="text-4_5">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_6" class="outline-4">
+<h4 id="sec-4_6"><span class="section-number-4"></span> □ explore: take time out. add 'by' back in the right color (#999). </h4>
+<div class="outline-text-4" id="text-4_6">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_7" class="outline-4">
+<h4 id="sec-4_7"><span class="section-number-4"></span> □ explore: remove file types. show on hover </h4>
+<div class="outline-text-4" id="text-4_7">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_8" class="outline-4">
+<h4 id="sec-4_8"><span class="section-number-4"></span> □ Messages </h4>
+<div class="outline-text-4" id="text-4_8">
+
+<ul>
+<li id="sec-4_8_1">□ Subject lines are sometimes in blue (say 'john has shared a folder with you.') <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-4_8_2">□ Spacing between username and subject too small sometimes (see carl's messages). <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4_9" class="outline-4">
+<h4 id="sec-4_9"><span class="section-number-4"></span> □ -&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; </h4>
+<div class="outline-text-4" id="text-4_9">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_10" class="outline-4">
+<h4 id="sec-4_10"><span class="section-number-4"></span> □ gallery / share tab: switch positions of google/fb share to the top. </h4>
+<div class="outline-text-4" id="text-4_10">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_11" class="outline-4">
+<h4 id="sec-4_11"><span class="section-number-4"></span> □ explore: put stats back. File / Reshare / Items / View </h4>
+<div class="outline-text-4" id="text-4_11">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_12" class="outline-4">
+<h4 id="sec-4_12"><span class="section-number-4"></span> □ explore: square. </h4>
+<div class="outline-text-4" id="text-4_12">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_13" class="outline-4">
+<h4 id="sec-4_13"><span class="section-number-4"></span> □ explore. Move title to overlay hover. </h4>
+<div class="outline-text-4" id="text-4_13">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_14" class="outline-4">
+<h4 id="sec-4_14"><span class="section-number-4"></span> □ explore: show avatar </h4>
+<div class="outline-text-4" id="text-4_14">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_15" class="outline-4">
+<h4 id="sec-4_15"><span class="section-number-4"></span> □ gallery: show follow </h4>
+<div class="outline-text-4" id="text-4_15">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_16" class="outline-4">
+<h4 id="sec-4_16"><span class="section-number-4"></span> □ signed out fb/twitter to overlay </h4>
+<div class="outline-text-4" id="text-4_16">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_17" class="outline-4">
+<h4 id="sec-4_17"><span class="section-number-4"></span> □ -&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; </h4>
+<div class="outline-text-4" id="text-4_17">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_18" class="outline-4">
+<h4 id="sec-4_18"><span class="section-number-4"></span> □ Move like/tweet to front of item. </h4>
+<div class="outline-text-4" id="text-4_18">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_19" class="outline-4">
+<h4 id="sec-4_19"><span class="section-number-4"></span> □ Reshare should be #1 action. </h4>
+<div class="outline-text-4" id="text-4_19">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_20" class="outline-4">
+<h4 id="sec-4_20"><span class="section-number-4"></span> □ Keyboard shortcuts, tab. <a href="http://projeqt.com/brainpicker#lsi08443ci0q">http://projeqt.com/brainpicker#lsi08443ci0q</a>, how to show keyboard. http://www.flickr.com/photos/dcdead/5963809124/?f=hp. Click keyboard shortcuts. john pefers qt. </h4>
+<div class="outline-text-4" id="text-4_20">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_21" class="outline-4">
+<h4 id="sec-4_21"><span class="section-number-4"></span> □ reshare user get's cut off. </h4>
+<div class="outline-text-4" id="text-4_21">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_22" class="outline-4">
+<h4 id="sec-4_22"><span class="section-number-4"></span> □ follow button on userpage "looks like i'm already following" </h4>
+<div class="outline-text-4" id="text-4_22">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_23" class="outline-4">
+<h4 id="sec-4_23"><span class="section-number-4"></span> □ tooltip for star: should note that it's private (ian, alex) </h4>
+<div class="outline-text-4" id="text-4_23">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_24" class="outline-4">
+<h4 id="sec-4_24"><span class="section-number-4"></span> □ back to top is ugly </h4>
+<div class="outline-text-4" id="text-4_24">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_25" class="outline-4">
+<h4 id="sec-4_25"><span class="section-number-4"></span> □ explain it: tags doesn't do anything so does publishing </h4>
+<div class="outline-text-4" id="text-4_25">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_26" class="outline-4">
+<h4 id="sec-4_26"><span class="section-number-4"></span> □ move flag down to bottom "you should have to look for it" </h4>
+<div class="outline-text-4" id="text-4_26">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_27" class="outline-4">
+<h4 id="sec-4_27"><span class="section-number-4"></span> □ indicate mlist menu that's selected (comments, share) </h4>
+<div class="outline-text-4" id="text-4_27">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_28" class="outline-4">
+<h4 id="sec-4_28"><span class="section-number-4"></span> □ star should bring up a tab same with reshare (some are tabs, some are buttons. be more consistent) </h4>
+<div class="outline-text-4" id="text-4_28">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_29" class="outline-4">
+<h4 id="sec-4_29"><span class="section-number-4"></span> □ Explore home page should have follow button </h4>
+<div class="outline-text-4" id="text-4_29">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_30" class="outline-4">
+<h4 id="sec-4_30"><span class="section-number-4"></span> □ take off fixed positioning for the right bar. </h4>
+<div class="outline-text-4" id="text-4_30">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_31" class="outline-4">
+<h4 id="sec-4_31"><span class="section-number-4"></span> □ add shift click to tooltip for upload. </h4>
+<div class="outline-text-4" id="text-4_31">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_32" class="outline-4">
+<h4 id="sec-4_32"><span class="section-number-4"></span> □ Gallery home page should have follow button </h4>
+<div class="outline-text-4" id="text-4_32">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_33" class="outline-4">
+<h4 id="sec-4_33"><span class="section-number-4"></span> □ Revise followboxHow to edit the description of the file (not the whole gallery)? Is it possible? </h4>
+<div class="outline-text-4" id="text-4_33">
+
+<p>Is there an option or possibility to delete comments and messages?
+I think that tabs were better than text links (like now).
+Eg. after clicking “publishing” I must go with mouse almost half of the screen to reach the options.
+You should correct “Lights Mode”, it should be “Lights off” and “Lights on”.
+Also, “List mode” looks strange, no options apart from privacy…
+In the “Linear mode” in dark color scheme the organize files window (top right) looks awful, very awful.
+Just for me, the button sticking all the time in the right down corner would be perfect solution for toggling browsing mode and lights.
+</p></div>
+
+</div>
+
+<div id="outline-container-4_34" class="outline-4">
+<h4 id="sec-4_34"><span class="section-number-4"></span> □ Profile: HSpace between Shared 250 and Gridbox should be same as space between "karma number" and "Shared". </h4>
+<div class="outline-text-4" id="text-4_34">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_35" class="outline-4">
+<h4 id="sec-4_35"><span class="section-number-4"></span> □ Add tooltips to every link in gallery view bottom right. </h4>
+<div class="outline-text-4" id="text-4_35">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_36" class="outline-4">
+<h4 id="sec-4_36"><span class="section-number-4"></span> □ "Organize" becomes Reorder and Edit for owners </h4>
+<div class="outline-text-4" id="text-4_36">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_37" class="outline-4">
+<h4 id="sec-4_37"><span class="section-number-4"></span> □ Increase width in filenames in menu. </h4>
+<div class="outline-text-4" id="text-4_37">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_38" class="outline-4">
+<h4 id="sec-4_38"><span class="section-number-4"></span> □ Decouple li coupling in gallery view / bottom right. </h4>
+<div class="outline-text-4" id="text-4_38">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_39" class="outline-4">
+<h4 id="sec-4_39"><span class="section-number-4"></span> □ 3-line headings look bad in explore. increase vertical space. </h4>
+<div class="outline-text-4" id="text-4_39">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_40" class="outline-4">
+<h4 id="sec-4_40"><span class="section-number-4"></span> □ show in title edit box how much is left that will fit in explore. make same amount fit in explore as in gallery view. </h4>
+<div class="outline-text-4" id="text-4_40">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_41" class="outline-4">
+<h4 id="sec-4_41"><span class="section-number-4"></span> □ Lights on lights off should be in separate dropdown. </h4>
+<div class="outline-text-4" id="text-4_41">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_42" class="outline-4">
+<h4 id="sec-4_42"><span class="section-number-4"></span> □ Rename button should float in paragrpah. </h4>
+<div class="outline-text-4" id="text-4_42">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_43" class="outline-4">
+<h4 id="sec-4_43"><span class="section-number-4"></span> □ reshares profiles/avatar more dominant. </h4>
+<div class="outline-text-4" id="text-4_43">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_44" class="outline-4">
+<h4 id="sec-4_44"><span class="section-number-4"></span> □ add avatar to timelines </h4>
+<div class="outline-text-4" id="text-4_44">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_45" class="outline-4">
+<h4 id="sec-4_45"><span class="section-number-4"></span> □ Turn off text-shadow in dropdown. </h4>
+<div class="outline-text-4" id="text-4_45">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_46" class="outline-4">
+<h4 id="sec-4_46"><span class="section-number-4"></span> □ Make shortlink box same as other input boxes </h4>
+<div class="outline-text-4" id="text-4_46">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_47" class="outline-4">
+<h4 id="sec-4_47"><span class="section-number-4"></span> □ Remover vertical lines. </h4>
+<div class="outline-text-4" id="text-4_47">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_48" class="outline-4">
+<h4 id="sec-4_48"><span class="section-number-4"></span> □ gray font of bottom area same as gray of menu and gray of minus. </h4>
+<div class="outline-text-4" id="text-4_48">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_49" class="outline-4">
+<h4 id="sec-4_49"><span class="section-number-4"></span> □ make gray everywhere be the same gray exactly. </h4>
+<div class="outline-text-4" id="text-4_49">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_50" class="outline-4">
+<h4 id="sec-4_50"><span class="section-number-4"></span> □ Add showing to the drop down for filetypes. </h4>
+<div class="outline-text-4" id="text-4_50">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_51" class="outline-4">
+<h4 id="sec-4_51"><span class="section-number-4"></span> □ administrators have to click open menu to open gallery menu. </h4>
+<div class="outline-text-4" id="text-4_51">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_52" class="outline-4">
+<h4 id="sec-4_52"><span class="section-number-4"></span> □ Move download all to link area. </h4>
+<div class="outline-text-4" id="text-4_52">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_53" class="outline-4">
+<h4 id="sec-4_53"><span class="section-number-4"></span> □ increase hspace between filename, etc. </h4>
+<div class="outline-text-4" id="text-4_53">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_54" class="outline-4">
+<h4 id="sec-4_54"><span class="section-number-4"></span> □ Decrease size of icons (or remove them entirely) </h4>
+<div class="outline-text-4" id="text-4_54">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_55" class="outline-4">
+<h4 id="sec-4_55"><span class="section-number-4"></span> □ Folder view. Linear mode font is too big. </h4>
+<div class="outline-text-4" id="text-4_55">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_56" class="outline-4">
+<h4 id="sec-4_56"><span class="section-number-4"></span> □ Add user avatar, folder view. </h4>
+<div class="outline-text-4" id="text-4_56">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_57" class="outline-4">
+<h4 id="sec-4_57"><span class="section-number-4"></span> □ Header - selected item has gray box. Same hover effect as secondary nav hover (border plus gradient). </h4>
+<div class="outline-text-4" id="text-4_57">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_58" class="outline-4">
+<h4 id="sec-4_58"><span class="section-number-4"></span> □ New timeline date </h4>
+<div class="outline-text-4" id="text-4_58">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_59" class="outline-4">
+<h4 id="sec-4_59"><span class="section-number-4"></span> □ Optimize explore rendering of title and time. </h4>
+<div class="outline-text-4" id="text-4_59">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_60" class="outline-4">
+<h4 id="sec-4_60"><span class="section-number-4"></span> □ Improve tooltip for starred to say something about bookmark, collect, and only for yourself. </h4>
+<div class="outline-text-4" id="text-4_60">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_61" class="outline-4">
+<h4 id="sec-4_61"><span class="section-number-4"></span> □ Tooltip for gallery view: left/right arrow to indicate keyboard shortcuts. </h4>
+<div class="outline-text-4" id="text-4_61">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_62" class="outline-4">
+<h4 id="sec-4_62"><span class="section-number-4"></span> □ grid mode </h4>
+<div class="outline-text-4" id="text-4_62">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_63" class="outline-4">
+<h4 id="sec-4_63"><span class="section-number-4"></span> □ hover underline should be orange </h4>
+<div class="outline-text-4" id="text-4_63">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_64" class="outline-4">
+<h4 id="sec-4_64"><span class="section-number-4"></span> □ all hover of dropdowns should have similar effect. include orange line. </h4>
+<div class="outline-text-4" id="text-4_64">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_65" class="outline-4">
+<h4 id="sec-4_65"><span class="section-number-4"></span> □ restyle of the drop down to simplify look of follow and unfollow. </h4>
+<div class="outline-text-4" id="text-4_65">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_66" class="outline-4">
+<h4 id="sec-4_66"><span class="section-number-4"></span> □ dropdown search: fix public galleries vertical spacing. </h4>
+<div class="outline-text-4" id="text-4_66">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_67" class="outline-4">
+<h4 id="sec-4_67"><span class="section-number-4"></span> □ explore: take time out of explore, put in # views / reshares. driible style info. </h4>
+<div class="outline-text-4" id="text-4_67">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_68" class="outline-4">
+<h4 id="sec-4_68"><span class="section-number-4"></span> □ explore: improve hover effect. show first comment. </h4>
+<div class="outline-text-4" id="text-4_68">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_69" class="outline-4">
+<h4 id="sec-4_69"><span class="section-number-4"></span> □ explore: consider, no titles. (show only on hover) </h4>
+<div class="outline-text-4" id="text-4_69">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_70" class="outline-4">
+<h4 id="sec-4_70"><span class="section-number-4"></span> □ explore: look at pinterest video overlay. </h4>
+<div class="outline-text-4" id="text-4_70">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_71" class="outline-4">
+<h4 id="sec-4_71"><span class="section-number-4"></span> □ header: de-emphasize search </h4>
+<div class="outline-text-4" id="text-4_71">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_72" class="outline-4">
+<h4 id="sec-4_72"><span class="section-number-4"></span> □ flesh out gridview. add share menus, etc. </h4>
+<div class="outline-text-4" id="text-4_72">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_73" class="outline-4">
+<h4 id="sec-4_73"><span class="section-number-4"></span> □ emphasize profile gallery count in folder view </h4>
+<div class="outline-text-4" id="text-4_73">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_74" class="outline-4">
+<h4 id="sec-4_74"><span class="section-number-4"></span> □ restyle followbox unfollow. </h4>
+<div class="outline-text-4" id="text-4_74">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_75" class="outline-4">
+<h4 id="sec-4_75"><span class="section-number-4"></span> □ improve gridview, gallery view. </h4>
+<div class="outline-text-4" id="text-4_75">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_76" class="outline-4">
+<h4 id="sec-4_76"><span class="section-number-4"></span> □ optimized news feed with more personalized presentation. </h4>
+<div class="outline-text-4" id="text-4_76">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_77" class="outline-4">
+<h4 id="sec-4_77"><span class="section-number-4"></span> □ design: explore thumbnails: replace with a number. that's it. </h4>
+<div class="outline-text-4" id="text-4_77">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_78" class="outline-4">
+<h4 id="sec-4_78"><span class="section-number-4"></span> □ design: optimize ordering in filetype dropdown </h4>
+<div class="outline-text-4" id="text-4_78">
+
+</div>
+
+</div>
+
+<div id="outline-container-4_79" class="outline-4">
+<h4 id="sec-4_79"><span class="section-number-4"></span> □ design: gallery view: no vscroll. use mouse wheel for navigating gallery. </h4>
+<div class="outline-text-4" id="text-4_79">
+
+<ul>
+<li id="sec-4_79_1">generate multiple views of a gallery in the timeline. <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-4_79_2">mlist should open in gridview. add default view mode to mlistfast. <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4_80" class="outline-4">
+<h4 id="sec-4_80"><span class="section-number-4"></span> □ generate optimal gallery view, precalculated. </h4>
+<div class="outline-text-4" id="text-4_80">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2"></span> Adam </h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5_1" class="outline-4">
+<h4 id="sec-5_1"><span class="section-number-4"></span> □ disable follow all when everyone is followed or singleton </h4>
+<div class="outline-text-4" id="text-5_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_2" class="outline-4">
+<h4 id="sec-5_2"><span class="section-number-4"></span> □ apostraphe breaks username </h4>
+<div class="outline-text-4" id="text-5_2">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_3" class="outline-4">
+<h4 id="sec-5_3"><span class="section-number-4"></span> □ pull facebook name as display name </h4>
+<div class="outline-text-4" id="text-5_3">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_4" class="outline-4">
+<h4 id="sec-5_4"><span class="section-number-4"></span> □ remove autofollows from follow statistics. </h4>
+<div class="outline-text-4" id="text-5_4">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_5" class="outline-4">
+<h4 id="sec-5_5"><span class="section-number-4"></span> □ avatars retroactive </h4>
+<div class="outline-text-4" id="text-5_5">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_6" class="outline-4">
+<h4 id="sec-5_6"><span class="section-number-4"></span> □ &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; </h4>
+<div class="outline-text-4" id="text-5_6">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_7" class="outline-4">
+<h4 id="sec-5_7"><span class="section-number-4"></span> □ permanent home page to explore </h4>
+<div class="outline-text-4" id="text-5_7">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_8" class="outline-4">
+<h4 id="sec-5_8"><span class="section-number-4"></span> □ followbox, search results: change "Published" to Shared. Also, add new user results style to other page's. </h4>
+<div class="outline-text-4" id="text-5_8">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_9" class="outline-4">
+<h4 id="sec-5_9"><span class="section-number-4"></span> □ look at profile description in <a href="http://minus.com/minus-team">http://minus.com/minus-team</a>. Fix &lt;br/&gt;. Feed it through django's markdown filter or something. </h4>
+<div class="outline-text-4" id="text-5_9">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_10" class="outline-4">
+<h4 id="sec-5_10"><span class="section-number-4"></span> □ add fb, twitter, google plus, and mlink to dropdown in explore timelines on </h4>
+<div class="outline-text-4" id="text-5_10">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_11" class="outline-4">
+<h4 id="sec-5_11"><span class="section-number-4"></span> □ flag dropdown is too easy to click "needs to go". let's delimit by horizontal line. </h4>
+<div class="outline-text-4" id="text-5_11">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_12" class="outline-4">
+<h4 id="sec-5_12"><span class="section-number-4"></span> □ minus-team sends a message when they register. </h4>
+<div class="outline-text-4" id="text-5_12">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_13" class="outline-4">
+<h4 id="sec-5_13"><span class="section-number-4"></span> □ Minus is not usable for mobile browser. </h4>
+<div class="outline-text-4" id="text-5_13">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_14" class="outline-4">
+<h4 id="sec-5_14"><span class="section-number-4"></span> □ he has portuguese bug </h4>
+<div class="outline-text-4" id="text-5_14">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_15" class="outline-4">
+<h4 id="sec-5_15"><span class="section-number-4"></span> □ track # of gmail invites, # email invites, and the new fb invites in bizanalytics page. </h4>
+<div class="outline-text-4" id="text-5_15">
+
+</div>
+
+</div>
+
+<div id="outline-container-5_16" class="outline-4">
+<h4 id="sec-5_16"><span class="section-number-4"></span> □ notifications of new Reshares/Comments (URL of gallery, who did it - in the top right corner) (at least message) </h4>
+<div class="outline-text-4" id="text-5_16">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2"></span> Attila </h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6_1" class="outline-4">
+<h4 id="sec-6_1"><span class="section-number-4"></span> □ Load fb connect only when we need it. Currently loading on every page </h4>
+<div class="outline-text-4" id="text-6_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-6_2" class="outline-4">
+<h4 id="sec-6_2"><span class="section-number-4"></span> □ Resumeable uploads </h4>
+<div class="outline-text-4" id="text-6_2">
+
+</div>
+
+</div>
+
+<div id="outline-container-6_3" class="outline-4">
+<h4 id="sec-6_3"><span class="section-number-4"></span> □ Visible panes should load on load of the page for Dashboard, Search Page, Profile, as well as Explore. </h4>
+<div class="outline-text-4" id="text-6_3">
+
+</div>
+
+</div>
+
+<div id="outline-container-6_4" class="outline-4">
+<h4 id="sec-6_4"><span class="section-number-4"></span> □ Merge the two signup js functions. </h4>
+<div class="outline-text-4" id="text-6_4">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2"></span> Skye </h2>
+<div class="outline-text-2" id="text-7">
+
+
+</div>
+
+<div id="outline-container-7_1" class="outline-4">
+<h4 id="sec-7_1"><span class="section-number-4"></span> □ signed out, profile, click on follow. no sign in link in overlay. </h4>
+<div class="outline-text-4" id="text-7_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-7_2" class="outline-4">
+<h4 id="sec-7_2"><span class="section-number-4"></span> □ Folder view: send box </h4>
+<div class="outline-text-4" id="text-7_2">
+
+<ul>
+<li id="sec-7_2_1">□ When done, pass to Adam to reimplement SOLR query. <br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-7_3" class="outline-4">
+<h4 id="sec-7_3"><span class="section-number-4"></span> □ gallery menu should be start out closed for moderators as well. </h4>
+<div class="outline-text-4" id="text-7_3">
+
+</div>
+
+</div>
+
+<div id="outline-container-7_4" class="outline-4">
+<h4 id="sec-7_4"><span class="section-number-4"></span> □ why are there two signup js functions? email attila and me. </h4>
+<div class="outline-text-4" id="text-7_4">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2"></span> Shelah </h2>
+<div class="outline-text-2" id="text-8">
+
+
+</div>
+
+<div id="outline-container-8_1" class="outline-4">
+<h4 id="sec-8_1"><span class="section-number-4"></span> □ Folder view, new drag behavior request: If user drags a file onto the page, and the gallery is not hers, then drop still works, but means that it creates a new gallery. </h4>
+<div class="outline-text-4" id="text-8_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_2" class="outline-4">
+<h4 id="sec-8_2"><span class="section-number-4"></span> □ Make it clear that the image is loading. For example, show the size of image, with a percentage (possibly faked since js doesn't offer percentage). Use a bigger loading animated hourglass. (big gifs take a long time and people can't tell it's actually working). </h4>
+<div class="outline-text-4" id="text-8_2">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_3" class="outline-4">
+<h4 id="sec-8_3"><span class="section-number-4"></span> □ Disable up/down keyboard manipulating item select. Let those keys scroll the window. </h4>
+<div class="outline-text-4" id="text-8_3">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_4" class="outline-4">
+<h4 id="sec-8_4"><span class="section-number-4"></span> □ Click on next item, you get the hover cursor instead of the regular cursor, even though you're not hovering over the selected item. </h4>
+<div class="outline-text-4" id="text-8_4">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_5" class="outline-4">
+<h4 id="sec-8_5"><span class="section-number-4"></span> □ back on fullsize mlist view should return to shrunk (instead of out of gallery) </h4>
+<div class="outline-text-4" id="text-8_5">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_6" class="outline-4">
+<h4 id="sec-8_6"><span class="section-number-4"></span> □ Remove blinking of the comments box on item change. </h4>
+<div class="outline-text-4" id="text-8_6">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_7" class="outline-4">
+<h4 id="sec-8_7"><span class="section-number-4"></span> □ Menu dotification </h4>
+<div class="outline-text-4" id="text-8_7">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_8" class="outline-4">
+<h4 id="sec-8_8"><span class="section-number-4"></span> □ Gallery dotification </h4>
+<div class="outline-text-4" id="text-8_8">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_9" class="outline-4">
+<h4 id="sec-8_9"><span class="section-number-4"></span> □ List view dotification </h4>
+<div class="outline-text-4" id="text-8_9">
+
+</div>
+
+</div>
+
+<div id="outline-container-8_10" class="outline-4">
+<h4 id="sec-8_10"><span class="section-number-4"></span> □ css restyling of the menu to achieve listview. </h4>
+<div class="outline-text-4" id="text-8_10">
+
+
+
+
+</div>
+</div>
+</div>
+<div id="postamble">
+<p class="date">Date: 2011-12-05 19:28:15 EST</p>
+<p class="author">Author: Ubuntu</p>
+<p class="creator">Org version 7.5 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+</div>
+</div>
+</body>
+</html>

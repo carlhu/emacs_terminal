@@ -1,0 +1,672 @@
+                         Carl's Personal TODO
+                         ====================
+
+Author: Ubuntu
+Date: 2011-12-04 14:49:42 EST
+
+
+Table of Contents
+=================
+1 Carl 
+        1.1 □ Monday: Post blog. 
+        1.2 □ Show ranking title or ranking progress bar based on Minus points 
+        1.3 □ Add copy to galleries. See Jiao's email. 
+        1.4 □ people you view a lot maybe should show up more frequently on followlist. 
+        1.5 □ Ghost accounts - robot agents that autofollow. 505 followers, 350 follows. Random from explore/popular. 
+        1.6 □ 5) Show ranking title or ranking progress bar based on Minus points 
+        1.7 □ http://9gag.com. 
+        1.8 □ Dance community evangelism, starting out with competitions. 
+        1.9 □ Badoo registration gaming. Please provide me a gallery of snapshots which we can convert to todos. 
+        1.10 □ Show # Published and minus points in followbox 
+        1.11 □ spathe uploader style to make it easier. http://minus.com/mWJ9gJBM9#1. Think about remote upload. 
+        1.12 □ Refine new L link gallery mode. 
+        1.13 □ How many people have tried minus? 
+        1.14 □ Review Attila's new Feed query. 
+        1.15 □ Minus is not usable for mobile browser. 
+        1.16 □ evaluate jplayer 
+        1.17 □ create an efficient browse, open, left/right, comment mouse and keyboard workflow. 
+        1.18 □ private profiles. 
+        1.19 □ http://minus.com/mWJ9gJBM9#7 Fancy upload experience 
+        1.20 □ how many people have tried minus 
+        1.21 □ measure turnover (gallery level) in popular 
+        1.22 □ reshare: github style reshare. reshare credits original. remix and reshare. 
+        1.23 □ Modify team page to not open in new window 
+        1.24 □ drag image into a folder for copy. 
+        1.25 □ add search to home page signed out. 
+        1.26 □ transient urls exposed to user. 
+        1.27 □ refine license terms for minus. 
+        1.28 □ js browser bookmark, ala pinterest, to remote upload. Default Descriptions. 
+        1.29 □ add search to home page 
+        1.30 □ is there any feasible way to automatically categorize? 
+        1.31 □ remote upload, reshare bookmark, remix, copy. 
+        1.32 □ http://www.reddit.com/r/linux/comments/mi80x/give\_me\_that\_one\_command\_you\_wish\_you\_knew\_years http://news.ycombinator.com/item?id=3257393 
+        1.33 □ multirendering of thumbnail: research imagemagick compositor. 
+2 John 
+        2.1 □ Add profile to Minus Team 
+        2.2 □ Guest explore: Adam 
+        2.3 □ Blog post 1: What's new. Getting started. See google plus mail. (Monday) 
+        2.4 □ Curated 9gag-style content. 
+        2.5 □ Have attitude or not! Standout vs Broad Audience. 
+        2.6 □ Launch: Art/Neutral Guest page, reach out specific audiences. 
+        2.7 □ home page on reddit and HN 
+        2.8 □ android: no way to get rest of feed. tell daniel. 
+3 Yejun 
+        3.1 □ log gallery access to a log file on o101, using redis queueing. 
+        3.2 □ menu should be start out closed for moderators as well. 
+        3.3 □ Add tags should not show up for nonowner 
+        3.4 □ http://minus.com/mky91ghHM#1, viewed, does not show dropdown. 
+        3.5 □ add avatar to galleries 
+        3.6 □ add avatar to explore timelines. (at least add variable) 
+        3.7 □ ogv video issue. 
+        3.8 □ why is http://minus.com/mbqks62cEd (ogv) not showing flash player) 
+        3.9 □ Re-sort users chart so legend is in same order as the current y values. 
+        3.10 □ http://minus.com/mQDCc4GOY I can only hear the voice but not see the image. What is the problem? My browser or?  BTW, after I download the video file, it works well. Write back to Jiao when done. 
+        3.11 □ Search for test in live. Dropdown. See Txn... see area below is "null'. 
+        3.12 □ Let user select thumbnail area 
+        3.13 □ Review referer stats with Carl to determine blocking strategy. 
+        3.14 □ calculate crc on upload instead of on download zip to avoid double download. 
+        3.15 □ identify: Empty input file `/mnt/minus/minus_com/smedia/uploads/0000204305.JPG' @ error/jpeg.c/EmitMessage/235. 
+        3.16 □ Figure out how pinterest bookmark submits picture. 
+        3.17 □ investigate custom ffmpeg based ogv conversion. 
+4 Dion 
+        4.1 □ Reorder: 
+        4.2 □ Remove box shadow on header and footer. 
+        4.3 □ 1 of 15 in same color as surrounding text. #666 
+        4.4 □ Flag should have space between Flag and parens. Parens and number should be gray. 
+        4.5 □ Line height of username and title not correct. 
+        4.6 □ Hover underline of grid dropdown in dashboard is still there. 
+        4.7 □ Color of icons griddropdown is reverted (put opacity back?) 
+        4.8 □ shortlink is user data, should be user color. baselines don't align. font-size incorrect. 
+        4.9 □ Vertical spacing between 1 of 3 and comment box should be same as vspace between username and links 
+        4.10 □ 1.5 MB 
+        4.11 □ 16 Gallery Views 
+        4.12 □ ---------------------- 
+        4.13 □ Revise followbox 
+        4.14 □ Profile: HSpace between Shared 250 and Gridbox should be same as space between "karma number" and "Shared". 
+        4.15 □ Add tooltips to every link in gallery view bottom right. 
+        4.16 □ Messages 
+        4.17 □ "Organize" becomes Reorder and Edit for owners 
+        4.18 □ Increase width in filenames in menu. 
+        4.19 □ Decouple li coupling in gallery view / bottom right. 
+        4.20 □ 3-line headings look bad in explore. increase vertical space. 
+        4.21 □ show in title edit box how much is left that will fit in explore. make same amount fit in explore as in gallery view. 
+        4.22 □ Lights on lights off should be in separate dropdown. 
+        4.23 □ Rename button should float in paragrpah. 
+        4.24 □ reshares profiles/avatar more dominant. 
+        4.25 □ add avatar to timelines 
+        4.26 □ Show avatars in explore. Move title to overlay hover. 
+        4.27 □ Turn off text-shadow in dropdown. 
+        4.28 □ Make shortlink box same as other input boxes 
+        4.29 □ Remover vertical lines. 
+        4.30 □ gray font of bottom area same as gray of menu and gray of minus. 
+        4.31 □ make gray everywhere be the same gray exactly. 
+        4.32 □ Add showing to the drop down for filetypes. 
+        4.33 □ administrators have to click open menu to open gallery menu. 
+        4.34 □ Move download all to link area. 
+        4.35 □ increase hspace between filename, etc. 
+        4.36 □ Decrease size of icons (or remove them entirely) 
+        4.37 □ Folder view. Linear mode font is too big. 
+        4.38 □ Add user avatar, folder view. 
+        4.39 □ Header - selected item has gray box. Same hover effect as secondary nav hover (border plus gradient). 
+        4.40 □ New timeline date 
+        4.41 □ Optimize explore rendering of title and time. 
+        4.42 □ Improve tooltip for starred to say something about bookmark, collect, and only for yourself. 
+        4.43 □ Tooltip for gallery view: left/right arrow to indicate keyboard shortcuts. 
+        4.44 □ grid mode 
+        4.45 □ hover underline should be orange 
+        4.46 □ all hover of dropdowns should have similar effect. include orange line. 
+        4.47 □ restyle of the drop down to simplify look of follow and unfollow. 
+        4.48 □ dropdown search: fix public galleries vertical spacing. 
+        4.49 □ explore: take time out of explore, put in # views / reshares. driible style info. 
+        4.50 □ explore: improve hover effect. show first comment. 
+        4.51 □ explore: consider, no titles. (show only on hover) 
+        4.52 □ explore: look at pinterest video overlay. 
+        4.53 □ header: de-emphasize search 
+        4.54 □ flesh out gridview. add share menus, etc. 
+        4.55 □ emphasize profile gallery count in folder view 
+        4.56 □ restyle followbox unfollow. 
+        4.57 □ improve gridview, gallery view. 
+        4.58 □ optimized news feed with more personalized presentation. 
+        4.59 □ design: explore thumbnails: replace with a number. that's it. 
+        4.60 □ design: optimize ordering in filetype dropdown 
+        4.61 □ design: gallery view: no vscroll. use mouse wheel for navigating gallery. 
+        4.62 □ generate optimal gallery view, precalculated. 
+5 Adam 
+        5.1 □ "To start sharing" tooltip has two "to start sharings" in it. Fix the copy! 
+        5.2 □ Review completed fb invite. 
+        5.3 □ autofollow, retroactive and new 
+        5.4 □ avatars, retroactive and new 
+        5.5 □ make home page explore (adam) 
+6 Attila 
+        6.1 □ Resumeable uploads 
+        6.2 □ Visible panes should load on load of the page for Dashboard, Search Page, Profile, as well as Explore. 
+        6.3 □ Merge the two signup js functions. 
+7 Skye 
+        7.1 □ Searchbox, drop down, yejun, white space is still showing. 
+        7.2 □ signed out, profile, click on follow. no sign in link in overlay. 
+        7.3 □ Folder view: send box 
+        7.4 □ why are there two signup js functions? email attila and me. 
+8 Shelah 
+        8.1 □ Remove blinking of the comments box. 
+        8.2 □ 2032. l page style zooming for gallery. 
+        8.3 □ Verify with Shelah zoom behavior. 
+        8.4 □ Embed galleries is broken. 
+        8.5 □ gallery views -> reinstate in the proper div (had to remove temporarily) 
+        8.6 Shelah, the new l page behavior is terrific. I find it extremely to use. There's a few followup tasks, sorted in priority order. 
+        8.7 □ I've merged the request into staging. Works great. Merging into live has conflicts I don't want to resolve myself. Can you do this for me? Email me when done and we'll deploy this before the following tickets. 
+        8.8 □ New feature: Pressing enter in gallery view (without focus on any of the input boxes) zooms or dezooms. 
+        8.9 □ Add left right arrows (in addition to the ones at the bottom to left and right of image to show the user that he can do that. 
+        8.10 □ Hover on picture shows Hourglass icon overlay, + or -, and a note that "Enter to zoom out/in". 
+        8.11 □ Embed galleries mode is broken. 
+        8.12 □ make gallery views work in folder mode. 
+        8.13 □ List view dotification 
+        8.14 □ Menu dotification 
+        8.15 □ Gallery dotification 
+        8.16 □ css restyling of the menu to achieve listview. 
+
+
+1 Carl 
+-------
+
+1.1 □ Monday: Post blog. 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.2 □ Show ranking title or ranking progress bar based on Minus points 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + 0-5 points: Newbie 
+  + 6-20 points: Amatuer OR simply use graphic progress bar to display [http://minus.com/mbcDOzRQP6#3] 
+
+1.3 □ Add copy to galleries. See Jiao's email. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.4 □ people you view a lot maybe should show up more frequently on followlist. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.5 □ Ghost accounts - robot agents that autofollow. 505 followers, 350 follows. Random from explore/popular. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.6 □ 5) Show ranking title or ranking progress bar based on Minus points 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   0-5 points: Newbie
+   6-20 points: Amatuer etc....
+   OR simply use graphic progress bar to display
+
+1.7 □ [http://9gag.com]. 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.8 □ Dance community evangelism, starting out with competitions. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ upload music, videos, pictures. 
+
+1.9 □ Badoo registration gaming. Please provide me a gallery of snapshots which we can convert to todos. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.10 □ Show # Published and minus points in followbox 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.11 □ spathe uploader style to make it easier. [http://minus.com/mWJ9gJBM9#1]. Think about remote upload. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.12 □ Refine new L link gallery mode. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ Instead of changing heading to "back to...", Nothing changes other than showing i-link. On click, goes back to j link. 
+
+1.13 □ How many people have tried minus? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.14 □ Review Attila's new Feed query. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.15 □ Minus is not usable for mobile browser. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.16 □ evaluate jplayer 
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.17 □ create an efficient browse, open, left/right, comment mouse and keyboard workflow. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.18 □ private profiles. 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.19 □ [http://minus.com/mWJ9gJBM9#7] Fancy upload experience 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.20 □ how many people have tried minus 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.21 □ measure turnover (gallery level) in popular 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.22 □ reshare: github style reshare. reshare credits original. remix and reshare. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.23 □ Modify team page to not open in new window 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.24 □ drag image into a folder for copy. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.25 □ add search to home page signed out. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.26 □ transient urls exposed to user. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.27 □ refine license terms for minus. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.28 □ js browser bookmark, ala pinterest, to remote upload. Default Descriptions. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.29 □ add search to home page 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.30 □ is there any feasible way to automatically categorize? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.31 □ remote upload, reshare bookmark, remix, copy. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.32 □ [http://www.reddit.com/r/linux/comments/mi80x/give\_me\_that\_one\_command\_you\_wish\_you\_knew\_years] http://news.ycombinator.com/item?id=3257393 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[http://www.reddit.com/r/linux/comments/mi80x/give\_me\_that\_one\_command\_you\_wish\_you\_knew\_years]: http://www.reddit.com/r/linux/comments/mi80x/give_me_that_one_command_you_wish_you_knew_years
+
+1.33 □ multirendering of thumbnail: research imagemagick compositor. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2 John 
+-------
+
+2.1 □ Add profile to Minus Team 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.2 □ Guest explore: Adam 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.3 □ Blog post 1: What's new. Getting started. See google plus mail. (Monday) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.4 □ Curated 9gag-style content. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.5 □ Have attitude or not! Standout vs Broad Audience. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.6 □ Launch: Art/Neutral Guest page, reach out specific audiences. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ Blog post 
+  + □ Share, Explore, Connect 
+  + □ Forums 
+      * □ Gaming community. Require photos, videos, gifs. 
+
+2.7 □ home page on reddit and HN 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.8 □ android: no way to get rest of feed. tell daniel. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3 Yejun 
+--------
+
+3.1 □ log gallery access to a log file on o101, using redis queueing. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.2 □ menu should be start out closed for moderators as well. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.3 □ Add tags should not show up for nonowner 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.4 □ [http://minus.com/mky91ghHM#1], viewed, does not show dropdown. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.5 □ add avatar to galleries 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.6 □ add avatar to explore timelines. (at least add variable) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.7 □ ogv video issue. 
+~~~~~~~~~~~~~~~~~~~~~~~
+
+3.8 □ why is [http://minus.com/mbqks62cEd] (ogv) not showing flash player) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.9 □ Re-sort users chart so legend is in same order as the current y values. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ Split two charts so that user stats is readable. 
+
+3.10 □ [http://minus.com/mQDCc4GOY] I can only hear the voice but not see the image. What is the problem? My browser or?  BTW, after I download the video file, it works well. Write back to Jiao when done. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ try building handbrake (3 day investment) 
+
+3.11 □ Search for test in live. Dropdown. See Txn... see area below is "null'. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.12 □ Let user select thumbnail area 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.13 □ Review referer stats with Carl to determine blocking strategy. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.14 □ calculate crc on upload instead of on download zip to avoid double download. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.15 □ identify: Empty input file `/mnt/minus/minus_com/smedia/uploads/0000204305.JPG' @ error/jpeg.c/EmitMessage/235. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.16 □ Figure out how pinterest bookmark submits picture. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.17 □ investigate custom ffmpeg based ogv conversion. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4 Dion 
+-------
+
+4.1 □ Reorder: 
+~~~~~~~~~~~~~~~
+  + Reshare 
+  + Flag 
+  + Star 
+  + Comments 
+  + Tags 
+  + Share Links 
+  + Embed Links 
+  + Publishing 
+  + Edit Image 
+  + View Original / Download 
+  + Download All as Links 
+  + Linear Mode 
+
+4.2 □ Remove box shadow on header and footer. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ reduce radius. 
+
+4.3 □ 1 of 15 in same color as surrounding text. #666 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.4 □ Flag should have space between Flag and parens. Parens and number should be gray. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.5 □ Line height of username and title not correct. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.6 □ Hover underline of grid dropdown in dashboard is still there. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.7 □ Color of icons griddropdown is reverted (put opacity back?) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.8 □ shortlink is user data, should be user color. baselines don't align. font-size incorrect. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ "Shortlink" should be 12px, #999 (nonuser data, lightest). 
+  + □ "Organize" should be 12px, #999 (nonuser data, lightest). 
+
+4.9 □ Vertical spacing between 1 of 3 and comment box should be same as vspace between username and links 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.10 □ 1.5 MB 
+~~~~~~~~~~~~~~
+
+4.11 □ 16 Gallery Views 
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.12 □ ---------------------- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.13 □ Revise followbox 
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.14 □ Profile: HSpace between Shared 250 and Gridbox should be same as space between "karma number" and "Shared". 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.15 □ Add tooltips to every link in gallery view bottom right. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.16 □ Messages 
+~~~~~~~~~~~~~~~~
+  + □ Subject lines are sometimes in blue (say 'john has shared a folder with you.') 
+  + □ Spacing between username and subject too small sometimes (see carl's messages). 
+
+4.17 □ "Organize" becomes Reorder and Edit for owners 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.18 □ Increase width in filenames in menu. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.19 □ Decouple li coupling in gallery view / bottom right. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.20 □ 3-line headings look bad in explore. increase vertical space. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.21 □ show in title edit box how much is left that will fit in explore. make same amount fit in explore as in gallery view. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.22 □ Lights on lights off should be in separate dropdown. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.23 □ Rename button should float in paragrpah. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.24 □ reshares profiles/avatar more dominant. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.25 □ add avatar to timelines 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.26 □ Show avatars in explore. Move title to overlay hover. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.27 □ Turn off text-shadow in dropdown. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.28 □ Make shortlink box same as other input boxes 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.29 □ Remover vertical lines. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.30 □ gray font of bottom area same as gray of menu and gray of minus. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.31 □ make gray everywhere be the same gray exactly. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.32 □ Add showing to the drop down for filetypes. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.33 □ administrators have to click open menu to open gallery menu. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.34 □ Move download all to link area. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.35 □ increase hspace between filename, etc. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.36 □ Decrease size of icons (or remove them entirely) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.37 □ Folder view. Linear mode font is too big. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.38 □ Add user avatar, folder view. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.39 □ Header - selected item has gray box. Same hover effect as secondary nav hover (border plus gradient). 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.40 □ New timeline date 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.41 □ Optimize explore rendering of title and time. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.42 □ Improve tooltip for starred to say something about bookmark, collect, and only for yourself. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.43 □ Tooltip for gallery view: left/right arrow to indicate keyboard shortcuts. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.44 □ grid mode 
+~~~~~~~~~~~~~~~~~
+
+4.45 □ hover underline should be orange 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.46 □ all hover of dropdowns should have similar effect. include orange line. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.47 □ restyle of the drop down to simplify look of follow and unfollow. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.48 □ dropdown search: fix public galleries vertical spacing. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.49 □ explore: take time out of explore, put in # views / reshares. driible style info. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.50 □ explore: improve hover effect. show first comment. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.51 □ explore: consider, no titles. (show only on hover) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.52 □ explore: look at pinterest video overlay. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.53 □ header: de-emphasize search 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.54 □ flesh out gridview. add share menus, etc. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.55 □ emphasize profile gallery count in folder view 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.56 □ restyle followbox unfollow. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.57 □ improve gridview, gallery view. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.58 □ optimized news feed with more personalized presentation. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.59 □ design: explore thumbnails: replace with a number. that's it. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.60 □ design: optimize ordering in filetype dropdown 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.61 □ design: gallery view: no vscroll. use mouse wheel for navigating gallery. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + generate multiple views of a gallery in the timeline. 
+  + mlist should open in gridview. add default view mode to mlistfast. 
+
+4.62 □ generate optimal gallery view, precalculated. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5 Adam 
+-------
+
+5.1 □ "To start sharing" tooltip has two "to start sharings" in it. Fix the copy! 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5.2 □ Review completed fb invite. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5.3 □ autofollow, retroactive and new 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5.4 □ avatars, retroactive and new 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5.5 □ make home page explore (adam) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+6 Attila 
+---------
+
+6.1 □ Resumeable uploads 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+6.2 □ Visible panes should load on load of the page for Dashboard, Search Page, Profile, as well as Explore. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+6.3 □ Merge the two signup js functions. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+7 Skye 
+-------
+
+7.1 □ Searchbox, drop down, yejun, white space is still showing. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+7.2 □ signed out, profile, click on follow. no sign in link in overlay. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+7.3 □ Folder view: send box 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  + □ When done, pass to Adam to reimplement SOLR query. 
+
+7.4 □ why are there two signup js functions? email attila and me. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8 Shelah 
+---------
+
+8.1 □ Remove blinking of the comments box. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.2 □ 2032. l page style zooming for gallery. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.3 □ Verify with Shelah zoom behavior. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.4 □ Embed galleries is broken. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.5 □ gallery views -> reinstate in the proper div (had to remove temporarily) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.6 Shelah, the new l page behavior is terrific. I find it extremely to use. There's a few followup tasks, sorted in priority order. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.7 □ I've merged the request into staging. Works great. Merging into live has conflicts I don't want to resolve myself. Can you do this for me? Email me when done and we'll deploy this before the following tickets. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.8 □ New feature: Pressing enter in gallery view (without focus on any of the input boxes) zooms or dezooms. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.9 □ Add left right arrows (in addition to the ones at the bottom to left and right of image to show the user that he can do that. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.10 □ Hover on picture shows Hourglass icon overlay, + or -, and a note that "Enter to zoom out/in". 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.11 □ Embed galleries mode is broken. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.12 □ make gallery views work in folder mode. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.13 □ List view dotification 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.14 □ Menu dotification 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.15 □ Gallery dotification 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8.16 □ css restyling of the menu to achieve listview. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+

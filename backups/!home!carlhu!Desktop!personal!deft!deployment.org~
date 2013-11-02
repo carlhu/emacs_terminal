@@ -1,0 +1,1765 @@
+Deployment Notes
+================
+
+Using python subprocess: http://jimmyg.org/blog/2009/working-with-python-subprocess.html
+
+nl /usr/share/dict/words | head -20 | sort -n
+    seems to work ok. "cut -f 2" and "cut -c 8-" also seem to work well in this case., also cut join sort
+
+
+cssh
+alias netst sudo netstat --tcp --udp --listening --program
+store netst
+
+
+
+Initializing machine
+
+    sudo apt-get install pydf pinfo boxes par indent dstat htop iotop slurm ttyrec tmux mtr multitail socat netpipes tpp iftop iptraf siege ncdu apache2 nginx ipython python-dev python-setuptools python-django python-mysqldb python-imaging apache2-mpm-worker apache2-suexec-custom libapache2-mod-wsgi memcached libapache2-mod-python  python-markdown python-beautifulsoup  python-lxml php5-mysql libapache2-mod-auth-mysql ubuntu-restricted-extras memcached git-core mysql-5.1 vim vim-gnome python-pylibmc clusterssh gitg pydf tmux python-gevent
+    libmemcache-dev libmemcache0
+
+    sudo easy_install boto south numpy hiredis
+
+    nano /etc/init/solr.conf
+
+# Setup git bash completion
+    cd ~/
+    git clone git://git.kernel.org/pub/scm/git/git.git
+    mv git/contrib/completion/git-completion.bash ~/.git-completion.sh
+    rm -rf ~/git
+    echo "export GIT_PS1_SHOWDIRTYSTATE=1" >> ~/.bashrc
+    echo "export GIT_PS1_SHOWSTASHSTATE=1" >> ~/.bashrc
+    echo "source ~/.git-completion.sh" >> ~/.bashrc
+    
+# Add git info to PS1 (append this to your ~/.bashrc file, not commented)
+# PS1='[\[\033[1;34m\]\u\[\033[0m\]@\h \W$(__git_ps1 "(%s)")]\$ '
+
+
+---------------
+Great programs
+
+    abcde            - CD to mp3 ripper
+    apg              - random password generator
+    base64           - better than uuencode
+    boxes            - draw any kind of boxes around your text
+    bsdiff           - binary differ
+    bspatch          - binary patcher
+    bvi              - binary vi (yet another hex editor)
+    ccx2             - console xmms2 client
+    clive            - flash video downloader
+    dvipdfmx         - dvi to pdf converter
+    enfuse           - poor man's HDR
+    get_flash_videos - yet another flash video downloader
+    glark            - advanced grep
+    indent           - code beautifier
+    lshw             - list hardware configuration
+    mcurl            - multiple part downloader using curl
+    mktemp           - safely create temporary files and directories
+    msort            - sort records in complex ways
+    netbrake         - bandwidth limiter
+    od               - octal dump
+    par              - paragraph reformatter
+    par2             - archive verification and repair tool
+    ped              - sed done right with perl
+    pinfo            - color info reader
+    pipe.vim         - make vim part of a unix pipe and allow it to
+        edit the pipe contents
+    pv               - Pipe Viewer: a tool for monitoring
+        the progress of data through a pipe
+    pydf             - pretty df (disk space viewer)
+    qmv              - use your favorite editor to rename files
+        (part of renameutils)
+    qodem            - modem program that can do serial, telnet, ssh,
+        zmodem, kermit, etc
+    rdiff-backup     - like rsync, but can do incremental backups
+    recode           - like dos2unix and unix2dos, but with many more encodings
+    recordmydesktop  - make screencast videos
+    remark           - great logfile colorizer (part of regex-markup)
+    rkhunter         - find rootkit infections
+    rlwrap           - add readline editing support to any command
+    safecopy         - data recovery tool (better than dd)
+    sponge           - soak up stdin and write to a file
+        (for things like pipeline editing)
+    sux              - su while transferring X credentials
+    unbuffer         - force flushing of stdout
+    upx              - executable compressor
+    utimer           - countdown timer and stopwatch
+    vared            - edit shell variables (part of zsh)
+    watch            - run a command multiple times and display the output
+        (with differences highlighted)
+    xdotool          - simulate keyboard and mouse activity
+    xxd              - hex dump
+    zargs            - a version of xargs that makes the find command redundant
+        (part of zsh)
+    zed              - very small and fast vi-like editor (part of zsh)
+    zrun             - automatically uncompress arguments to command
+
+
+    siege -b -c 100 -r 10 http://localhost
+    dstat: pretty disk stat
+    
+    htop:monitor
+    iotop: monitor
+    slurm: network history
+    
+    tmux: session continues after logout.
+    mtr: tracerout 2
+    multitail 
+    iptraf monitor iptraffic.
+    siege and tsung: website stressors
+    du with debug info.
+
+siege -b -c 1 -t2H -l./siege.log http://127.0.0.1:8000/iasdfasfdasdf.jpg
+
+# Install php5
+sudo apt-get install php5 libapache2-mod-php5 php5-cli php5-cgi php5-mysql
+
+SHOW STATUS
+use mysql;
+select host, user from user;
+
+mysql remote access
+update user set host='%' where user='root' and host='ip-10-202-201-171';
+flush privileges;
+
+########## Minus v2.1 migration. #############
+    . Deploy sequence.
+        . Remove migration 117 (already added stats)
+        . Copy db to new server
+            . time mysqldump --user=root --password=carlhu minus --single-transaction | pv -ptbr | mysql --host=minusdb.chgk9syyw7fo.us-east-1.rds.amazonaws.com --user=root --password=carlhu minus
+        . Migrate db
+            . time python manage.py migrate --delete-ghost-migrations
+        . Migrate to timeline
+            . time python manage.py migrate_to_new_timeline_architecture
+        . Migrate untitled galleries
+            . time python manage.py migrate_untitled_galleries
+        . ReIndex
+            . time python manage.py reindex
+    
+    time mysqldump --host=minusdb.chgk9syyw7fo.us-east-1.rds.amazonaws.com --user=root --password=carlhu minus --single-transaction | pv -ptbr | mysql --user=root --password=carlhu minus 
+    
+    time mysqldump --host=10.78.209.112 --user=root --password=carlhu minus --single-transaction | pv -ptbr | mysql --user=root --password=carlhu minus 
+
+
+####### Optimizing image #############
+1. Turn off directory/file access-time logging:
+edit /etc/fstab
+add noatime,nodiratime to the options for the drives being mounted.
+our fstab looks something like this:
+/dev/sdb        /mnt    auto    defaults„noatime,nodiratime,comment=cloudconfig,nobootwait     0       0
+2. Increase the available file descriptors:
+cat » /etc/security/limits.conf « EOF
+* hard nofile 65536
+* soft nofile 65536
+EOF
+Mounting the Ethereal Drive
+To avoid changing MongoDB’s default logging and data directories, I added these lines to fstab:
+/mnt/var/lib/mongodb /var/lib/mongodb     none bind
+/mnt/var/log/mongodb /var/log/mongodb     none bind
+
+
+
+
+
+# add latency to localhost
+To simulate a far away server, add RTT time to the localhost device.
+For example if we add 100 milliseconds (which then makes 200ms ping
+time to localhost):
+$ tc qdisc add dev lo root handle 1:0 netem delay 100msec
+
+Restore it back to normal again with:
+$ tc qdisc del dev lo root
+
+# Setup mount on ubuntu guest to windows
+mkdir windows in desktop
+sudo mount -t vboxsf Desktop /home/carlhu/Desktop/windows
+edit /etc/init.d/rc.local
+add same command.
+
+
+rsync -v -a --stats --progress . /vol/spathe_uploads
+
+ffmpeg -i foo.m2t video.avi
+ffmpeg -i /home/video/foo.m2t -target ntsc-dv foo.dv
+mplayer -fps 49.94 00022.MTS
+
+Setting up Django DB Characterset
+
+Notes.
+alter DATABASE spathe DEFAULT CHARACTER SET utf8
+alter DATABASE spathe DEFAULT COLLATE utf8_general_ci
+SET NAMES 'utf8';
+alter table spathe_entry CONVERT TO CHARACTER SET 'utf8' collate 'utf8_general_ci';
+alter table spathe_entry CONVERT TO CHARACTER SET 'utf8' collate 'utf8_general_ci';
+
+
+mysqldump -u root -p --default-character-set=latin1 --skip-set-charset spathe > spathe.sql
+
+sed -r 's/latin1/utf8/g' spathe.sql > spathe_utf.sql
+
+mysql -u root -p --execute="DROP DATABASE spathe; CREATE DATABASE spathe CHARACTER SET utf8 COLLATE utf8_general_ci;"
+
+mysql -u root -p --default-character-set=utf8 spathe < spathe_utf.sql
+
+
+
+
+
+Setting up Django ipython prompt
+
+git apply --reject --whitespace=fix my-patches/ace2-2.6.21-rc6/0002.patch
+git difftool
+git am --resolved
+git add .
+git commit -a -m ''
+
+git apply --reject --whitespace=fix
+sudo apt-get install trickle
+trickle -s -d 1000 git ...
+
+Memcached
+apt-get install memcached
+sudo easy_install python-memcached
+
+Setting up Django ipython prompt
+
+os.environ["DJANGO_SETTINGS_MODULE"] = "settings"
+from minus.models import Tag
+from tagging.models import TaggedItem
+from spathe.models import *
+    out = TaggedItem.objects.get_by_model(
+        Entry.objects.filter(
+            collection=Collection.objects.get(id=37),
+            is_trash=False,
+            is_published=True),
+        '')       
+
+Change collation of tag to case sensitive for django-tagging.
+
+ALTER TABLE tagging_tag MODIFY name VARCHAR(100) COLLATE utf8_bin;
+
+Setting up Ubuntu
+
+# Set timezone on aws machine.
+    dpkg-reconfigure tzdata
+
+# Install python packages
+sudo apt-get install python-markdown python-beautifulsoup  python-lxml
+
+sudo apt-get install subversion libqt4-webkit libqt4-dev g++
+sudo apt-get install xvfb
+
+#gnome setting path for launcher (shortcut.)
+gnome-terminal --working-directory /home/carlhu/Desktop/mysites  -e ipython
+# Gnome shortcut path setting in general
+sh -c 'cd ~;exec gedit'
+
+# Add editor
+sudo apt-get install scribes (good editor)
+alias e scribes
+store e
+# Add alias to  gnome-open
+alias start gnome-open
+store start
+
+#######################################################################
+# Ripping a dvd to flv is an area fraught with risk related to out-of-sync audio-video. Here is what I found works.
+# The initial rip: i used dvdrip, direct to vob (no transcoding).
+# I used ffmpeg to recreate the vobs (cleaning up dropped frames)
+ffmpeg -i /tmp/test%d.vob /tmp/out.vob
+# I then use avidemux to concat and convert to flv.
+# (kdelive proved unreliable)
+# I used 700kb, source 4:3, target 1:1, 320x270, 128kb mp3 LAME, producing a 300meg file for 1/2 a dvd.
+# I then used yamdi to instrument the flv.
+# I then used php stream to pseudo stream.
+#######################################################################
+
+# Ripping an iso.
+Use nautilus, right click on dvd, copy.
+
+
+
+
+# Monitoring cpu/mem via command line, excellent program.
+sudo apt-get install htop
+htop
+# Also iftop for network, excellent.
+sudo apt-get install iftop
+
+#php send mail to work.
+sudo apt-get install sendmail
+ps -aux | grep sendmail
+edit /etc/php5/apache2/
+change to: sendmail_path =  /usr/sbin/sendmail -t -i
+
+# Using lftp to backup
+1. Unmount everything in .gvfs
+2. lftp -u carlhu,piers 192.168.0.194 -e "mirror --reverse --skip /home/carlhu/.gvfs --only-newer --verbose /home/carlhu /share/Backup_Linux"
+3. Result: works okay, except that next backup totally ignores date and uploads everything again.
+
+rsync -v -a --stats --progress . /vol/spathe_uploads
+
+# Rsync with Thecus.
+Download Thecus rsync module.
+Upload module to Thecus using web page.
+Upload ssh module to Thecus.
+Unmount everything in .gvfs
+Edit rsyncd.conf with vi, remove the auth users and hosts lines (allowing all).
+Change user to root, group to root.
+cd ~
+sudo rsync -v -a --delete --exclude .gvfs --stats --progress . 192.168.0.194::share/Backup_Linux
+Works unbelievable. Incremental update is 5 seconds for the entire drive.
+
+
+# Copying a big file with resume (not sure about retry) over ssh.
+
+
+# Add repos
+deb http://za.archive.ubuntu.com/ubuntu/ intrepid main restricted
+deb http://za.archive.ubuntu.com/ubuntu/ intrepid multiverse
+
+# This script has been tested several times to work flawless with
+# Amazon EC2's ami-1c5db975, Ubuntu, hardy LTS.
+
+# Refresh packages
+sudo apt-get update
+sudo apt-get upgrade -y
+
+# Install java
+sudo apt-get install sun-java6-bin sun-java6-jre sun-java6-jdk
+sudo update-java-alternatives -s java-6-sun
+# Install pdf printer
+sudo apt-get install cups-pdf
+mkdir ~/PDF
+
+# Install mysql
+sudo apt-get install -y xfsprogs mysql-server-5.1
+sudo apt-get install php5-mysql libapache2-mod-auth-mysql
+sudo apt-get install ubuntu-restricted-extras
+
+# Install php5
+sudo apt-get install php5 libapache2-mod-php5 php5-cli php5-cgi php5-mysql
+
+# Install EBS
+sudo apt-get install xfsprogs
+sudo mkfs.xfs /dev/sdf
+sudo echo "/dev/sdf /vol xfs noatime 0 0" >> /etc/fstab
+mkdir /vol
+mount /vol
+
+# Setup dvd playback.
+sudo wget http://www.medibuntu.org/sources.list.d/`lsb_release -cs`.list --output-document=/etc/apt/sources.list.d/medibuntu.list; sudo apt-get -q update; sudo apt-get --yes -q --allow-unauthenticated install medibuntu-keyring; sudo apt-get -q update
+sudo wget http://www.medibuntu.org/sources.list.d/jaunty.list --output-document=/etc/apt/sources.list.d/medibuntu.list
+sudo apt-get update && sudo apt-get install medibuntu-keyring && sudo apt-get update
+sudo apt-get install libdvdcss2
+sudo apt-get install w64codecs
+
+
+# Font install (for latex)
+sudo apt-get install kile
+sudo apt-get install xetex
+sudo apt-get install texlive-latex
+sudo apt-get install texlive-latex-recommended
+
+# Copy fonts to ~/.fonts 
+# Update cache.
+sudo fc-cache -f -v
+sudo apt-get install lcdf-typetools
+otfinfo --family texgyrepagella-regular.otf
+
+# Kill mysql
+/etc/init.d/mysql stop
+# This should not be needed but is (the first time we stop mysql)
+killall mysqld_safe
+
+# Move mysql files over to ebs, adjusting index in log.
+mkdir /vol/lib /vol/log
+mv /var/lib/mysql /vol/lib/
+mv /var/log/mysql /vol/log/
+test -f /mnt/mysql/log/mysql/mysql-bin.index && perl -pi -e 's%/mnt/mysql/log/%/mnt/mysql/log/%' /mnt/mysql/log/mysql/mysql-bin.index
+
+# Reconfigure Mysql
+cat > /etc/mysql/conf.d/mysql-ec2.cnf <<EOM
+[mysqld]
+innodb_file_per_table
+datadir          = /vol/lib/mysql
+log_bin          = /vol/log/mysql/mysql-bin.log
+max_binlog_size  = 1000M
+# log_slow_queries = /vol/log/mysql/mysql-slow.log
+# long_query_time  = 10
+EOM
+
+rsync -aR /etc/mysql /vol/
+
+# Restart mysql
+/etc/init.d/mysql start
+    or
+sudo mysqld --character-set-server=utf8 &
+alter database cruxxial_md CHARACTER SET = utf8;
+
+# Install python-django
+sudo apt-get install python-dev
+sudo apt-get install python-setuptools python-django python-mysqldb python-imaging python-crypto
+sudo easy_install fabric
+
+# Install apache php mod_python
+sudo apt-get install apache2-mpm-worker apache2-suexec-custom
+sudo apt-get install libapache2-mod-wsgi
+
+sudo apt-get install libapache2-mod-python
+sudo a2enmod rewrite
+sudo a2enmod actions
+sudo a2enmod fcgid
+sudo a2enmod suexec
+sudo a2enmod vhost_alias
+
+# Restoring ebs snapshot.
+apt-get update && apt-get upgrade -y
+export DEBIAN_FRONTEND=noninteractive
+apt-get install -y xfsprogs mysql-server
+echo "/dev/sdh /vol xfs noatime 0 0" >> /etc/fstab
+mkdir /vol
+mount /vol
+find /vol/{lib,log}/mysql/ ! -user  root | xargs -r chown mysql
+find /vol/{lib,log}/mysql/ ! -group root -a ! -group adm | xargs -r chgrp mysql
+/etc/init.d/mysql stop
+killall mysqld_safe
+rsync -a /vol/etc/mysql /etc/
+/etc/init.d/mysql start
+
+# Install latex fonts
+sudo apt-get install lcdf-typetools
+wget ftp://dante.ctan.org/tex-archive/fonts/minionpro/scripts.zip ftp://dante.ctan.org/tex-archive/fonts/minionpro/enc-2.000.zip ftp://dante.ctan.org/tex-archive/fonts/minionpro/metrics-base.zip
+unzip scripts.zip
+
+# Remove apache default site.
+rm /etc/apache2/sites-enabled/*
+
+# Get svn
+sudo apt-get install subversion git-core
+
+# Atop is useful for monitoring disk access.
+sudo apt-get install atop
+# Using it like this:
+sudo atop 3, then press "D" to sort by disk access.
+
+# Sync to tree.
+svn co https://templamatic.svn.beanstalkapp.com/shingleonline live
+svn co https://templamatic.svn.beanstalkapp.com/shingleonline staging
+
+# Setup httpd.conf
+cd /etc/apache2/
+rm httpd.conf
+ln -s /mnt/live/deployment/apache/httpd.conf httpd.conf
+
+# Setup hosts file.
+cd /etc
+rm hosts
+ln -s /mnt/live/deployment/hosts hosts
+
+# Restart apache2.
+apache2ctl restart
+
+# CRON jobs for mailer. Every min send. Every 20 min deferred.
+sudo crontab -e
+####### file contents #######################################################################
+# m h  dom mon dow   command
+* * * * * (cd /mnt/live; python manage.py send_mail >> /mnt/cron_mail.log 2>&1)
+0,20,40 * * * * (cd /mnt/live; python manage.py retry_deferred >> /mnt/cron_mail_deferred.log 2>&1)
+* * * * * (cd /mnt/housejd/website; python manage.py send_mail >> /mnt/cron_mail.log 2>&1)
+0,20,40 * * * * (cd /mnt/housejd/website; python manage.py retry_deferred >> /mnt/cron_mail_deferred.log 2>&1)
+0 0 * * * (wget http://housejd.com/status -a /mnt/status.log)
+##############################################################################################
+# New version
+# m h  dom mon dow   command
+* * * * * (cd /mnt/mysites/sites/spathe_com; python manage.py send_mail >> /var$
+0,20,40 * * * * (cd /mnt/mysites/sites/spathe_com; python manage.py retry_defer$
+
+##############################################################################################
+
+
+# Setup jinja2 with django
+
+# Setup ftp
+sudo apt-get install vsftpd
+nano /etc/vsftpd.conf
+    anonymous_enable=NO
+    local_enable=YES
+    write_enable=YES
+sudo /etc/init.d/vsftpd start
+adduser bharper
+usermod -G admin bharper
+chmod 777 /mnt/live
+usermod -G www-data bharper
+# Add ln to /mnt/live
+cd /home/bharper
+ln -s /mnt/live live
+
+# Install banshee music player
+sudo apt install banshee
+
+# Setting up cron for mailer on live machine.
+crontab -e
+* * * * * (cd /mnt/live; python manage.py send_mail >> operations/cron_mail.log 2>&1)
+0,20,40 * * * * (cd /mnt/live; python manage.py retry_deferred >> operations/cron_mail_deferred.log 2>&1)
+
+
+# Setting up cron for mailer on my machine.
+crontab -e
+* * * * * (cd /home/carlhu/Documents/eclipse_workspace/shingleonline/src; python manage.py send_mail >> operations/cron_mail.log 2>&1)
+0,20,40 * * * * (cd /home/carlhu/Documents/eclipse_workspace/shingleonline/src; python manage.py retry_deferred >> operations/cron_mail_deferred.log 2>&1)
+
+# Get password for a windows machine.
+ec2-get-password  -k id-SecondPair instance_id
+
+# Get ipython
+sudo apt-get install ipython
+sudo apt-get install sysstat
+
+# ssh initial login from ec2 id.
+chmod 600 id-SecondPair
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpgIBAAKCAQEA6a1Kx0j0YQt9MwwMaxmWsC6+t2FvJuCZqhaJ+eLc/JTgghvFA+iA56U6hhbt
+PP8cRJEgaQpbv2zVdZ83swWNvedYuTEssbfUyxDsXZbBLMwqA89Giib6uQl7ePHy4Xj6Dw9TGYiK
+O4ON30H55gqzoMfewyRirsbbdNK79tClt+/GYJDfMXaA8UdO6NNcbHB2uXL+MB19xA4Jqw97m5ud
+l6Uf/BeGvbkQoUVu8p/jEjayrvRfUSTbDGR8fMpggHn9CWyGAMcP/4X04c1PFgunuSSHUuRKhccw
+S07JqjQ6ch8R1Edv0O9R7gi55wcl+jsNOo2g3DXBoBxwnwVdJV0gAwIDAQABAoIBAQChAOBsDM0s
+bEEYQe3wgRH9VEfdjAmMrOXTdnIctX3znhROMRn+xlzCvmpjZzqQc2mjqKa/GP78Ft3AjDJRa7ss
+pFDSUJpt3K6GN6PUHAH/frBYLaF5oL/RbEIho/rn9XW9mJ52EkjEFrFSqV+oa6k2V2AZ7mD78VHV
+3TjbJwl3gDF7zfx/QtASbVDnTgrcP/DLXsAYPBHRPJnqD5e6XT6/nn3G9mpTB8xbmYLRabaYUBo5
+dX3ih1bOZI4ZfBBrxhg6vMo9EdylgJXwaAX9dMn58Qt66BN15wffsGBuC8RLGq+TkScE+BUJN8i9
+7c4i6r6C4JA05mA145onkBcA2v15AoGBAPoXk2EXhj+nxVgho00za6K+dyND6+4giUBvy0IjlVYU
+n7Dk8fgL+i0W3sb4+OlomHitgMYK3KMwKivoD9LpZOmpolIixtLzeTPVFHCzXqHU7ToSOsw9HRFK
+hQ3gYDkkRSvfA6JztQspmXzDxEPmkufcpqBZauTmaLkB/hX3ZMpNAoGBAO8ycjekHyrHRkrFlWdu
+P+cM5VnQeaQb7BYtkQLyZGVQ/8ScMymIi7QhlLej3EdN6BKYQheH9duE7FpDloCNMpzvvwRgMQq8
+Lyiw+xLAKMKRv9cb6nHxF8GonGxgEKpTU/BR+jpCtK7/L+gX4Td28HkmmOln17g91sDu0aSGohuP
+AoGBALLrRu8BS3Qi7NZeSlwi23B03vsFzrZv5IGK+Vl5547L9msxf8K7nuG/KOYknL8vq1U6m5QT
+lUHSZXk/7oIvo5hfWdd1NdUZhq6EVLlEOgGBOa5/+DzBxBfovkPtMCnxPuNiC1GfgfhYbIyL6c/C
+F3t1qmexUP4tsOIbANJqSVtJAoGBANibwjsI8QB4PPtxOf7UJCJD114iIEWw03ayBOO6RZhKZZPS
+L7Ko6HpS/q3eQZiAwGw2XYOZp9cG5FJJan03YGIl6cE4qrCiAcLDolo0kbTA8A0IRqKwRWcmHaE2
+zWCw3Q5/7i3cQmtGxEdVeKoVl2bewRJ86yj5NwS4QDjRgvOZAoGBALzFsgNVoRSv2DCxSyAm4F22
+MrpA3kaII40Gw5f/9M0/FWEWQrzG83GM9is6/p7lswBZ9aM8LB6d9tepKILN7X+9olPcn9XkLFgT
+M0FL+J2zVLYzuU/c4qdp2qmhtZ3usC1w6BJDY7q6FoZky6z8xhKYk8EEiXws2btO9yq0UZHF
+-----END RSA PRIVATE KEY-----
+
+ssh root@carlhu.com -i id-SecondPair
+
+
+# ssh passwordless setup.
+ssh -i .ssh/dsa_pub root@shingleonline.com
+# Local
+ssh-keygen -t dsa
+gedit ~/.ssh/id_dsa.pub (copy)
+# Remote setup
+ssh root@shingleonline.com
+nano ~/.ssh/authorized_keys (paste)
+
+# Change mysql passwd
+mysqladmin -u root -p'housejd' password carlhu
+
+# Create a repository.
+sudo apt-get install git-core
+sudo apt-get install gitk
+sudo apt-get install gitosis
+
+# login to remote server
+ssh git@REMOTE_SERVER
+
+# once logged in
+mkdir example.git
+cd example.git
+git --bare init
+
+mkdir example
+cd example
+git init
+touch README
+git add README
+git commit -m 'first commit'
+git remote add origin root@shingleonline.com:/vol/housejd
+git push origin master
+svn revert is: git checkout -f
+also, stronger, removing last commit, is git revert HEAD
+
+# git ignore setup
+gedit git_ignore.txt (in root repo directory)
+git add git_ignore.txt
+git commit -m   "Add ignore"
+git config --global core.excludesfile ignore_files.txt
+git rm -r --cached .
+git add .
+
+# Startup apps
+- pidgin
+
+# Install hp printer support.
+(after installing hp printer package, hplib)
+sudo hp-setup
+
+# Big git bundling and movement (note to self, not sure if this works completely: safer to tar the whole directory and copy it, or clone it directly).
+The sender creates a bundle:
+$ git bundle create somefile HEAD
+then transports the bundle, somefile, to the other party somehow: email, thumb drive, floppy disk, an xxd printout and an OCR machine, reading bits over the phone, smoke signals, etc. The receiver retrieves commits from the bundle by typing:
+$ git pull somefile
+or
+$ git pull origin master
+
+
+# Install solr
+wget http://apache.osuosl.org/lucene/solr/1.3.0/apache-solr-1.3.0.tgz
+tar -xzvf apache-solr-1.3.0.tgz
+
+# Install solango
+svn checkout http://django-solr-search.googlecode.com/svn/trunk/ django-solr-search
+sudo chmod 775 solr.xml
+
+# Django solango settings.py
+try:
+    from solr_settings import *
+except ImportError:
+    pass
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
+# Django models.py for solango
+from lifeflow.models import Comment, Entry
+
+class EntryDocument(solango.SearchDocument):
+    date = solango.fields.DateField()
+    summary = solango.fields.TextField(copy=True)
+    title = solango.fields.CharField(copy=True)
+    tags = solango.fields.CharField(copy=True)
+    content = solango.fields.TextField(copy=True)
+
+def transform_summary(self, instance):
+    return instance.summary
+
+def transform_tags(self, instance):
+    tags = list(instance.tags.all())
+    texts = [ tag.title for tag in tags ]
+    return ",".join(texts)
+
+def transform_date(self, instance):
+    return instance.pub_date
+
+def transform_content(self, instance):
+    return instance.body
+
+solango.register(Entry, EntryDocument)
+
+# Configure solr to run at startup
+sudo nano /etc/init.d/solr
+
+################# FILE #######################
+#!/bin/sh -e
+
+# Starts, stops, and restarts solr
+
+SOLR_DIR="/apache-solr-nightly/example"
+JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=stopkey -jar start.jar"
+LOG_FILE="/var/log/solr.log"
+JAVA="/usr/bin/java"
+
+case $1 in
+    start)
+        echo "Starting Solr"
+        cd $SOLR_DIR
+        $JAVA $JAVA_OPTIONS 2> $LOG_FILE &
+        ;;
+    stop)
+        echo "Stopping Solr"
+        cd $SOLR_DIR
+        $JAVA $JAVA_OPTIONS --stop
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}" >&2
+        exit 1
+        ;;
+esac
+###########################################
+sudo update-rc.d solr defaults
+sudo chmod a+rx /etc/init.d/solr
+###################################################################
+# Install SAGE
+sudo apt-get install sagemath # takes a while, 800 megs.
+# Install sagetex
+cp /usr/lib/sagemath/examples/latex_embed files over to tex directory: sagetex.py, sagetex.sty
+
+The following script compiles:
+------------
+rm document.aux
+rm document.log
+rm document.out
+rm document.sage
+rm document.sout
+/usr/bin/xelatex -interaction batchmode -shell-escape document.tex
+sage document.sage
+/usr/bin/xelatex -interaction batchmode -shell-escape document.tex
+rm document.aux
+rm document.log
+rm document.out
+rm document.toc
+rm document.sout
+------------
+
+# Start with regular ubuntu
+
+# Then Install kubuntu.
+apt-get install kubuntu-desktop kubuntu-restricted-extras
+# Adjust settings so all KDE apps look nice.
+
+# Then install KFCE window manager. Awesome! Adjust transparency.
+apt-get install xubuntu-desktop xubuntu-restricted-extras
+
+# Install basket (wonderful notes program)
+
+# Fix video flicker
+# run ccsm
+# fix refresh rate to 200, under general options.
+
+# Setup virtualbox
+Download from web (don't use synaptic) so you can get usb support from commercial.
+sudo ./Virtualbox.run
+##########################
+# Experimental
+#
+
+Synaptic apps I use:
+mplayer
+    gedit ~/.mplayer/config
+
+[default]
+# Write your default config options here!
+really-quiet="1"
+banshee
+gnucash
+firefox
+kile
+
+Other apps:
+xetex
+virtualbox
+okular
+wing
+eclipse
+latex plugin for eclipse.
+
+
+# Recursive file search. Remember that this is a regexp.
+find . -name "*filename*"
+
+# Recursive grep.
+grep -ri 'something' /somewhere
+
+# Install matplotlib, numpy
+sudo apt-get install python-numpy python-scipy
+sudo apt-get install python-matplotlib python-tk
+
+
+
+
+Irrational Exuberance
+
+
+Code Life Series Projects
+
+About Archive Tag Cloud Translations RSS
+
+
+<< Visually Representing Word Structures When psycopg2 Can't Import tz >>
+The Django and Ubuntu Intrepid Almanac
+
+by Will Larson February 13, 2009   apache    django    memcache    nginx    postgresql    ubuntu    mod_wsgi
+
+It's been more than a year since my first endeavor to setup a healthy environment to deploy Django (as I was rudely reminded by the Ubuntu repositories for my server's version ceasing to function). In that time I've learned a lot, and have also stretched my original setup to its breaking point, but inevitably the day comes for a fresh deployment with better configurations and more flexible folder layouts.
+From my last server setup guide, a number have things have remained the same: still using Ubuntu, Memcached, Postgres and still using Nginx as a proxy server infront of Apache2. A number of things have changed as well: using mod_wsgi over mod_python, cmemcache over python-memcached, and a more intentional folder layout along with virtualenv to make it straightforward to host multiple projects and domains (including some serving only static files or PHP scripts).
+More than just an update, I've also included a few side-quests like using your server as a remote Git repository over SSH, and installing pluggable Django libraries. Finally, in the vein of my previous tutorial, I tried to include every keystroke required to transform a naked Ubuntu Intrepid server into a full-featured multi-site Django-loving server.
+Please let me know if you run into any problems, or have suggestions on improvements!
+Setting up your Server
+
+Somehow get a Ubuntu Intrepid server or VPS. (Perhaps go to your SliceHost console and request a new Slice running Ubuntu Intrepid (8.10). ;)
+Write down root password and IP address for your box.
+SSH into your server.
+ssh root@255.255.255.255
+Update your apt-get sources.
+apt-get upgrade
+Make sure there is an editor that suits your taste available on the system. Vim is pre-installed, but I prefer Emacs...
+apt-get install emacs
+Setup any non-root accounts you want, and one for Django.
+useradd django
+mkdir /home/django
+chown django:django /home/django
+useradd will
+mkdir /home/will
+chown will:will /home/will
+passwd will
+Unless you like sh, change your default shell to something more humane.
+chsh root -s /bin/bash
+sudo chsh carlhu -s /bin/bash
+sudo chsh django -s /bin/bash
+(These changes won't be applied until you log in the next time.)
+Give your account (but not Django) root permissions.
+visudo
+Then use the down arrow for find a line that looks like this:
+root ALL=(ALL) ALL
+Replicate that with your username:
+root ALL=(ALL) ALL
+will ALL=(ALL) ALL
+Open a second terminal (leave the first one logged in while we keep configuring SSH, incase something goes horribly awry), and SSH in as your non-root user.
+ssh will@255.255.255.255
+Verify it works, then exit back to your system.
+Now it's time to setup password-less login. Return to your home system,
+scp ~/.ssh/id_dsa.pub will@255.255.255.255:~/
+ssh will@255.255.255.255
+mkdir .ssh
+mv id_dsa.pub .ssh/authorized_keys
+chmod go-w ~/.ssh/authorized_keys ~/.ssh/
+Now exit and ssh back in. You should have been logged in without needing to supply your password.
+Now it's time to restrict ssh a bit.
+sudo groupadd sshers
+sudo usermod -a -Gsshers will
+sudo emacs /etc/ssh/shhd_config
+Make these changes:
+#X11Forwarding yes
+X11Forwarding no
+And add these lines to the end of the file:
+UseDNS no
+AllowGroups sshers
+Save the file, and then restart the ssh service.
+    sudo /etc/init.d/ssh restart
+exit your VPS, and once again try logging back in. If that worked, again open /etc/ssh/sshd_config.
+    sudo emacs /etc/ssh/sshd_config
+And append this line to the end of the file:
+PasswordAuthentication no
+And once again restart the ssh service.
+sudo /etc/init.d/ssh restart
+Finally, disable password access to the root account.
+sudo passwd -l root
+Now your VPS is only accessible through your approved account from machines with the correct SSH key.
+Now it's time to start installing some general libraries.
+sudo apt-get install subversion git-core gcc curl
+sudo apt-get install build-essential python-dev python-setuptools
+sudo apt-get install python-egenix-mxdatetime memcached postfix
+Now it's time to configure Postgres, first we need to grab some libraries.
+sudo apt-get install postgresql-8.3 postgresql-server-dev-8.3
+sudo apt-get install postgresql-8.3 postgresql-server-dev-8.3
+Rather than a typo, I really did need to run the above command twice for a successful installation.
+Next we need to configure the postgres user.
+sudo -u postgres psql template1
+ALTER USER postgres WITH PASSWORD 'password';
+    \q
+(Make sure that you used a real password, rather than 'password' in the above example.)
+We also need to modify Postgres' configuration file.
+sudo emacs /etc/postgresql/8.3/main/pg_hba.conf
+Move to the bottom of the file, and comment out (add a # at the beginning of the line) all lines which begin with host. (This prevents external access to your database.)
+It should look like this:
+# Database administrative login by UNIX sockets
+local all postgres ident sameuser
+# TYPE DATABASE USER CIDR-ADDRESS METHOD 
+# "local" is for Unix domain socket connections only
+local all all password
+# IPv4 local connections:
+#host all all 127.0.0.1/32 md5 
+# IPv6 local connections:
+#host all all ::1/128 md5
+Note that we switched ident sameuser to password for the second local line! Then restart Postgres to have it reload its settings.
+sudo /etc/init.d/postgresql-8.3 restart
+And there we have it, Postgres is setup and functioning.
+And now it's time to setup memcached. This is a two part process. First we need to start memcached, which is very easy, and second we need to build cmemcache, which is a bit harder.
+sudo memcached -u www-data -p 11211 -m 32 -d
+That runs memcached on the standard port, with the standard www-data user (standard for Ubuntu, that is), with 32 megabytes of ram. You might want to allocate more, depending on how much data you're expecting to store in memcached, and the size of your VPS.
+Next we need to setup cmemcache. First grab libmemcache,
+sudo apt-get install libmemcache-dev
+Next we actually build cmemcache.
+su django
+mkdir ~/libs/
+
+
+
+cd ~/libs/
+wget http://gijsbert.org/downloads/cmemcache/cmemcache-0.95.tar.bz2
+tar -xjvf cmemcache-0.95.tar.bz2
+cd cmemcache-0.95
+exit
+We'll need to actually install the library later when we setup our virtualenv.
+If you are unable to install cmemcache, follow these instructions.
+Alternatively, if you want to use the Python based python-memcached (runs a bit slower, but no C module to build and install), you can do that as follows.
+wget ftp://ftp.tummy.com/pub/python-memcached/python-memcached-latest.tar.gz
+tar -zxvf python-memcached-latest.tar
+cd python-memcached-1.43
+# later on use python setup.py install inside virtualenv
+The preference for cmemcache is strictly based on speed. But python-memcached is still quite usable, and if the choice is between python-memcached and not running memcached as your caching backend, picking python-memcached is the clear winner.
+Next it's time to setup Nginx, which is a lightweight server we'll use to serve static content as well as proxy requests to Apache21.
+sudo apt-get install nginx
+We can quickly verify that it installed correctly.
+sudo /etc/init.d/nginx start
+curl 127.0.0.1
+Should return:
+<html>
+<head>
+<title>Welcome to nginx!</title>
+</head>
+<body bgcolor="white" text="black">
+<center><h1>Welcome to nginx!</h1></center>
+</body>
+</html>
+Now we're going to modify the nginx.conf file a bit (based on the advice here).
+sudo emacs /etc/nginx/nginx.conf
+Right now we only need to make two minor changes, first change line 2 to use four worker processes,
+worker_processes 4;
+And next uncomment line 18,
+tcp_nopush on;
+We won't need to edit this file again, because of the last line,
+include /etc/nginx/sites-enabled/*;
+which makes it easy to declare site specific settings in their own files, and really cuts down on clutter in nginx.conf.
+We also need to create a proxy.conf file, which is a common Nginx practice for keeping nginx.conf clean.
+sudo emacs /etc/nginx/proxy.conf
+Which should contain these lines:
+# proxy.conf
+proxy_redirect off;
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+client_max_body_size 10m;
+client_body_buffer_size 128k;
+proxy_connect_timeout 90;
+proxy_send_timeout 90;
+proxy_read_timeout 90;
+proxy_buffers 32 4k;
+Finally, stop and start Nginx (I don't know if this is still the case with the current version of Nginx, but historically I've never gotten it to reload a configuration file with just a reload or restart).
+sudo /etc/init.d/nginx stop
+sudo /etc/init.d/nginx start
+Now it's time to setup Apache2. First we grab the necessary libraries.
+sudo apt-get install apache2 libapache2-mod-wsgi
+Because we already have Nginx bound on port 80 it will throw a bit of a complaint
+(98)Address already in use: make_sock: could not bind to address 0.0.0.0:80
+no listening sockets available, shutting down
+Unable to open logs
+    ...fail!
+    invoke-rc.d: initscript apache2, action "start" failed.
+But no worries, we're going to be alright.
+The first thing we need to do is to setup Apache to run on the internal 127.0.0.1:80 instead of on port 80.
+sudo nano /etc/apache2/ports.confg
+Then modify these lines:
+NameVirtualHost 127.0.0.1:80
+Listen 127.0.0.1:80
+We also want to make a modification to apache2.conf:
+sudo nano /etc/apache2/apache2.conf
+Search for KeepAlive (it's around line 77), and change its value as follows:
+# KeepAlive On
+KeepAlive Off
+We do this because Nginx doesn't yet support the KeepAlive option. Now let's try starting Apache, again.
+sudo apache2ctl start
+Which may complain yet, again.
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+[Thu Feb 12 17:14:46 2009] [warn] NameVirtualHost 127.0.0.1:80 has no VirtualHosts
+But once, again, no worries, it's just a phase in the process.
+Finally we get to actually grab Django. Switch over to the /home/django folder we created earlier, and it's time for us to create some folders.
+su django
+mkdir domains
+mkdir libs
+mkdir .python-eggs
+exit
+Then let's do some permissions wrangling.
+sudo chown django:www-data .python-eggs
+sudo chmod g+w .python-eggs/
+sudo usermod -a -G www-data django
+sudo usermod -a -G www-data will
+sudo chgrp -R www-data /home/django/domains
+sudo chmod -R 2750 /home/django/domains
+Then let's grab the Django source code.
+    cd libs
+svn co http://code.djangoproject.com/svn/django/trunk/ django
+Normally this would be a great time to symlink the packages into /usr/lib/python2.5/site-packages, but we're going to go a slightly different route instead and use virtualenv to encapsulate each of our projects.
+sudo easy_install virtualenv
+We'll take care of setting up virtualenv later, because it is done on a per-project basis.
+Our last step of generic preparation is to remove the default sites for both Apache and Nginx. With properly configured setup files for Nginx/Apache (we'll get to those soon ;) you won't run into many situations where you are accidentally showing the default pages, but they often will be displayed when visiting the page directly via it's IP address.
+While that isn't a terribly common event, it's probably undesirable nonetheless.
+sudo rm /etc/apache2/sites-enabled/default
+sudo rm /etc/apache2/sites-enabled/default
+sudo rm /etc/apache2/sites-enabled/000-default
+sudo rm /etc/nginx/sites-enabled/default 
+You'll need to restart the server for the changes to take effect.
+sudo /etc/init.d/nginx stop
+sudo /etc/init.d/nginx start
+sudo apache2ctl graceful
+Now we're going to actually setup a Django project. You'll be able to follow this same process to setup any number of Django projects later.
+First we need to create the folders for each domain. (I'll walk through this example using the domain substanceis.com, which was hosting an old project long since forgotten.)
+cd /home/django/domains
+mkdir substanceis.com
+sudo mkdir -p substanceis.com/{public,log}
+sudo mkdir substanceis.com/public/media
+sudo chown -R django:www-data substanceis.com
+Some people like to have private and backup directories as well. Feel free to add your own special spice.
+The public directory will be for publicly accessible files served by Nginx.
+The log directory will store the Apache and Nginx logs for the domain.
+We'll keep the project dir in the substanceis.com folder itself. (And the mod_wsgi config file in the project directory.)
+Now we need to setup a virtual environment for the project. If you haven't experiment with virtualenv, it makes it easy to sandbox your projects, so that each project can have different versions of libraries (Django 0.97pre for one project, Django 1.1 for another, Pygments 0.6 for one project, Pygments 1.1 for another, etc).
+This makes it an essential tool for developing or hosting multiple applications on one server.
+Note that we previously downloaded Django from SVN into the folder /home/django/libs/django.
+su django
+cd ~/domains/substanceis.com
+virtualenv --no-site-packages --unzip-setuptools substanceis.com
+cd ~/libs/django
+~/domains/substanceis.com/substanceis.com/bin/python setup.py install
+cd ~/libs/cmemcache-0.95
+~/domains/substanceis.com/substanceis.com/bin/python setup.py install
+You will also need to install psycopg2 (Python interface for Postgres).
+cd domains/substanceis.com/substanceis.com/bin/
+./easy_install egenix-mx-base
+./easy_install psycopg2
+For packages without easy_install or setup.py support, you can symlink them into the virtual environment's site-packages folder:
+cd ~/libs/
+ln -s `pwd`/some_app /home/django/domains/substanceis.com/substanceis.com/lib/python2.5/site-packages/
+Now that we've done our installations, go ahead and test it out.
+~/domains/substanceis.com/substanceis.com/bin/python
+Then try importing it.
+>>> import django
+>>> 
+Whereas if you do that with the normal python:
+cd
+python
+You get a different experience:
+>>> import django
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+ImportError: No module named django
+>>> 
+Now that we're done setting up the virtualenv go ahead and exit the django user.
+exit
+Next we need to create an Nginx virtual host for the domain.
+sudo emacs /etc/nginx/sites-available/substanceis.com
+If you wish to strip www from your domain, you should begin the file with this server directive:
+You'll need to update 255.255.255.255 to be the IP address of your VPS/server.
+server {
+    listen 255.255.255.255:80;
+    server_name www.substanceis.com;
+    rewrite ^/(.*) http://substanceis.com/$1 permanent;
+}
+Regardless, the remainder of the file should be in this format:
+You'll need to update 255.255.255.255 to be the IP address of your VPS/server.
+server {
+    listen 255.255.255.255:80;
+    server_name www.substanceis.com substanceis.com;
+
+    access_log /home/django/domains/substanceis.com/log/access.log;
+    error_log /home/django/domains/substanceis.com/log/error.log;
+
+    location / {
+    proxy_pass http://127.0.0.1:80/;
+    include /etc/nginx/proxy.conf;
+    }
+
+    location /media/ {
+    root /home/django/domains/substanceis.com/public/;
+    expires 1d;
+    }
+}
+Note that if your static media changes frequently, then you'll want to remove the expires 1d setting. That adds a header saying that such content will not change for the next day, which means that the browser won't try to refetch it for that period of time.
+This means faster page loads for your users, and lower server load for you. If you want the benefits of future expires, but have frequently changing media, then the standard solution is to add a version number for your media files (me.1.png, me.2.png, etc). django-compress provides some support for automating the versioning process for JavaScript and CSS files (and is highly recommended).
+Next we need to let Nginx know that the site is enabled, by symlinking it from sites-available to sites-enabled.
+sudo ln -s /etc/nginx/sites-available/substanceis.com /etc/nginx/sites-enabled/substanceis.com
+Finally you'll need to stop and start Nginx before Nginx knows that this virtual environment exists.
+sudo /etc/init.d/nginx stop
+sudo /etc/init.d/nginx start
+And you're done configuring Nginx.
+Now let's quickly create a default Django project.
+su django
+cd ~/domains/substanceis.com/
+./substanceis.com/bin/python substanceis.com/bin/django-admin.py startproject hello
+exit
+Link the Django admin media into the public/media/ folder.
+sudo ln -s /home/django/domains/substanceis.com/substanceis.com/lib/python2.5/site-packages/django/contrib/admin/media /home/django/domains/substanceis.com/public/media/admin
+Then update the ADMIN_MEDIA_PREFIX setting in your hello/settings.py file
+sudo emacs /home/django/domains/substanceis.com/hello/settings.py
+to look like this
+#ADMIN_MEDIA_PREFIX = '/media/' 
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+Next let's create a Postgres database for this project to use.
+sudo su postgres
+createuser -P pg_substanceis
+# should not be a superuser
+# should not be able to create databases
+# should not be able to create more new roles
+createdb --encoding=UNICODE db_substanceis -O pg_substanceis
+exit
+Then we need to update the settings.py file with the proper settings.
+sudo emacs hello/settings.py
+And modify the DATABASE_* fields to look like this:
+DATABASE_ENGINE = 'postgresql_psycopg2'
+DATABASE_NAME = 'db_substanceis'
+DATABASE_USER = 'pg_substanceis' 
+DATABASE_PASSWORD = '123456789' 
+DATABASE_HOST = '' 
+DATABASE_PORT = ''
+Finally let's try to sync the database to verify that we got the settings correct.
+~/domains/substanceis.com/substanceis.com/bin/python hello/manage.py syncdb
+Assuming you entered your username, database and password correctly you should see something familiar.
+Creating table auth_permission
+Creating table auth_group
+Creating table auth_user
+Creating table auth_message
+Creating table django_content_type
+Creating table django_session
+Creating table django_site
+...
+Our next step is to setup the project to memcached as its caching backend.
+sudo emacs hello/settings.py
+And add these settings:
+CACHE_BACKEND =	'memcached://127.0.0.1:11211'
+CACHE_MIDDLEWARE_SECONDS = 60 *	5
+CACHE_MIDDLEWARE_KEY_PREFIX = 'sis' # SubstanceIS 
+CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
+You'll have to decide what values of CACHE_MIDDLEWARE_SECONDS and CACHE_MIDDLEWARE_ANONYMOUS_ONLY are appropriate for the particular project you're configuring. There is more information available here.
+The value of CACHE_MIDDLEWARE_KEY_PREFIX should be unique for each project using memcached.
+After a tremendous journey, we reach the final step: configuring mod_wsgi and Apache to serve our project.
+sudo emacs /home/django/domains/substanceis.com/hello/hello.wsgi
+And add this code to hello.wsgi:
+ALLDIRS = ['/home/django/domains/substanceis.com/substanceis.com/lib/python2.5/site-packages']
+# note that the above directory depends on the locale of your virtualenv,
+# and will thus be *different for each project!*
+import os
+import sys
+import site
+
+prev_sys_path = list(sys.path)
+
+for directory in ALLDIRS:
+    site.addsitedir(directory)
+
+new_sys_path = []
+for item in list(sys.path):
+    if item not in prev_sys_path:
+    new_sys_path.append(item)
+    sys.path.remove(item)
+sys.path[:0] = new_sys_path
+
+# this will also be different for each project!
+sys.path.append('/home/django/domains/substanceis.com/hello/')
+
+os.environ['PYTHON_EGG_CACHE'] = '/home/django/.python-eggs'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()
+Next we need to create a virtual host for our domain.
+sudo emacs /etc/apache2/sites-available/substanceis.com
+And add this VirtualHost definition.
+<VirtualHost 127.0.0.1:80>
+    ServerName www.substanceis.com
+    ServerAlias substanceis.com
+
+    <Directory /home/django/domains/substanceis.com/hello/>
+    Order deny,allow
+    Allow from all
+    </Directory>
+
+    LogLevel warn
+    ErrorLog /home/django/domains/substanceis.com/log/apache_error.log
+    CustomLog /home/django/domains/substanceis.com/log/apache_access.log combined
+
+    WSGIDaemonProcess substanceis.com user=www-data group=www-data threads=25
+    WSGIProcessGroup substanceis.com
+    WSGIScriptAlias / /home/django/domains/substanceis.com/hello/hello.wsgi
+</VirtualHost>
+And finally enable substanceis.com.
+sudo ln -s /etc/apache2/sites-available/substanceis.com /etc/apache2/sites-enabled/substanceis.com
+And restart Apache2 to have it pick up the new site.
+sudo apache2ctl graceful
+
+
+You can repeat these steps to host as many projects as you want.
+Some Additional Options
+
+At this point your mod_wsgi server is setup and fully functional, but here are a couple of suggestions for things you might want to do with your fresh server.
+At the moment if you go to your VPS's ip address, then you'll notice that it isn't serving anything at all. For most people that is probably the correct behavior, but you might want to serve a static page when they reach your VPS via its IP address (also, you can do the same thing to serve static content for some of your domains, rather than a full Django project).
+First we need to create some folders
+sudo mkdir /home/django/domains/default
+sudo mkdir -p /home/django/domains/default/{public,logs}
+Then create an index page
+sudo emacs /home/django/domains/default/public/index.html
+with this html
+<html>
+<head><title>Default</title></head>
+<body><p>Hi. Welcome to my default site.</p></body>
+</html>
+Now we need to configure the Nginx site
+sudo emacs /etc/nginx/sites-available/default
+with these settings (you'll need to change 255.255.255.255 to your VPS's ip address):
+server {
+
+    listen 80;
+    server_name 255.255.255.255;
+
+    access_log /home/django/domains/default/log/access.log;
+    error_log /home/django/domains/default/log/error.log;
+
+    location / {
+    root /home/django/domains/default/public;
+    index index.html;
+    }
+Then symlink it into the sites-enabled folder.
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+And finally we need to stop-start nginx.
+sudo /etc/init.d/nginx stop
+sudo /etc/init.d/nginx start
+Now if you navigate to your VPS's ip address in a browser, you'll see your static site. (Note that browsers typically limit the number of concurrent http connections to one domain, so you can speed up page load for heavy pages by using these steps to setup a media only subdomain--media.example.com, etc--for your Django sites and serving static media from them instead of the same domain as your site.)
+One of the most helpful packages around is PIL, which supports a wide variety of image manipulation techniques. It's also used by some pieces of Django. It seems to be improperly packaged for installation with easy_install, but it is still straightforward to install.
+su django
+cd ~/libs
+wget http://effbot.org/downloads/Imaging-1.1.6.tar.gz
+tar -xzvf Imaging-*
+cd Imaging-1.1.6
+/domains/substanceis.com/substanceis.com/bin/python setup.py install
+And now the substanceis.com virtual environment will have access to the Image module:
+>>> import Image
+>>> 
+The more Django development you do, the more you'll be creating pluggable applications and reusing those made by others, so it's a good process to be familiar with. So let's take a few moments to install a couple common reusable Django applications developed by the Django community.
+One of the downsides of using virtualenv is that you'll need to install pluggable apps into each of your environments one at a time. Of course, it also means that you can freeze a production site to use a certian version of a pluggable app while another plunges ahead into the unknown.
+It is important to note the benefits of installing with setup.py or easy_install in conjunction with virtualenv. It means that you'll get a frozen copy of the code, and even if you update the source code later on, the environments won't be running different code.
+On the other hand, if you're actively developing code, then you would be better off symlinking the code into the environment's site-packages directory so that you don't have to redeploy the code on changes.
+Both approaches have their place, just be careful to use them appropriately.
+First let's install django-compress, which I mentioned earlier and helps automating the merging and compression of JavaScript and CSS files.
+su django
+cd /django/home/libs
+sudo svn checkout http://django-compress.googlecode.com/svn/trunk/ django-compress
+cd django-compress
+~/domains/substanceis.com/substanceis.com/bin/python setup.py install
+Now let's make sure it's usable.
+~/domains/substanceis.com/substanceis.com/bin/python
+Then within Python try
+>>> import compress
+>>> 
+As long as you don't get an error, then it installed correctly.
+Next let's install django-faq, which is a pluggable application for creating faqs on websites (managable via the Django admin).
+Just for fun, let's symlink it in (more convenient for active development) instead of using setup.py.
+cd /django/home/libs
+sudo git clone git://github.com/RockHoward/django-faq.git
+cd django-faq
+ln -s `pwd`/faq /home/django/domains/substanceis.com/substanceis.com/lib/python2.5/site-packages
+Finally let's install django-mailer, which supplements Django with a more robust mailing framework.
+cd /django/home/libs
+sudo svn checkout http://django-mailer.googlecode.com/svn/trunk/ django-mailer
+cd django-mailer
+sudo ln -s `pwd`/mailer /home/django/domains/substanceis.com/substanceis.com/lib/python2.5/site-packages
+Wait, is it okay to recommend one of my projects? Ok. You should consider taking a look at django-monetize, which supports dynamically serving different kinds of advertisements (and requests for donations, etc) based on a page's context.
+cd /django/home/libs
+sudo git clone git://github.com/lethain/django-monetize.git
+cd django-monetize
+sudo ln -s `pwd`/django_monetize /home/django/domains/substanceis.com/substanceis.com/lib/python2.5/site-packages
+Moving past these pluggable apps, there are also a number of projects which have expanded to be something akin to mini-frameworks on top of Django. They provide a great amount of functionality, but often at the expense of somewhat non-standard installation patterns.
+Two of the more popular are the social framework Pinax ( installation ), and the webshop platform Satchmo ( installation ).
+Another thing I like doing is to use my VPS as a Git repository, which is--thanks to the manifold joys of DVCS--unexpectedly simple.
+cd
+mkdir git
+mkdir git/scripts
+cd git/scripts
+echo "# a test" > test.py
+git init --bare
+Then exit your VPS and return to your machine. From your home machine you can clone that repository by using SSH.
+mkdir my_repo
+cd my_repo
+git init
+mkdir
+echo "a test" > test.py
+git add test.py
+git commit -m "Initial commit."
+git remote add origin ssh://67.207.149.179/home/will/git/scripts
+git push origin master
+Note that using the --bare keyword means that repository will keep all its files in its .git folder, so you won't be able directly interact with your files in that hosted repository. If you do want to interact with the files from that git repository on your machine, you should git clone from the origin repository and then push and  like you normally would.
+(If you're wanting to use Git as a mechanism for pushing code for your Django projects, you might want to read up about using something like Fabric.)
+Although admittedly not as glamorous as being a Djangonaut, there are a number of situations where you may want Apache to also run some php scripts for you.
+sudo apt-get install php5
+sudo apache2ctl graceful
+Then just place .php files in a directory served by Apache (not by Nginx), and they'll be executed. You'll probably want a combination of the Django and static Nginx configuration files that we've put together through the course of this walkthrough.
+
+The mod_wsgi page on Google Code is a great launching point.
+As is the mod_wsgi page on integrating with Django.
+Setting up Nginx Virtual Hosts on Ubuntu.
+A full example of an Nginx config file.
+Setting up mod_wsgi with Django.
+Having Nginx serve ip addresses.
+Using virtualenv with mod_wsgi.
+
+Many thanks to those who created these above resources that made this all possible.
+
+
+
+
+
+Setting up Windows Filezilla Client
+
+Active mode
+Restrict ports 6001-6019
+Get external port using filezilla.
+vaa.appzero.com, ftpuser, trigence.
+shingleonline.com, bharper, bharper777
+
+
+Git branching
+
+master: what the start.spathe.com is showing. Controls AWS apache deployment httpd.conf.
+dev: what dev.spathe.com is showing (as well as localdev). I use this to develop new features before merging into master.
+demo: what we use for vc's.
+
+
+To merge dev to master:
+
+$ git checkout master
+Switched to branch 'master'
+$ git merge --no-ff dev
+Merge made by recursive.
+(Summary of changes)
+$ git tag 1.2
+
+
+
+SSL
+a2enmod ssl
+NameVirtualHost *:443
+netstat -tna
+
+sudo apt-get install nginx
+sudo nano /etc/nginx/nginx.conf
+worker_processes 4;
+tcp_nopush on;
+sudo nano /etc/nginx/proxy.conf
+sudo /etc/init.d/nginx stop 
+sudo /etc/init.d/nginx start
+
+dvd copy:
+sudo aptitude install dvdauthor libdvdread3 mencoder mplayer libhal1 libdbus0 libdbus-qt-1-1
+
+All open ports
+apt-get install nmap
+sudo nmap -T Aggressive -A -v 127.0.0.1 -p 1-65000
+
+Rebooting apache on ec2
+sudo netstat --tcp --udp --listening --program
+find port 80 listening
+kill -9 the process number.
+apache2ctl restart
+or
+sudo fuser -v 80/tcp
+sudo fuser -vk 80/tcp # Kills all port 80 processes!
+
+
+
+# Graphical ls
+ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^-][^\/]*\//–/g' -e 's/^/ /' -e 's/-/|/'
+
+1) Monitor progress of a command
+pv access.log | gzip > access.log.gz
+
+
+) Delete all files in a folder that don’t match a certain file extension
+rm !(*.foo|*.bar|*.baz)
+
+
+
+# Production memcached upstart memcache.conf
+# start on runlevel [2345]
+# stop on runlevel [016]
+
+start on (filesystem and net-device-up IFACE!=lo)
+stop on shutdown
+
+# Respawn the process on unexpected termination
+respawn
+
+script
+    exec /usr/bin/memcached memcached -d -u ubuntu  -m 3024 -p 11211 -c 30000 -R 40 -L -t 4 -v >> /mnt/log/memcache.log 2>&1
+end script
+
+Setting up Tier A -  2011-05-05
+
+alias tiera cssh ubuntu@ec2-50-16-85-136.compute-1.amazonaws.com ubuntu@ec2-184-72-136-13.compute-1.amazonaws.com ubuntu@ec2-50-17-23-228.compute-1.amazonaws.com
+store tiera
+
+alias assh cssh ubuntu@204.236.229.205 ubuntu@174.129.233.126 ubuntu@ec2-184-73-54-216.compute-1.amazonaws.com ubuntu@50.16.241.65
+store assh
+
+sudo apt-get update
+
+sudo apt-get upgrade -y
+
+sudo chmod 777 /mnt
+
+get tier c1 private address from ec2 control panel: 50.17.254.208 
+cd /mnt
+git clone ubuntu@50.17.254.208:/vol/minus_git minus 
+
+mkdir /mnt/nginx_cache /mnt/nginx_cache/cache /mnt/nginx_cache/tmp /mnt/log /mnt/log/apache2 /mnt/log/nginx
+
+sudo ln -s /mnt/minus/deployment/nginx minus
+
+sudo ln -s /mnt/minus/deployment/nginx/nginx.conf nginx.conf
+
+Git autosync
+
+alias psync cd /home/carlhu/Desktop/personal; git add .; git commit -am 'autosync'; git pull --rebase; git push
+alias isync cd /home/carlhu/Desktop/intminus; git add .; git commit -am 'autosync'; git pull --rebase; git push
+alias async cd /home/carlhu/Desktop/personal; git add .; git commit -am 'autosync'; git pull; git push; cd /home/carlhu/Desktop/internal; git add .; git commit -am 'auto'; git pull; git push
+alias pull git pull --rebase
+store psync
+store isync
+store async
+store pull
+    
+Increasing file handles
+    sysctl -w fs.file-max=5000000
+    vi /etc/sysctl.conf
+        fs.file-max=5000000
+    sudo sysctl -p # execute
+    cat /proc/sys/fs/file-max
+
+. consider removing memcache completely.
+
+----------------
+mysql
+    show processlist
+
+ntpdate ntp.ubuntu.com
+
+-------------------------
+GIT
+
+    # Install git and gitg repo viewer
+    sudo apt-get install git git-doc gitg
+    
+    # Set name and email in gitconfig
+    git config --global user.name "Carl Hu"
+    git config --global user.email carlhu@carlhu.com
+    
+    # Configure default git text editor
+    git config --global core.editor "/usr/bin/wing4.0"
+    git config --global core.editor "gvim --nofork"
+    # Configure status colors
+    git config --global color.diff auto
+    git config --global color.status auto
+    git config --global color.branch auto
+    git config --global color.status.changed yellow
+    git config --global color.status.added green
+    git config --global color.status.untracked red
+    
+    # Verify git settings
+    git config --list
+    
+    # Generate SSH keys (provide a good passphrase when asked)
+    ssh-keygen -t rsa -C "johndoe@example.com"
+    
+    # Add git aliases
+    mac echo "alias g='/usr/local/git/bin/git'" >> ~/.bashrc
+    
+    ipython aliasing
+    --------------
+    alias gb git branch
+    store gb
+    alias gco git checkout    
+    store gco
+    alias gl git pull --rebase
+    store gl
+    alias gp git push
+    store gp
+    gst git status
+    store gst
+    alias ga git add -p
+    store ga
+    alias glg git log --pretty=oneline --abbrev-commit
+    store glg
+    
+    echo "alias gb='git branch'" >> ~/.bashrc
+    echo "alias gc='git commit -v'" >> ~/.bashrc
+    echo "alias gca='git commit -a -v'" >> ~/.bashrc
+    echo "alias gco='git checkout'" >> ~/.bashrc
+    echo "alias gd='git diff'" >> ~/.bashrc
+    echo "alias gdc='git diff --cached'" >> ~/.bashrc
+    echo "alias gdh='git diff HEAD'" >> ~/.bashrc
+    echo "alias gp='git push'" >> ~/.bashrc
+    echo "alias gl='git pull'" >> ~/.bashrc
+    echo "alias gpr='git pull --rebase'" >> ~/.bashrc
+    echo "alias gst='git status'" >> ~/.bashrc
+    /usrecho "alias gap='git add -p'" >> ~/.bashrc
+    echo "alias glg='git log --pretty=oneline --abbrev-commit'" >> ~/.bashrc
+    alias glg git log --pretty=oneline --abbrev-commit
+    alias glgg git log --pretty=medium --abbrev-commit --graph
+    
+. django tips
+    http://stevelosh.com/blog/2011/06/django-advice/
+        . grapelli
+
+nginx build
+    apt-get install libpcre3 libpcre3-dev
+    
+ulimit
+    sysctl fs.file-max
+     ulimit -Hn
+     ulimit -Sn
+     ulimit -a
+     /etc/security/limits.conf
+        * hard nofile 1024000
+        * soft nofile 1024000
+        root hard nofile 1024000
+        root soft nofile 1024000
+
+     alias openfiles cat /proc/sys/fs/file-nr 
+     store openfiles
+     8667        3145        288217 
+        |           |             |__ maximum number of file descriptors allowed on the system 
+        |           |      
+        |           |__ total free allocated file descriptors 
+        | 
+        |__  total allocated file descriptors 
+
+gunicorn
+    . sudo easy_install gunicorn eventlet gevent greenlet
+    . alias corn_live gunicorn_django --daemon --bind=10.102.15.183:8000 --log-level=info --workers=32 --log-file=/mnt/log/unicorn.log --user=ubuntu --group=ubuntu --backlog=2048 --worker-corateections=1000 --max-requests=1000  --timeout=30 --keep-alive=1
+    . alias corn gunicorn_django --bind=127.0.0.1:8000 --log-level=info --workers=32 --backlog=2048 --worker-connections=1000 --max-requests=1000  --timeout=30 --keep-alive=1
+    
+sudo sysctl -w net.ipv4.ip_local_port_range="1024 64000"
+
+
+alias rate="tail -f /mnt/log/apache2/access.log | pv -l -i2 -r > /dev/null"
+tail -f /mnt/log/apache2/error.log | pv -l -i2 -r > /dev/null
+
+alias terror tail -n 50000 /mnt/log/apache2/error.log | grep -E '^[^\[]' | less
+store terror
+
+# change to virtualenv
+source /mnt/python27/bin/activate
+
+
+cd /mnt/minus/minus_com
+/mnt/python27/bin/gunicorn_django --workers=30 --bind 0.0.0.0:8001 --worker-class sync --timeout 45 --keep-alive 0
+
+
+
+
+mysql --host 10.202.201.171 -uroot -pcarlhu minus 'show slave status ' |                                                           ~ 16:17:47
+mysql --host 10.202.201.171 -uroot -pcarlhu minus -e 'show slave status\G' | grep -E '(Exec_Master_Log_Pos|Read_Master_Log_Pos)'
+
+sysctl -w net.core.somaxconn=30000
+
+https://www.google.com/adplanner/planning/site_profile#siteDetails
+
+alias rate="tail -f /mnt/log/apache2/access.log | pv -l -i2 -r > /dev/null"
+alias terror="tail -n 50000 /mnt/log/apache2/error.log | grep -E '^[^\[]' | less"
+
+
+
+
+
+http://www.nashcoding.com/2011/08/23/how-karma-should-be-measured/3
+
+zsh aliases
+alias rate="tail -f /mnt/log/apache2/access.log | pv -l -i2 -r > /dev/null"
+alias l='ls -l'
+alias terror="tail -n 50000 /mnt/log/apache2/error.log | less"
+alias werror="watch tail -n 200 /mnt/log/apache2/error.log"
+alias taccess="tail -n 50000 /mnt/log/apache2/access.log | less"
+alias waccess="watch tail -n 200 /mnt/log/apache2/access.log"
+
+
+Testing oauth
+http://0.0.0.0:8000/oauth/token?grant_type=password&client_id=d328076c8b9f5005f18085b9e6636f&client_secret=fc6f4c69aefe9757c8322370430c68&scope=read_public&username=carl&password=asdf
+
+####### My favorite aliases ###########
+alias rate tail -f /mnt/log/apache2/access.log | pv -l -i2 -r > /dev/null
+store rate
+
+alias l ls -l
+store l
+
+alias terror tail -n 50000 /mnt/log/apache2/error.log | less
+store terror
+
+alias werror watch tail -n 200 /mnt/log/apache2/error.log
+store werror
+
+alias taccess tail -n 50000 /mnt/log/apache2/access.log | less
+store taccess
+
+alias waccess watch tail -n 200 /mnt/log/apache2/access.log
+store waccess
+
+alias openfiles cat /proc/sys/fs/file-nr 
+store openfiles
+
+alias gb git branch
+store gb
+
+alias co git checkout    
+store co
+
+alias gp git push
+store gp
+
+alias status git status
+store status
+
+alias glg git log --pretty=oneline --abbrev-commit
+store glg
+
+alias netst sudo netstat --tcp --udp --listening --program
+store netst
+
+alias n101 ssh ubuntu@n-101.minus.com
+store n101
+
+alias n102 ssh ubuntu@n-102.minus.com
+store n102
+
+alias m101 ssh ubuntu@n-101.minus.com
+store m101
+
+alias m102 ssh ubuntu@n-102.minus.com
+store m102
+
+alias m103 ssh ubuntu@n-103.minus.com
+store m103
+
+######## Customized /home/ubuntu/.ipython/ipy_user_conf.py ###############
+import IPython.ipapi
+ip = IPython.ipapi.get()
+
+# You probably want to uncomment this if you did %upgrade -nolegacy
+import ipy_defaults    
+
+import os   
+
+def main():   
+
+    import ipy_profile_sh
+    import ipy_editors
+    ipy_editors.install_editor("/usr/bin/vim")
+    
+    
+    o = ip.options
+    # An example on how to set options
+    #o.autocall = 1
+    o.system_verbose = 0
+    
+    # import_all("os sys")
+    # execf('~/_ipython/ns.py')
+
+    machine_name = 'N101'
+    o.prompt_in1 = machine_name + ' [\C_LightCyan\Y1\C_LightBlue]\C_Green|\#> '
+    o.prompt_in2 = machine_name + ' \C_Green|\C_LightGreen\D\C_Green> '
+    o.prompt_out = machine_name + ' <\#> '
+
+    #o.autoexec.append('%colors LightBG')
+    #o.autoexec.append('%colors NoColor')
+    #o.autoexec.append('%colors Linux')
+    
+    # for sane integer division that converts to float (1/2 == 0.5)
+    o.autoexec.append('from __future__ import division')
+    
+    # For %tasks and %kill
+    import jobctrl 
+    
+    # For autoreloading of modules (%autoreload, %aimport)    
+    import ipy_autoreload
+    
+    import ipy_greedycompleter
+    
+    import readline
+    readline.parse_and_bind('set completion-query-items 1000')
+    readline.parse_and_bind('set page-completions no')
+
+
+# some config helper functions you can use 
+def import_all(modules):
+    """ Usage: import_all("os sys") """ 
+    for m in modules.split():
+        ip.ex("from %s import *" % m)
+
+def execf(fname):
+    """ Execute a file in user namespace """
+    ip.ex('execfile("%s")' % os.path.expanduser(fname))
+
+main()
+
+=================
+SELECT * INTO OUTFILE '/mnt/users.csv'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM minus_user;
+
+===================
+sudo vim /etc/sysctl.conf
+net.core.somaxconn = 30000
+fs.file-max = 5000000
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.ip_local_port_range = 1024 65535
+sudo sysctl -p
+sudo vim /etc/security/limits.conf
+*                soft    nofile          650535
+*                hard    nofile          650535
+
+
+ssh tunnel
+ssh -L 8982:localhost:8983 ubuntu@o-101.minus.com
+local 8982 goes to o101 this way. for example: http://localhost:8982/solr/ to solr.
+
+# write a 4 gig file
+dd if=/dev/zero of=zerofile.tst bs=1k count=4700000
+
+sudo hdparm -t /dev/hda (do a df to see devices)
+
+# Test solr performance.
+import timeit
+timeit.timeit(stmt="requests.get(r'''http://localhost:8983/solr/recent/?hl=true&hl.fl=gallery_search_text&qq=doc_type:2%20AND%20gallery_visibility:1%20AND%20gallery_flag_count:{*%20TO%202}%20AND%20gallery_item_count:[1%20TO%20*]&rows=40&start=0''').status_code", setup='import requests', number=10)
+
+######### Video/Audio Processing ###########
+[2011-10-27 15:08:21,626: WARNING/PoolWorker-2] video converted | 3752942 | 1185338 | 0 | 11.280000 | 3.414394
+Video: 
+(whether video or audio) | original file size | small video file size | hd video size | video length (s) | conversion time.
+
+Audio:
+(whether video or audio) | original file size | small video file size | video length (s) | conversion time.
+
+######### Top user registrations by IP #############
+SELECT * FROM (SELECT original_ip_address, count(*) ct, dminus FROM minus_user, (SELECT DATE_ADD(CURDATE(), INTERVAL - 1 DAY) dminus)  WHERE date_created>=dminus GROUP BY original_ip_address) t ORDER BY ct DESC LIMIT 20;
+
+select sum(tt.ct) from (SELECT * FROM (SELECT original_ip_address, count(*) ct FROM minus_user WHERE date_created>=DATE_ADD(CURDATE(), INTERVAL -3 DAY) GROUP BY original_ip_address) t WHERE ct>10 ORDER BY ct DESC LIMIT 40) tt;
+
+##############nginx m-101 restart #############33
+sudo kill -HUP `cat /var/run/nginx.pid`
+ # Test nginx configuration
+ /usr/local/nginx/sbin/nginx -t
+
+# testing sql from python
+from django.db import connection
+c = connection.cursor()
+[[y for y in x] for x in c.fetchall()]
+
+
+##########################
+curl --max-time 4 http://minus.com -o - --write-out> /dev/null
+
+##### Emacs install ##########
+git clone https://github.com/eschulte/emacs-starter-kit.git emacs.d
+git config remote.origin.url git@github.com:carlhu/emacs-starter-kit
+git checkout carl
+Change caps lock to ctrl
+alias estart emacs --daemon -q -l /home/carlhu/emacs.d/init.el
+store estart
+alias e emacsclient -c
+store e
+alias et emacsclient -t
+store et
+
+alias e emacs -q -l /home/carlhu/emacs.d/init.el
+store e
+
+https://sites.google.com/site/steveyegge2/effective-emacs
+
+

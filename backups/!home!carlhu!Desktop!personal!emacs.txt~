@@ -1,0 +1,25 @@
+. Forward
+  . C-f
+  . M-f
+  . C-e
+. Back
+  . C-b
+  . M-b
+  . C-a
+. Next
+  . C-n
+  . C-v
+  . M->
+. Previous
+  . C-p
+  . M-v
+  . M-<
+. Center
+  . C-l
+. Navigate by Search
+  . C-s
+  . C-r
+  . C-g
+
+
+

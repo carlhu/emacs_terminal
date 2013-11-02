@@ -1,0 +1,157 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/templates/minus/" . "admin/")
+ ("/home/carlhu/Desktop/internal/" . "memo/")
+ ("/root@carlhu.com:/etc/emacs/" . "site-start.d/")
+ ("/root@carlhu.com:/etc/" . "apache2/")
+ ("/ubuntu@o-101.minus.com:/home/" . "ubuntu/")
+ ("/ubuntu@o-101.minus.com:/" . "home/")
+ ("/" . "mnt/")
+ ("/home/carlhu/Desktop/personal/" . "markdown/")
+ ("/home/carlhu/emacs.d/" . "emacs-color-theme-solarized/")
+ ("/home/carlhu/Desktop/minus/minus_com/apps/explore/templates/explore/" . "sql/")
+ ("/home/carlhu/Desktop/minus/minus_com/apps/explore/templates/" . "explore/")
+ ("/home/carlhu/Desktop/minus/minus_com/apps/explore/" . "templates/")
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/templates/" . "minus/")
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/" . "templates/")
+ ("/home/carlhu/Desktop/minus/minus_com/apps/" . "minus/")
+ ("/home/carlhu/Desktop/minus/minus_com/" . "smedia/")
+ ("/home/" . "carlhu/")
+ ("/home/carlhu/Desktop/minus/" . "minus_com/")
+ ("/home/carlhu/Desktop/" . "minus/")
+ ("/home/carlhu/" . "emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/carlhu/emacs.d/"
+ "/home/carlhu/emacs.d/emacs-color-theme-solarized/"
+ "/home/carlhu/Desktop/personal/org/"
+ "/home/carlhu/Desktop/minus/minus_com/apps/minus/templates/minus/admin/"
+ "/home/carlhu/Desktop/minus/minus_com/smedia/"
+ "/home/carlhu/Desktop/minus_project/"
+ "/home/carlhu/Desktop/internal/"
+ "/home/carlhu/Desktop/internal/memo/"
+ "/home/carlhu/Desktop/personal/latex_docs/memos/2010-04-21/"
+ "/home/carlhu/Desktop/personal/latex_docs/memos/2010-08-29-Experience-Density/"
+ "/home/carlhu/Desktop/personal/latex_docs/memos/2010-09-08/"
+ "/"
+ "/ubuntu@"
+ "/home/carlhu/Desktop/personal/journal/"
+ "/home/carlhu/Desktop/personal/"
+ "/root@carlhu.com:/etc/apache2/"
+ "/ubuntu@o-101.minus.com:/home/ubuntu/"
+ "/home/carlhu/"
+ "/ubuntu@o-101.minus.com:/"
+ "/home/carlhu/Desktop/minus/minus_com/f2>/"
+ "/home/carlhu/Desktop/personal/deft/"
+ "/mnt/minus_project/"
+ "/home/carlhu/Desktop/minus/docs/todo/"
+ "/home/carlhu/Desktop/minus/"
+ "/home/carlhu/Desktop/minus/docs/"
+ "/home/carlhu/Desktop/minus/minus_com/"
+ "/home/carlhu/Desktop/minus/deployment/apache/"
+ "/home/carlhu/Desktop/minus/minus_com/apps/minus/templates/minus/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "solarized-definitions.el"
+ "color-theme-solarized-pkg.el"
+ "LICENSE"
+ "diary-2011-12-10.org"
+ "resumeable_uploads.org"
+ "todo.html"
+ "todo.js"
+ "s3_garbage_collection_plan.org"
+ "s3_garbage_collection_strategy.org"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/carlhu/emacs.d/" (20256 10498) "custom.el" "starter-kit-python.bak.el" "starter-kit-eshell.el" "starter-kit-python.org" "deft.el" "undo-tree.el" "starter-kit-bindings.el" "starter-kit-elpa.org" "backups/" "deft.elc" "starter-kit-perl.elc" "starter-kit-defuns.org" "starter-kit-haskell.elc" ".init.el.swp" "starter-kit-defuns.el" "bm.el" "snippets/" "browse-kill-ring.elc" "#!home!carlhu!emacs.d!init.d#" "starter-kit-eshell.org" "lusty-explorer.el" ".gitignore" "tiling.elc" "starter-kit-misc.el" "starter-kit-gnus-pop.org" "COPYING" "starter-kit-js.elc" "pymacs.el" "starter-kit-haskell.org" "anything.el" "starter-kit-defuns.elc" "starter-kit-elpa.el" ".git/" "build/" ".#init.el" "anything-github/" "starter-kit-org.org" "starter-kit-ruby.el" "starter-kit-misc.elc" "learn.el" "starter-kit-org.elc" "temp.auto-saves-4716-ubuntu~" "expert.el" "solarize.sh" "starter-kit-registers.org" "grep-o-matic.elc" "starter-kit-eshell.elc" "starter-kit-yasnippet.org" "./" "old_init.el_ideas.el" "src/" "starter-kit-ruby.org" "starter-kit-gnus.org" "auto-complete/" "init.d" "starter-kit.org" "init.txt" "tiling.el" "starter-kit-bindings.elc" "starter-kit-js.el" "starter-kit-registers.el" "starter-kit-lisp.org" "anything-config.el" "old_init.el_ideas.elc" "starter-kit-haskell.el" "undo-tree.elc" "eshell/" "starter-kit-perl.el" "ropemacs/" "dominating-file.el" "starter-kit-elpa.elc" "#init.el#" "starter-kit.el" "bookmarks.txt" "smart-tab.el" "elpa-to-submit/" "color-theme-sanityinc-solarized/" "learn.elc" "anything-complete.el" "../" "starter-kit-js.org" "starter-kit-python.el" "starter-kit-latex.el" "emacs-color-theme-solarized/" "elpa/" "replace+.el" "#anything-config.el#" "starter-kit-org.el" "package.el" ".gitmodules" "package.elc" "starter-kit-gnus-imap.org" "README" "browse-kill-ring.el" "python-mode.el" "starter-kit.elc" "starter-kit-bindings.org" "replace+.elc" "places" "smart-tab.elc" "anything-match-plugin.elc" "grep-o-matic.el" "init-auto-complete.el" "starter-kit-misc.org" "starter-kit-lisp.elc" "expert.elc" "highlight-indentation.el" "anything.elc" "markdown-mode.el" "anything-config.elc" "learn.html" "init.el" "anything-match-plugin.el" "dominating-file.elc" "starter-kit-registers.elc" "pymacs.elc" "starter-kit-lisp.el" "sunrise-commander/" "init.html" "starter-kit-ruby.elc" "starter-kit-latex.org" "pinard-Pymacs-016b0bc/" "starter-kit-perl.org" "updatedb.conf" "cua-lite.el")
+
+ ("/home/carlhu/" (20245 9132) ".fonts/" ".gnucash/" ".ipython/" ".icons/" "game.012" ".fontconfig/" "eclipse/" ".gitconfig" "Django-1.3.1/" "users.csv" "sim_users.txt" ".gegl-0.0/" ".vimrc" ".csshrc" ".dmrc" ".gksu.lock" ".rvm/" "emacs.d/" "Pictures/" "log.005" "game.006" ".synaptic/" ".selected_editor" "game.009" ".gvfs/" ".gnome2_private/" ".rediscli_history" ".shotwell/" ".macromedia/" ".pulse/" ".esd_auth" ".emacs.d/" ".gstreamer-0.10/" ".gem/" ".mission-control/" "Documents/" "wallpaper-895202.jpg" "game.002" "log.009" ".ido.last" "Videos/" "log.002" "game.003" ".vim.bak/" "log.011" ".bash_logout" "./" "#game.001#" ".bash_history" "log.007" ".npm/" ".icedtea/" ".recentf" "log.013" "Templates/" ".gtk-bookmarks" ".thunderbird/" ".pulse-cookie" ".tmux.conf" ".xsession-errors" ".vimrc.bak" ".gnome2/" ".gconf/" "game.007" ".fonts.cache-1" "Public/" "game.008" "daemon_pinger_access.log" ".profile" ".cache/" "Django-1.3/" "django.1.3.1.tar.gz" "log.010" ".dbus/" ".wingide4/" ".pip/" "game.001" "game.013" ".libreoffice/" ".sudo_as_admin_successful" "macat-vimconf/" "log.001" "../" ".ssh/" ".texmf-var/" ".emacs.bmk" ".mysql_history" ".dropbox-dist-new/" ".dropbox/" ".gconfd/" ".emacs" ".vim" "game.005" "emacs_saveplace" "log.008" "wallpaper-1087020.jpg" "log.003" "game.004" "django.tar.gz" ".ICEauthority" "minus.wpr" ".gimp-2.6/" ".gnupg/" ".Xresources" ".matplotlib/" "game.011" ".viminfo" ".pki/" ".bashrc" ".config/" "log.004" "Downloads/" ".lesshst" ".nautilus/" ".dropbox-dist/" ".xsession-errors.old" "spf13-vim/" ".local/" "workspace/" "log.006" ".adobe/" "#.emacs#" "todo.wpr" "processed.txt" ".themes/" ".mozilla/" "log.012" "Desktop/" ".emacs.bak" ".emacs.desktop" "game.010" "Music/" "examples.desktop" ".htoprc" "temp/" ".thumbnails/" "t" ".tsclient/" "t.txt")
+
+ ("/home/carlhu/Desktop/minus/minus_com/" (20245 9132) "__init__.py" "default_sprite.png" "wsgi_handler.py" "__init__.pyc" "urls_for_minus_objects.py" "settings.pyc" "bundle_media_versions.cfg" "./" "manage.py" "java" "JS_TEMPLATE_VERSION.txt" "settings.py" "smedia/" "../" "urls.pyc" "apps/" ".emacs.desktop" "lib/" "urls.py" "uwsgi_localhost.py")
+
+ ("/home/carlhu/Desktop/personal/" (20245 8333) "minus.pem" "Tax/" "carlhu@ubuntu.2060:1324240124" "iyMEa.pdf" "zshrc" "TODO - Amazon.txt" "nyc_apt_application/" "personal.todo" "lyuda.todo" "vim/" "dancing.org" "scratch.txt" "copy.txt" "org/" ".git/" "emacs.org" "latex_docs/" "finance_analysis/" "bio.txt" "./" "fonts/" "carl_hu_contacts_2011-07-21.csv" "Compendium/" "spathe_founders_agreement.psd" "dance.org" "#README#" "user_published.pickle" "dancing.txt" "emacs.txt" "Spathe Negotiations/" "scoring.txt" "iserver.txt" "deployment.org" ".#.#journal.org" "stock_options_minus.org" "journal/" "personal.html" "../" "Spathe Agreement v2 2011.09.12.doc" "PlateReturnReceipt.pdf" "contracts/" "Cai_Carl_Promissory_Note_signed_by_xizi.pdf" "tmux.conf" "markdown/" "minus_orig_git.zip" "README" "user_recommendation_study.txt" "recommend_user_sims.pickle" "VC-summary data.xls" "ideas_from_zune.txt" "nyc_move_in/" "TODO - Personal.txt" "amazon/" "#test.py#" "Cai_Carl_Promissory_Note_signed_by_xizi_and_carl.jpg" ".emacs.desktop" "recommend_user.pickle" "deployment/" "stock_options_minus.html" "MyAmznOffer.xlsx" "personal_todo.org" "s3_nginx_design.txt")
+
+ ("/home/carlhu/Desktop/minus_project/" (20245 7996) "fabfile.py" "#minus.todo#" ".git/" "s3_garbage_collection_plan.org" "./" ".#minus.todo" "fabfile.pyc" "../" "fabfile.html" "README" "minus.archive.todo" "minus.todo.orig" "minus.todo")
+
+ ("/home/carlhu/Desktop/personal/org/" (20245 2641) "diary-2011-12-10.org" "resumeable_uploads.org" "./" "../")
+
+ ("/home/carlhu/emacs.d/emacs-color-theme-solarized/" (20245 3970) "makepkg.sh" "LICENSE" ".git/" "./" "README.md" "color-theme-solarized-pkg.el" "../" "color-theme-solarized.el" "solarized-definitions.el" "solarized-light-theme.el" "solarized-dark-theme.el")
+
+ ("/home/carlhu/Desktop/personal/markdown/" (20244 63051) "./" "../" "resumeable_uploads.md")
+
+ ("/home/carlhu/Desktop/internal/" (20244 60230) "bank/" "story.org" "user_analysis.org" "ssl/" "graphics/" "memo/" ".git/" "investor_relations/" "./" "budget.worksheet.todo" "receipts/" "../" "README.markdown" "contracts/" "resumes/" "analysis.sorted.txt" "my_notebook/" "scrum/" "index.html" "2012.01.04.IDG.Status.org" "servers/" "press-releases/" "todo/" "engineering/" "s3_garbage_collection_strategy.org")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/templates/minus/admin/" (20243 20315) "item_decode.html" "emails.html" "team.html" "todo.html" "./" "apache_error_log.html" "status.html" "../" "registrations.html")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/templates/" (20190 11489) "./" "../" "minus/")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/" (20213 7494) "compress/" "my_sunburnt/" "nginx/" "my_redis/" "minus_lib/" "django_concurrent_test_server/" "recommend/" "template_utils/" "uwsgi_admin/" "./" "sql_print/" "my_mailer/" "page_starter/" "comments/" "mailer/" "agents/" "tags/" "netdna/" "following/" "../" "explore/" "media_bundler/" "djangologging/" "redis/" "root/" "ads/" "oauth/" "mdaemon/" "minus/")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/templates/minus/" (20241 57358) "followbox.html" "outreach/" "user/" "viewer_json.html" "snippet/" "admin/" "public/" "base_homepage.html" "search/" "tracking/" "viewer.html" "./" "common_footer.html" "footer.html" "common_header.html" "facebook/" "static_pages/" "following/" "../" "viewer_lite.html" "email/" "index.html" "base.html" "sql/" "tabs.html")
+
+ ("/home/carlhu/Desktop/minus/deployment/apache/" (20241 57358) "envvars" "ports.conf" "logtail.conf" "unused_httpd.conf" "./" "../" "httpd.conf")
+
+ ("/home/carlhu/Desktop/minus/docs/" (20238 30564) "getting_started.rst" "operations/" "minus_id.rst" "public/" "agent.org" "./" "minus.txt" "minus_models_visualized.png" "../" "js_uploader.rst" "s3_garbage_collection.org" "explore/" "models_optimized_archive.py" "Generators.pdf" "sprints/" "nginx_apache.rst" "build_nginx.rst" "setup_i_server.txt" "install_centos_python.txt")
+
+ ("/home/carlhu/Desktop/internal/memo/" (20241 14568) "memo.synctex.gz" "memo.tex" "outlines.tex" "memo.toc" "memo.out" "texput.log" "auto/" "carl_article.sty" "./" "outlines.aux" "memo.aux" "outlines.sty" "output/" "../" "memo.pdf" "outlines.log" "todonotes.sty" "memo.log" "references/")
+
+ ("/home/carlhu/Desktop/minus/minus_com/smedia/" (20242 35923) "jquery_google/" "buttons/" "zeroclipboard/" "flowplayer/" "uploads/" "fluid960/" "file_uploads/" "swfupload/" "uploadify.tar.gz" "fluid960_v2/" "todo.js" "./" "dygraphs/" "highcharts/" "dojo/" "plupload/" "../" "logo_small.png" "jquery/" "tinymce/" "misc_static/" "root/" "json/" "flowplayer-orig/" "minus/" "libs/" "protovis/")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/" (20242 36313) "__init__.py" "analyze.py" "s3.py" "facebook.py" "middleware.pyc" "user.pyc" "api/" "management/" "utils.py" "redis_utils.py" "__init__.pyc" "szip.py" "graphs.py" "file_utils.py" "event_types.py" "admin.py" "context_processors.py" "solr.pyc" "static_pages.py" "feeds.pyc" "feeds.py" "gallery_tracking.py" "s3.pyc" "search.py" "view_utils.py" "twitter.py" "event_types.pyc" "./" "exceptions.pyc" "solr.py" "user.py" "models.py" "gallery_tracking.pyc" "migrations/" "admin.pyc" "projections.py" "resizer.pyc" "views/" "backends.pyc" "login.pyc" "exceptions.py" "../" "facebook.pyc" "tests/" "search.pyc" "file_utils.pyc" "static_pages.pyc" "models.pyc" "projections.pyc" "resizer.py" "view_utils.pyc" "middleware.py" "login.py" "utils.pyc" "context_processors.pyc" "backends.py" "szip.pyc" "analyze.pyc" "redis_utils.pyc" "twitter.pyc" "templates/")
+
+ ("/home/carlhu/Desktop/minus/" (20242 31972) "docs/" "test/" "mservice/" ".gitignore" "fabfile.py" "minus.wpu" ".git/" "minus_com/" "./" "celery/" "dependencies/" "ignore_files.txt" "media/" "fabfile.pyc" "../" "README" "minus.wpr" "deployment/")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/minus/views/" (20242 31886) "__init__.py" "api/" "copy.pyc" "resolver.pyc" "remote_upload.pyc" "__init__.pyc" "lists.py" "remote_upload.py" "share.py" "./" "mlist.py" "share.pyc" "../" "mlist.pyc" "messaging.pyc" "messaging.py" "copy.py" "lists.pyc" "resolver.py")
+
+ ("/home/carlhu/Desktop/personal/latex_docs/memos/2010-04-21/" (20228 37270) "memo.synctex.gz" "memo.tex" "memo.tex.backup" "outlines.tex" "memo.toc" "memo.tex~" "memo.out" "spathe.tex~" "2-year-review.tex~" "hagon_preso.tex~" "carl_article.sty" "./" "outlines.aux" "bmodel.tex~" "todo.tex~" "memo.aux" "outlines.sty" "output/" "../" "carl_article.sty~" "memo.pdf" "necmusiconline.tex~" "outlines.log" "todonotes.sty" "memo.log" "references/")
+
+ ("/home/carlhu/Desktop/personal/deft/" (20228 52189) ".#deployment.todo" "#personal.html#" "deployment.todo" "personal.todo" "#deployment.todo#" "2011-12-10.todo" "./" "dancing.txt" "emacs.todo" "main_personal.txt" "personal.html" "../" "recommendations.todo" "dancing.todo" "review-2011-12-10.org")
+
+ ("/home/carlhu/Desktop/personal/latex_docs/memos/2010-08-29-Experience-Density/" (20228 36702) "memo.synctex.gz" "_region_.pdf" "_region__flymake.log" "_region_.log" "missfont.log" "memo.tex" "memo.tex.backup" "outlines.tex" "memo.toc" "_region_.tex" "memo.tex~" "_region_.out" "memo.out" "pertable.py" "_region_.aux" "_region_.prv/" "prv_memo.log" "table.tex" "carl_article.sty" ".memo.pdf.swp" "./" "outlines.aux" "memo.aux" "outlines.sty" "output/" "../" "carl_article.sty~" "memo.pdf" "outlines.log" "prv_memo.pdf" "todonotes.sty" "memo.log" "references/" "carl_article.sty.backup")
+
+ ("/home/carlhu/Desktop/personal/latex_docs/memos/2010-09-08/" (20228 30662) "memo.tex" "memo.tex.backup" "memo.toc" "memo.tex~" "memo.out" "pertable.py" "table.tex" "./" "memo.aux" "output/" "../" "carl_article.sty~" "memo.pdf" "memo.log" "references/")
+
+ ("/home/carlhu/Desktop/personal/latex_docs/memos/" (19981 65225) "2010-05-10, Intel Capital/" "2010-03-08/" "2010-08-29-Experience-Density/" "2010-02-03/" "carl_article.sty" "./" "2010-04-21/" "outlines.sty" "../" "carl_article.sty~" "2010-09-08/" "todonotes.sty" "2009-12-01/")
+
+ ("/home/carlhu/Desktop/personal/latex_docs/" (19981 65224) "article/" "irs_letter/" "ResumeForIronMountain/" "accident_adviser/" "necmusiconline.com/" "ResumeForRethinkDB/" "nec_preso_lesser/" "OfExperience/" "nec_proposal/" "memos/" "necmusiconline.kilepr" "notice_of_vacancy/" "hireyard/" "Resume/" "spathe_positioning_part2/" "ResumeForNSF/" "resume.txt" "./" "CourseAdvisor/" "resume_for_akamai.txt" "supplyscape_proposal/" "spathe/" "progress_appliance_recipe/" "hagon_preso/" "../" "AccidentAdvisor/" "spathe_founders_agreement/" "Carl Hu - resume.docx" "JiaoSample/" "spathe_positioning/" "Resume_For_Vivek/" "CloudVirtua/" "spathe_positioning_footnotes_part2/" "WinSecurity/" "2-year-review/" "onyva_prospectus/" "spathe_positioning_footnotes/" "ResumeForAvenue100/" "temp/")
+
+ ("/home/carlhu/Desktop/" (20228 27583) "Dropbox/" "minus_desktop/" "pictures/" "./" "internal/" "mysites/" "../" "minus_project/" "blog/" "personal/" "minus/")
+
+ ("/home/carlhu/Desktop/personal/journal/" (20214 656) "journal.2011.12.18.todo" "swir.txt" "./" "../")
+
+ ("/mnt/" (20207 47215) "nginx_cache/" "#test.txt#" "solr-3.1.0/" "unicorn.log" "./" "log/" "redis_minus.rdb" "../" "test.txt" "python27/" "aws_keys.txt" "minus/" "redis_minus.log" "temp/")
+
+ ("/home/carlhu/Desktop/minus/docs/todo/" (20190 62244) "#minus.todo#" "minus.html" "./" "../" "minus.todo")
+
+ ("/home/carlhu/Desktop/Dropbox/" (20183 6325) "design.txt" "Minus Employment Agreement FINAL (C Hu).doc" "users.csv" "PTDC0033.JPG" "Pictures/" "Subway_1_Schedule.pdf" "Amazon/" "blackberrypics/" "LIMITED GUARANTY OF LEASE - Minus Inc 3D.pdf" "report (3).csv" "users.xlsx" "CarlEmploymentAgreement_Carl_SignedOnly.jpg" "MetroDesign.pdf" "intro.mp4" ".git/" "ScalingOutByJeffDean.pdf" "Minus License Agreement.pdf" "finance_analysis/" "Minus_Final_HD.mov" "./" "src/" "Spathe/" "dance.txt" "dance.org" "lirr.txt" "Public/" "linda_before_thirty.zip" "../" "Books/" "businesscard.png" ".dropbox" "Spathe Agreement v4 2011 09 22 (1).doc" "Spathe_Founders_Agreement (copy).png" "Minus_Storage_Cost_Projection.xlsx" "businesscard.psd" "20110706140735108 (1).pdf" ".dropbox.cache/" "reddit_pics/" "MinusExploreScoring.xlsx" "MINUS-5minutes.pptx" "Spathe_Corporate_Records.zip" "Minus Inc Leasing Package-131W-3D.pdf")
+
+ ("/home/carlhu/emacs.d/elpa/" (20183 4935) "paredit-22/" ".gitignore" "inf-ruby-2.1/" "./" "idle-highlight-1.0/" "yasnippet-bundle-0.6.1/" "ruby-mode-1.1/" "gist-0.5/" "../" "archives/" "magit-readme.txt" "js2-mode-20090814/" "magit-0.8.1/")
+
+ ("/home/carlhu/emacs.d/elpa/magit-0.8.1/" (20183 4936) "magit-autoloads.el" "./" "magit-pkg.elc" "magit.el" "../" "magit.elc" "magit-pkg.el")
+
+ ("/home/carlhu/emacs.d/backups/" (20178 60817) "!home!carlhu!Desktop!personal!emacs.txt~" "!home!carlhu!Desktop!personal!emacs.org~" "!home!carlhu!.emacs.d!framegeometry~" "./" "!home!carlhu!.recentf~" "../" "!home!carlhu!emacs.d!starter-kit-misc.el~" "!home!carlhu!.ido.last~")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/explore/templates/explore/sql/" (20173 44256) "clear_flags_for_mlist.sql" "temp_table_create.sql" "update_usermliststate.sql" "./" "../" "temp_table_insert_ids.sql" "temp_table_join_usermliststate.sql" "explore_view.sql")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/explore/templates/explore/" (20111 19078) "./" "../" "sql/")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/explore/templates/" (20111 19078) "./" "../" "explore/")
+
+ ("/home/carlhu/Desktop/minus/minus_com/apps/explore/" (20182 26266) "__init__.py" "__init__.pyc" "admin.py" "views.pyc" "./" "models.py" "migrations/" "admin.pyc" "../" "models.pyc" "views.py" "templates/")
+
+ ("/home/carlhu/emacs.d/.git/refs/heads/" (20182 23599) "./" "carl" "../" "master")
+
+ ("/home/" (20004 40710) "carlhu/" "./" "../" "ubuntu/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

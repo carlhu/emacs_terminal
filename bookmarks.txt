@@ -1,0 +1,20 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("classify.py"
+ (filename . "/_personal/classifier/classify.py")
+ (front-context-string . "\n            ),\n")
+ (rear-context-string . "'),\n            ")
+ (position . 16618))
+("org-refile-last-stored"
+ (filename . "~/Desktop/personal/minus/mcarl.org")
+ (front-context-string . "** Shelah\n*** Se")
+ (rear-context-string . "Send Junde NDA.\n")
+ (position . 1028))
+("expert.el"
+ (filename . "~/emacs.d/expert.el")
+ (front-context-string . "\n;; visible book")
+ (rear-context-string . "ored\n;; `----\n\n\n")
+ (position . 34098))
+)

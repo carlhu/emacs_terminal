@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>;indent; init.el &mdash; Where all the magic begins</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2011-12-08 01:05:55 EST"/>
+<meta name="author" content="Ubuntu"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">;indent; init.el &mdash; Where all the magic begins</h1>
+<p>;;
+;; Part of the Emacs Starter Kit
+;;
+;; This is the first thing to get loaded.
+;;
+</p>
+
+
+<p>
+(setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
+</p>
+<p>
+(add-to-list 'load-path (expand-file-name
+                         "lisp" (expand-file-name
+                                 "org" (expand-file-name
+                                        "src" dotfiles-dir))))
+</p>
+<p>
+(add-to-list 'load-path "~/emacs.d/icicles")
+</p>
+<p>
+;; Load up Org Mode and Babel
+;; customize todo char.
+(add-hook 'org-mode-hook
+          (lambda ()
+            (modify-syntax-entry (string-to-char "\u25b6") "w") ;right
+            (modify-syntax-entry (string-to-char "\u25a1") "w") ;square
+            (modify-syntax-entry (string-to-char "\u25bc") "w") ;down
+            (modify-syntax-entry (string-to-char "\u25b8") "w"))) ;right
+</p>
+<p>
+(setq org-todo-keywords
+      '((sequence "\u25a1(t)" "|" "DONE(d)")
+        ))
+</p>
+<p>
+(setq org-startup-indented t)
+(setq org-hide-leading-stars t)
+(setq org-odd-level-only nil) 
+</p>
+<p>
+(require 'org-install)
+</p>
+<p>
+;; load up the main file
+(org-babel-load-file (expand-file-name "starter-kit.org" dotfiles-dir))
+</p>
+<p>
+;;; init.el ends here
+</p>
+<p>
+(require 'color-theme)
+(color-theme-initialize)
+</p>
+<p>
+(defun color-theme-carl ()
+  "A color theme based on Tango Palette colors."
+  ;; Color codes :
+  ;; - blue :       "dodger blue"
+  ;; - yellow :     "#edd400"
+  ;; - green :      "#6ac214"
+  ;; - orange/red : "tomato"
+  (interactive)
+  (color-theme-install
+   '(color-theme-carl
+     ((background-color . "#000000")
+      (background-mode . dark)
+      (border-color . "#888a85")
+      (cursor-color . "#fce94f")
+      (foreground-color . "#ffffff")
+      (mouse-color . "#8ae234"))
+     ((help-highlight-face . underline)
+      (ibuffer-dired-buffer-face . font-lock-function-name-face)
+      (ibuffer-help-buffer-face . font-lock-comment-face)
+      (ibuffer-hidden-buffer-face . font-lock-warning-face)
+      (ibuffer-occur-match-face . font-lock-warning-face)
+      (ibuffer-read-only-buffer-face . font-lock-type-face)
+      (ibuffer-special-buffer-face . font-lock-keyword-face)
+      (ibuffer-title-face . font-lock-type-face))
+     (highlight ((t (:background "brown4" :foreground nil))))
+     (border ((t (:background "#888a85"))))
+     (fringe ((t (:background "grey10"))))
+     (mode-line ((t (:foreground "#bbbbbc" :background "#222222" :box (:line-width 1 :color nil :style released-button)))))
+     (mode-line-inactive ((t (:foreground "#bbbbbc" :background "#555753"))))
+     (mode-line-buffer-id ((t (  :foreground "orange" :background nil))))
+     (region ((t (:background "dark slate blue"))))
+     (link ((t (:underline t :foreground "dodger blue"))))
+     (custom-link ((t (:inherit 'link))))
+     (match ((t (  :background "#e9b96e" :foreground "#2e3436"))))
+     (tool-tips ((t (:inherit 'variable-pitch :foreground "black" :background "lightyellow"))))
+     (tooltip ((t (:inherit 'variable-pitch :foreground "black" :background "lightyellow"))))
+;     (bold ((t (  :underline nil :background nil))))
+     (italic ((t (:italic t :underline nil :background nil))))
+     (font-lock-builtin-face ((t (:foreground "#729fcf"))))
+     (font-lock-comment-face ((t (:foreground "#888a85"))))
+     (font-lock-constant-face ((t (:foreground "#8ae234"))))
+     (font-lock-doc-face ((t (:foreground "#888a85"))))
+     (font-lock-keyword-face ((t (:foreground "#729fcf"  ))))
+     (font-lock-string-face ((t (:foreground "#ad7fa8" :italic t))))
+     (font-lock-type-face ((t (:foreground "#8ae234"  ))))
+     (font-lock-variable-name-face ((t (:foreground "tomato"))))
+     (font-lock-warning-face ((t (  :foreground "#f57900"))))
+     (font-lock-function-name-face ((t (:foreground "#edd400"  ))))
+     (comint-highlight-input ((t (:italic t  ))))
+     (comint-highlight-prompt ((t (:foreground "#8ae234"))))
+     (isearch ((t (:background "#f57900" :foreground "#2e3436"))))
+     (isearch-lazy-highlight-face ((t (:foreground "#2e3436" :background "#e9b96e"))))
+     (show-paren-match-face ((t (:foreground "#2e3436" :background "#73d216"))))
+     (show-paren-mismatch-face ((t (:background "#ad7fa8" :foreground "#2e3436"))))
+     (minibuffer-prompt ((t (:foreground "#729fcf"  ))))
+     (info-xref ((t (:foreground "#729fcf"))))
+     (info-xref-visited ((t (:foreground "#ad7fa8"))))
+     (diary-face ((t (  :foreground "IndianRed"))))
+     (eshell-ls-clutter-face ((t (  :foreground "DimGray"))))
+     (eshell-ls-executable-face ((t (  :foreground "Coral"))))
+     (eshell-ls-missing-face ((t (  :foreground "black"))))
+     (eshell-ls-special-face ((t (  :foreground "Gold"))))
+     (eshell-ls-symlink-face ((t (  :foreground "White"))))
+     (widget-button ((t ( ))))
+     (widget-mouse-face ((t (  :foreground "white" :background "brown4"))))
+     (widget-field ((t (:foreground "orange" :background "gray30"))))
+     (widget-single-line-field ((t (:foreground "orange" :background "gray30"))))
+     (custom-group-tag ((t (  :foreground "#edd400"))))
+     (custom-variable-tag ((t (  :foreground "#edd400" ))))
+     (custom-face-tag ((t (  :foreground "#edd400"))))
+     (custom-state-face ((t (:foreground "#729fcf"))))
+     (custom-button  ((t (:box (:line-width 1 :style released-button) :background "grey50" :foreground "black"))))
+     (custom-variable-button ((t (:inherit 'custom-button))))
+     (custom-button-mouse  ((t (:inherit 'custom-button :background "grey60"))))
+     (custom-button-unraised  ((t (:background "grey50" :foreground "black"))))
+     (custom-button-mouse-unraised  ((t (:inherit 'custom-button-unraised :background "grey60"))))
+     (custom-button-pressed  ((t (:inherit 'custom-button :box (:style pressed-button)))))
+     (custom-button-mouse-pressed-unraised  ((t (:inherit 'custom-button-unraised :background "grey60"))))
+     (custom-documentation ((t (:italic t))))
+     (message-cited-text ((t (:foreground "#edd400")))) 
+     (gnus-cite-face-1 ((t (:foreground "#ad7fa8"))))
+     (gnus-cite-face-2 ((t (:foreground "sienna4"))))
+     (gnus-cite-face-3 ((t (:foreground "khaki4"))))
+     (gnus-cite-face-4 ((t (:foreground "PaleTurquoise4"))))
+     (gnus-group-mail-1-empty-face ((t (:foreground "light cyan"))))
+     (gnus-group-mail-1-face ((t (  :foreground "light cyan"))))
+     (gnus-group-mail-2-empty-face ((t (:foreground "turquoise"))))
+     (gnus-group-mail-2-face ((t (  :foreground "turquoise"))))
+     (gnus-group-mail-3-empty-face ((t (:foreground "#729fcf"))))
+     (gnus-group-mail-3-face ((t (  :foreground "#edd400"))))
+     (gnus-group-mail-low-empty-face ((t (:foreground "dodger blue"))))
+     (gnus-group-mail-low-face ((t (  :foreground "dodger blue"))))
+     (gnus-group-news-1-empty-face ((t (:foreground "light cyan"))))
+     (gnus-group-news-1-face ((t (  :foreground "light cyan"))))
+     (gnus-group-news-2-empty-face ((t (:foreground "turquoise"))))
+     (gnus-group-news-2-face ((t (  :foreground "turquoise"))))
+     (gnus-group-news-3-empty-face ((t (:foreground "#729fcf"))))
+     (gnus-group-news-3-face ((t (  :foreground "#edd400"))))
+     (gnus-group-news-low-empty-face ((t (:foreground "dodger blue"))))
+     (gnus-group-news-low-face ((t (  :foreground "dodger blue"))))
+     (gnus-header-name-face ((t (  :foreground "#729fcf"))))
+     (gnus-header-from ((t (  :foreground "#edd400"))))
+     (gnus-header-subject ((t (:foreground "#edd400"))))
+     (gnus-header-content ((t (:italic t :foreground "#8ae234"))))
+     (gnus-header-newsgroups-face ((t (:italic t   :foreground "LightSkyBlue3"))))
+     (gnus-signature-face ((t (:italic t :foreground "dark grey"))))
+     (gnus-summary-cancelled-face ((t (:background "black" :foreground "yellow"))))
+     (gnus-summary-high-ancient-face ((t (  :foreground "rotal blue"))))
+     (gnus-summary-high-read-face ((t (  :foreground "lime green"))))
+     (gnus-summary-high-ticked-face ((t (  :foreground "tomato"))))
+     (gnus-summary-high-unread-face ((t (  :foreground "white"))))
+     (gnus-summary-low-ancient-face ((t (:italic t :foreground "lime green"))))
+     (gnus-summary-low-read-face ((t (:italic t :foreground "royal blue"))))
+     (gnus-summary-low-ticked-face ((t (:italic t :foreground "dark red"))))
+     (gnus-summary-low-unread-face ((t (:italic t :foreground "white"))))
+     (gnus-summary-normal-ancient-face ((t (:foreground "royal blue"))))
+     (gnus-summary-normal-read-face ((t (:foreground "lime green"))))
+     (gnus-summary-normal-ticked-face ((t (:foreground "indian red"))))
+     (gnus-summary-normal-unread-face ((t (:foreground "white"))))
+     (gnus-summary-selected ((t (:background "brown4" :foreground "white"))))
+     (message-header-name-face ((t (:foreground "tomato"))))
+     (message-header-newsgroups-face ((t (:italic t   :foreground "LightSkyBlue3"))))
+     (message-header-other-face ((t (:foreground "LightSkyBlue3"))))
+     (message-header-xheader-face ((t (:foreground "DodgerBlue3"))))
+     (message-header-subject ((t (:foreground "white"))))
+     (message-header-to ((t (:foreground "white"))))
+     (message-header-cc ((t (:foreground "white"))))
+    ; (org-hide ((t (:foreground "#ffffff"))))
+     (org-level-1 ((t (    :foreground "#ffffff"  ))))
+     (org-level-2 ((t (  :foreground "#ffffff"  ))))
+     (org-level-3 ((t (   :foreground "#ffffff" ))))
+     (org-level-4 ((t (  :foreground "#ffffff" ))))
+     (org-level-5 ((t (  :foreground "#ffffff" ))))
+     (org-level-6 ((t (  :foreground "#ffffff" ))))
+     (org-level-7 ((t (  :foreground "#ffffff" ))))
+     (org-date ((t (:underline t :foreground "#ffffff"))))
+     (org-footnote  ((t (:underline t :foreground "#ffffff"))))
+     (org-link ((t (:underline nil :foreground "dodger blue" ))))
+     (org-special-keyword ((t ( :foreground "red"))))
+     (org-verbatim ((t (:foreground "#eeeeec" :underline t  ))))
+     (org-block ((t (:foreground "#bbbbbc"))))
+     (org-quote ((t (:inherit org-block  ))))
+     (org-verse ((t (:inherit org-block  ))))
+     (org-todo ((t (  :foreground "#bbbbbb"))))
+     (org-done ((t (  :foreground "#444444"))))
+     (org-agenda-structure ((t (:weight bold :foreground "tomato"))))
+     (org-agenda-date ((t (:foreground "#6ac214"))))
+     (org-agenda-date-weekend ((t (:weight normal :foreground "dodger blue"))))
+     (org-agenda-date-today ((t (:weight bold :foreground "#edd400"))))
+     (org-drawer ((t (:foreground "#ff0000" ))))  
+     (org-ellipsis ((t (:foreground "LightGoldenrod" :underline t))))      
+     (anything-header ((t (  :background "grey15" :foreground "#edd400"))))
+     (ess-jb-comment-face ((t (:background "#2e3436" :foreground "firebrick"  ))))
+     (ess-jb-hide-face ((t (:background "#2e3436" :foreground "#243436"))))
+     (ess-jb-h1-face ((t ( :foreground "dodger blue" :slant normal))))
+     (ess-jb-h2-face ((t ( :foreground "#6ac214" :slant normal))))
+     (ess-jb-h3-face ((t (  :foreground "#edd400" :slant normal))))
+     (ecb-default-highlight-face ((t (:background "#729fcf"))))
+     (ecb-tag-header-face ((t (:background "#f57900"))))
+     (magit-header ((t (:foreground "#edd400"))))
+     (magit-diff-add ((t (:foreground "#729fcf"))))
+     (magit-item-highlight ((t (:weight extra-bold :inverse-video t))))
+     )))
+</p>
+<p>
+(setq org-ellipsis " \u25bc" )
+;; (color-theme-billw)
+(color-theme-carl)
+</p>
+<p>
+(setq org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
+(setq org-completion-use-ido t)
+(setq org-insert-heading-respect-content t)
+(setq org-return-follows-link t)
+(setq org-special-ctrl-a/e t)
+(setq org-use-speed-commands t)
+(setq org-speed-commands-user nil)
+(setq org-startup-align-all-tables t)
+(setq org-treat-S-cursor-todo-selection-as-state-change nil)
+(setq org-archive-location (concat org-directory "archive/%s<sub>archive</sub>::"))
+</p>
+<p>
+(defun arrange-frame (w h x y)
+  "Set the width, height, and x/y position of the current frame"
+  (let ((frame (selected-frame)))
+    (delete-other-windows)
+    (set-frame-position frame x y)
+    (set-frame-size frame w h)))
+</p>
+<p>
+(arrange-frame 125 160 2 22)
+</p>
+<p>
+(setq visual-line-mode t)
+(setq global-visual-line-mode t)
+(setq org-indent-mode t)
+(setq org-startup-truncated nil)
+(setq-default fill-column 110)
+</p>
+
+<p>
+(global-set-key (kbd "\C-x\C-e") 'org-export-as-html)
+</p>
+<p>
+;; end orgmode
+</p>
+<p>
+(set-face-attribute 'default nil :font "Monospace")
+</p>
+
+<p>
+;; make emacs use the clipboard
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+</p>
+<p>
+;;(require 'linum)
+;;(global-linum-mode)
+;;(autoload 'linum-mode "linum" "toggle line numbers on/off" t) 
+;;(global-set-key (kbd "C-&lt;f5&gt;") 'linum-mode)    
+</p>
+<p>
+(setq auto-save-default t)
+(setq auto-save-interval 20)
+</p>
+<p>
+;; autoload changed files
+(global-auto-revert-mode t)
+</p>
+<p>
+;; ctrl pageup page down buffer switching
+(global-set-key [(control prior)] 'previous-buffer)
+(global-set-key [(control next)] 'next-buffer)
+</p>
+<p>
+(load "browse-kill-ring")
+</p>
+
+<p>
+;; <a href="http://jblevins.org/projects/deft/">http://jblevins.org/projects/deft/</a>
+(when (require 'deft nil 'noerror) 
+   (setq
+      deft-extension "todo"
+      deft-directory "<i>home/carlhu/Desktop/personal/deft</i>"
+      deft-text-mode 'org-mode)
+   (global-set-key (kbd "&lt;f9&gt;") 'deft))
+</p>
+
+<p>
+;; cut and paste windows bindings. note that this disables very
+;; important ctrl x behavior.
+(cua-mode t)
+(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+(transient-mark-mode 1) ;; No region when it is not highlighted
+(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+(require 'undo-tree)
+(global-set-key (kbd "C-S-z") 'undo-tree-visualize)
+</p>
+<p>
+;; desktop saving
+(setq save-place-file "<i>home/carlhu/emacs<sub>saveplace</sub>") ;; keep my ~</i> clean
+(setq-default save-place t)                   ;; activate it for all buffers
+(require 'saveplace)                          ;; get the package
+</p>
+<p>
+(setq default-directory "/home/carlhu/Desktop/minus/minus<sub>com</sub>" )
+</p>
+<p>
+(desktop-save-mode 1)
+</p>
+<p>
+(setq desktop-globals-to-save
+      (append '((extended-command-history . 30)
+                (file-name-history        . 100)
+                (grep-history             . 30)
+                (compile-history          . 30)
+                (minibuffer-history       . 50)
+                (query-replace-history    . 60)
+                (read-expression-history  . 60)
+                (regexp-history           . 60)
+                (regexp-search-ring       . 20)
+                (search-ring              . 20)
+                (shell-command-history    . 50)
+                tags-file-name
+                register-alist)))
+</p>
+<p>
+(require 'desktop)
+</p>
+<p>
+(condition-case ()
+    (desktop-read)     ;; restore desktop files (protected from errors)
+  (error nil))
+</p>
+<p>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+</p>
+
+<p>
+;;; bind RET to py-newline-and-indent
+(global-set-key (kbd "\C-m") 'newline-and-indent)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+</p>
+<p>
+(global-set-key (kbd "&lt;f3&gt;") 'replace-string)
+</p>
+<p>
+;; chrome default browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome")
+</p>
+<p>
+;; python
+(setq-default indent-tabs-mode nil)    ; use only spaces and no tabs
+(setq default-tab-width 4)
+</p>
+<p>
+;; full screen f11
+(defun toggle-fullscreen (&amp;optional f)
+  (interactive)
+  (let ((current-value (frame-parameter nil 'fullscreen)))
+    (set-frame-parameter nil 'fullscreen
+                         (if (equal 'fullboth current-value)
+                             (if (boundp 'old-fullscreen) old-fullscreen nil)
+                           (progn (setq old-fullscreen current-value)
+                                  'fullboth)))))
+(global-set-key [f11] 'toggle-fullscreen)
+</p>
+<p>
+                                        ; Make new frames fullscreen by default. Note: this hook doesn't do
+                                        ; anything to the initial frame if it's in your .emacs, since that file is
+                                        ; read <span style="text-decoration:underline;">after</span> the initial frame is created.
+(add-hook 'after-make-frame-functions 'toggle-fullscreen)
+</p>
+<p>
+;; .todo's go to orgmode
+(add-to-list 'auto-mode-alist '("\\.todo\\'" . org-mode))
+</p>
+<p>
+;; keyboard shortcuts
+;(global-set-key (kbd "\C-g") 'goto-line)
+(global-set-key (kbd "C-&lt;f5&gt;")  'org-table-recalculate)
+(global-set-key (kbd "\C-w") 'backward-kill-word)
+(global-set-key (kbd "\C-x\C-m") 'execute-extended-command) ; alternative M-x shortcuts
+(global-set-key (kbd "\C-c\C-m") 'execute-extended-command)
+(global-set-key (kbd "\C-c\C-m") 'execute-extended-command)
+(global-set-key (kbd "C-S-s") 'rgrep)
+(global-set-key (kbd "C-,") 'previous-error)
+(global-set-key (kbd "C-.") 'next-error)
+(global-set-key (kbd "C-S-r") 'replace-string)
+(global-set-key "\M-/" 'hippie-expand)
+(defun refresh-file ()
+  (interactive)
+  (revert-buffer t t t)
+  )
+(global-set-key (kbd "&lt;f5&gt;")  'refresh-file)
+</p>
+<p>
+;; Make scroll smoother.
+(setq scroll-step            1
+      scroll-conservatively  10000)
+</p>
+<p>
+;(global-set-key [up] (lambda () (interactive) (scroll-down 1)))
+;(global-set-key [down] (lambda () (interactive) (scroll-up 1)))
+</p>
+<p>
+(defun scroll-down-in-place (n)
+  (interactive "p")
+  (previous-line n)
+  (scroll-down n))
+</p>
+<p>
+(defun scroll-up-in-place (n)
+  (interactive "p")
+  (next-line n)
+  (scroll-up n))
+</p>
+<p>
+(global-set-key [mouse-4] 'scroll-down-in-place)
+(global-set-key [mouse-5] 'scroll-up-in-place)
+</p>
+<p>
+;;; I want a key to open the current buffer all over the screen.
+(defun all-over-the-screen ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-horizontally)
+  (split-window-horizontally)
+  (balance-windows)
+  (follow-mode t))
+</p>
+<p>
+(define-key global-map (kbd "&lt;f9&gt;") 'all-over-the-screen)
+</p>
+<p>
+                                        ; (require 'icicles)
+</p>
+
+<p>
+(when (require 'lusty-explorer nil 'noerror)
+  ;; overrride the normal file-opening, buffer switching
+  (global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
+  (global-set-key (kbd "C-x C-b") 'lusty-buffer-explorer)
+  (global-set-key (kbd "C-x b")   'lusty-buffer-explorer))
+</p>
+<p>
+(require 'replace+)
+(global-set-key (kbd "C-S-o")  'occur)
+</p>
+<p>
+(require 'midnight)
+(midnight-delay-set 'midnight-delay 16200) ;; (eq (* 4.5 60 60) "4:30am")
+</p>
+
+
+<p>
+(defun todo-export ()
+  (interactive)
+  (save-buffer)
+  (org-export-as-html 30)
+  )
+(todo-export
+ )
+</p>
+
+<div id="postamble">
+<p class="date">Date: 2011-12-08 01:05:55 EST</p>
+<p class="author">Author: Ubuntu</p>
+<p class="creator">Org version 7.5 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+</div>
+</div>
+</body>
+</html>

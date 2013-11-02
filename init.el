@@ -79,7 +79,8 @@
                 (outline-previous-visible-heading 1)
                 (org-show-subtree)))))
 
-;; (add-to-list 'load-path "~/emacs.d/emacs-color-theme-solarized/")
+(add-to-list 'load-path "~/emacs_terminal/")
+(add-to-list 'load-path "~/emacs_terminal/emacs-color-theme-solarized/")
 (require 'color-theme-solarized)
 
 ;; (add-to-list 'load-path "~/emacs.d/color-theme-sanityinc-solarized/")

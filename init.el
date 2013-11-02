@@ -20,19 +20,13 @@
 
 (require 'cl)
 
-(setq PERSONAL-TODO "~/Desktop/personal/personal.todo")
-(setq PERSONAL-ORG "~/Desktop/personal/personal.org")
-(setq MINUS-TODO "~/Desktop/personal/minus/mcarl.org")
 (setq INIT-EL "~/emacs.d/init.el")
-(setq save-place-file "/home/carlhu/emacs_saveplace") ;; keep my ~/ clean
-(setq magit-repo-dirs (list "~/Desktop/minus" "~/Desktop/minus_project" "~/emacs.d") )
-(setq default-directory "/home/carlhu/Desktop/minus/minus_com" )
+(setq save-place-file "/emacs_saveplace") ;; keep my ~/ clean
+(setq default-directory "/mnt/minus" )
 (cd default-directory)
 (setq MY-GREP-PATHS '(
                       "~/Desktop/minus/"
-                      "~/Desktop/personal/"
-                      "~/Desktop/blog/"
-                      "~/emacs.d/"))
+                      ))
 (setq EMACS_BACKUP "~/emacs_backup")
 ;; (setq org-agenda-files (list "~/Desktop/personal/personal.todo" "~/Desktop/personal/minus.todo"))
 

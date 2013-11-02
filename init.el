@@ -22,4 +22,23 @@
 
 (message "My init file is completely loaded.")
 
+(delete-selection-mode t)
+;;; (winner-mode t)
+(setq global-auto-revert-non-file-buffers t)
+(setq revert-without-query (quote (".*")))
+(fringe-mode 'none)
+(modify-frame-parameters (selected-frame) (list (cons 'name "Emacs")))
+(setq backup-directory-alist `((".*" . "~/emacs_backup")))
+(setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
+(setq backup-by-copying t)
+(setq auto-save-list-file-prefix
+      (concat temporary-file-directory ".auto-saves-"))
+(setq auto-save-file-name-transforms 
+      `((".*" , temporary-file-directory t)))
+(setq auto-sae-default t)
+(setq auto-save-interval 20) ;; keystrokes
+;(setq auto-revert-interval 1) 
+(setq auto-save-timeout 20) ;; seconds
+
 
